@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Form</title>
+  <link rel="stylesheet" href="../CSS/SignUp.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+<div class="container">
+  <h2>Sign Up</h2>
+  <form id="signup-form">
+    <div class="form-group">
+      <label for="first-name">First Name</label>
+      <input type="text" id="first-name" name="first-name" required>
+    </div>
+    <div class="form-group">
+      <label for="last-name">Last Name</label>
+      <input type="text" id="last-name" name="last-name" required>
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" required>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="telephone">Telephone</label>
+      <input type="tel" id="telephone" name="telephone" required>
+    </div>
+    <div class="form-group">
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" required>
+    </div>
+    <div class="form-group">
+      <label for="district">District</label>
+      <select id="district" name="district" required>
+        <option value="">Select District</option>
+        <option value="Maharagama">Maharagama</option>
+        <option value="Rajagiriya">Rajagiriya</option>
+        <option value="Mount Lavinia">Mount Lavinia</option>
+        <option value="Colombo 10">Colombo 10</option>
+        <option value="Colombo 02">Colombo 02</option>
+        <option value="Colombo 07">Colombo 07</option>
+        <option value="Colombo 05">Colombo 05</option>
+        <option value="Kohuwala">Kohuwala</option>
+        <option value="Colombo 03">Colombo 03</option>
+        <option value="Wattala">Wattala</option>
+        <option value="Ragama">Ragama</option>
+        <option value="Nugegoda">Nugegoda</option>
+        <option value="Malabe">Malabe</option>
+        <option value="Battaramulla">Battaramulla</option>
+        <option value="Kadawatha">Kadawatha</option>
+        <option value="Homagama">Homagama</option>
+        <option value="Galle">Galle</option>
+        <option value="Kalutara">Kalutara</option>
+        <option value="Negombo">Negombo</option>
+        <option value="Ambalangoda">Ambalangoda</option>
+        <option value="Kurunegala">Kurunegala</option>
+        <option value="Kandy">Kandy</option>
+        <option value="Jayawardenepura">Jayawardenepura</option>
+        <option value="Thalawathugoda">Thalawathugoda</option>
+        <option value="Moratuwa">Moratuwa</option>
+        <option value="Badulla">Badulla</option>
+        <option value="Dehiwala">Dehiwala</option>
+        <option value="Colombo 06">Colombo 06</option>
+        <option value="Colombo 08">Colombo 08</option>
+        <option value="Colombo 13">Colombo 13</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <p class="password-strength" id="password-strength"></p>
+    </div>
+    <div class="form-group">
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+    </div>
+    <button type="submit">Sign Up</button>
+  </form>
+</div>
+<script src="../JavaScript/SignUp.js"></script>
+</body>
+</html>
