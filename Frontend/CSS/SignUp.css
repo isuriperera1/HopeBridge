@@ -16,12 +16,15 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("https://images.ctfassets.net/8mn0755ou4sj/69e4PX6ZyBtfB5Zd2vxJAs/48e32ece01e8267649f7ff1c006a204e/1200x900_blog_mental_health_HERO.jpg?w=1180&q=50&bg=rgb%3A000000");
+    background-image: url("https://campuscommerce.com/wp-content/uploads/shutterstock_1184139997_800x400.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     filter: blur(8px);
     z-index: -1;
 }
+
 
 .container {
     background: rgba(128, 128, 128, 0.2);
