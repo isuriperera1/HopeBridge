@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risk Calculator</title>
+    <title>Depression Risk Calculator</title>
     <link rel="stylesheet" href="../CSS/ScreenTest.css">
 </head>
 <body>
@@ -12,113 +12,101 @@
         <form id="riskForm">
             <div class="question">
                 <label>In the past 4 weeks, did you feel so sad that nothing could cheer you up?</label>
-                <select name="q1" required>
-                    <option value="">Select an answer</option>
-                    <option value="All of the time">All of the time</option>
-                    <option value="Most of the time">Most of the time</option>
-                    <option value="Some of the time">Some of the time</option>
-                    <option value="A little of the time">A little of the time</option>
-                    <option value="None of the time">None of the time</option>
-                </select>
+                <div>
+                    <input type="radio" name="q1" value="All of the time" required> All of the time<br>
+                    <input type="radio" name="q1" value="Most of the time"> Most of the time<br>
+                    <input type="radio" name="q1" value="Some of the time"> Some of the time<br>
+                    <input type="radio" name="q1" value="A little of the time"> A little of the time<br>
+                    <input type="radio" name="q1" value="None of the time"> None of the time<br>
+                </div>
             </div>
             <div class="question">
                 <label>In the past 4 weeks, how often did you feel no hope for the future?</label>
-                <select name="q2" required>
-                    <option value="">Select an answer</option>
-                    <option value="All of the time">All of the time</option>
-                    <option value="Most of the time">Most of the time</option>
-                    <option value="Some of the time">Some of the time</option>
-                    <option value="A little of the time">A little of the time</option>
-                    <option value="None of the time">None of the time</option>
-                </select>
+                <div>
+                    <input type="radio" name="q2" value="All of the time" required> All of the time<br>
+                    <input type="radio" name="q2" value="Most of the time"> Most of the time<br>
+                    <input type="radio" name="q2" value="Some of the time"> Some of the time<br>
+                    <input type="radio" name="q2" value="A little of the time"> A little of the time<br>
+                    <input type="radio" name="q2" value="None of the time"> None of the time<br>
+                </div>
             </div>
             <div class="question">
                 <label>In the past 4 weeks, how often did you feel intense shame or guilt?</label>
-                <select name="q3" required>
-                    <option value="">Select an answer</option>
-                    <option value="All of the time">All of the time</option>
-                    <option value="Most of the time">Most of the time</option>
-                    <option value="Some of the time">Some of the time</option>
-                    <option value="A little of the time">A little of the time</option>
-                    <option value="None of the time">None of the time</option>
-                </select>
+                <div>
+                    <input type="radio" name="q3" value="All of the time" required> All of the time<br>
+                    <input type="radio" name="q3" value="Most of the time"> Most of the time<br>
+                    <input type="radio" name="q3" value="Some of the time"> Some of the time<br>
+                    <input type="radio" name="q3" value="A little of the time"> A little of the time<br>
+                    <input type="radio" name="q3" value="None of the time"> None of the time<br>
+                </div>
             </div>
             <div class="question">
                 <label>In the past 4 weeks, how often did you feel worthless?</label>
-                <select name="q4" required>
-                    <option value="">Select an answer</option>
-                    <option value="All of the time">All of the time</option>
-                    <option value="Most of the time">Most of the time</option>
-                    <option value="Some of the time">Some of the time</option>
-                    <option value="A little of the time">A little of the time</option>
-                    <option value="None of the time">None of the time</option>
-                </select>
+                <div>
+                    <input type="radio" name="q4" value="All of the time" required> All of the time<br>
+                    <input type="radio" name="q4" value="Most of the time"> Most of the time<br>
+                    <input type="radio" name="q4" value="Some of the time"> Some of the time<br>
+                    <input type="radio" name="q4" value="A little of the time"> A little of the time<br>
+                    <input type="radio" name="q4" value="None of the time"> None of the time<br>
+                </div>
             </div>
             <div class="question">
                 <label>Have you ever tried to kill yourself?</label>
-                <select name="q5" required>
-                    <option value="">Select an answer</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
+                <div>
+                    <input type="radio" name="q5" value="Yes" required> Yes<br>
+                    <input type="radio" name="q5" value="No"> No<br>
+                </div>
             </div>
             <div class="question">
                 <label>Have you gone through any upsetting events recently?</label>
-                <select name="q6" required>
-                    <option value="">Select an answer</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
+                <div>
+                    <input type="radio" name="q6" value="Yes" required> Yes<br>
+                    <input type="radio" name="q6" value="No"> No<br>
+                </div>
             </div>
             <div class="question">
                 <label>Have things been so bad lately that you have thought about killing yourself?</label>
-                <select name="q7" required>
-                    <option value="">Select an answer</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
+                <div>
+                    <input type="radio" name="q7" value="Yes" required> Yes<br>
+                    <input type="radio" name="q7" value="No"> No<br>
+                </div>
             </div>
             <div class="question" id="additionalQuestion1" style="display: none;">
                 <label>How many times?</label>
-                <select name="q7_times">
-                    <option value="">Select an answer</option>
-                    <option value="Once">Once</option>
-                    <option value="Twice">Twice</option>
-                    <option value="3+">3+</option>
-                </select>
+                <div>
+                    <input type="radio" name="q7_times" value="Once"> Once<br>
+                    <input type="radio" name="q7_times" value="Twice"> Twice<br>
+                    <input type="radio" name="q7_times" value="3+"> 3+<br>
+                </div>
             </div>
             <div class="question">
                 <label>Do you have a current plan for how you would attempt suicide?</label>
-                <select name="q8" required>
-                    <option value="">Select an answer</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
+                <div>
+                    <input type="radio" name="q8" value="Yes" required> Yes<br>
+                    <input type="radio" name="q8" value="No"> No<br>
+                </div>
             </div>
             <div class="question">
                 <label>Do you have any friends/family members you can confide in if you have a serious problem?</label>
-                <select name="q9" required>
-                    <option value="">Select an answer</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
+                <div>
+                    <input type="radio" name="q9" value="Yes" required> Yes<br>
+                    <input type="radio" name="q9" value="No"> No<br>
+                </div>
             </div>
             <div class="question" id="additionalQuestion2" style="display: none;">
                 <label>How often are you in contact with this/these person/people?</label>
-                <select name="q9_times">
-                    <option value="">Select an answer</option>
-                    <option value="Daily">Daily</option>
-                    <option value="A few days a week">A few days a week</option>
-                    <option value="Weekly">Weekly</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="A less than a month">A less than a month</option>
-                </select>
+                <div>
+                    <input type="radio" name="q9_times" value="Daily"> Daily<br>
+                    <input type="radio" name="q9_times" value="A few days a week"> A few days a week<br>
+                    <input type="radio" name="q9_times" value="Weekly"> Weekly<br>
+                    <input type="radio" name="q9_times" value="Monthly"> Monthly<br>
+                    <input type="radio" name="q9_times" value="A less than a month"> A less than a month<br>
+                </div>
             </div>
-            <button type="submit">Calculate Risk Level</button>
+            <button type="button" id="next-btn">Next</button>
         </form>
-        <div id="result" class="result"></div>
+        <div id="result" class="result" style="display: none;"></div>
     </div>
     <script src="../JavaScript/ScreenTest.js"></script>
 </body>
 </html>
-

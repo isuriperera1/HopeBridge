@@ -1,31 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const question7 = document.querySelector('select[name="q7"]');
-    const additionalQuestion1 = document.getElementById('additionalQuestion1');
-    const question9 = document.querySelector('select[name="q9"]');
-    const additionalQuestion2 = document.getElementById('additionalQuestion2');
+    const questions = document.querySelectorAll('.question');
+    const nextButton = document.getElementById('next-btn');
+    const resultContainer = document.getElementById('result');
+    let currentQuestionIndex = 0;
 
-    // Show or hide the additional question based on the answer to question 7
-    question7.addEventListener('change', function() {
-        if (this.value === 'Yes') {
+    // Hide all questions initially
+    function resetState() {
+        questions.forEach(question => {
+            question.style.display = 'none';
+        });
+    }
+
+    // Show the current question
+    function showQuestion() {
+        resetState();
+        questions[currentQuestionIndex].style.display = 'block';
+    }
+
+    // Show or hide additional questions based on answers
+    function handleAdditionalQuestions() {
+        const q5Answer = document.querySelector('input[name="q5"]:checked');
+        const additionalQuestion1 = document.getElementById('additionalQuestion1');
+
+        if (q5Answer && q5Answer.value === 'Yes') {
             additionalQuestion1.style.display = 'block';
         } else {
             additionalQuestion1.style.display = 'none';
         }
-    });
+    }
 
-    // Show or hide the additional question based on the answer to question 9
-    question9.addEventListener('change', function() {
-        if (this.value === 'Yes') {
-            additionalQuestion2.style.display = 'block';
-        } else {
-            additionalQuestion2.style.display = 'none';
-        }
-    });
-
-    // Handle form submission
-    document.getElementById('riskForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
+    // Calculate risk level based on answers
+    function calculateRiskLevel() {
         const scores = {
             "All of the time": 4,
             "Most of the time": 3,
@@ -33,19 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
             "A little of the time": 1,
             "None of the time": 0,
             "Yes": 10,
-            "No": 0,
-            "Once": 5,
-            "Twice": 10,
-            "3+": 15,
-            "Daily": 2,
-            "A few days a week": 4,
-            "Weekly": 6,
-            "Monthly": 8,
-            "A less than a month": 10
+            "No": 0
         };
 
-        const formData = new FormData(event.target);
         let totalScore = 0;
+        const formData = new FormData(document.getElementById('riskForm'));
 
         for (let [key, value] of formData.entries()) {
             totalScore += scores[value] || 0;
@@ -60,6 +57,30 @@ document.addEventListener('DOMContentLoaded', function() {
             riskLevel = "Low";
         }
 
-        document.getElementById('result').innerText = `Risk Level: ${riskLevel}`; // Corrected line
+        return riskLevel;
+    }
+
+    // Handle next button click
+    nextButton.addEventListener('click', function() {
+        const selectedRadio = questions[currentQuestionIndex].querySelector('input[type="radio"]:checked');
+        if (selectedRadio) {
+            if (currentQuestionIndex === 2) { // Assuming question 3 is where q5 is
+                handleAdditionalQuestions();
+            }
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                showQuestion();
+            } else {
+                const riskLevel = calculateRiskLevel();
+                resultContainer.innerText = `Risk Level: ${riskLevel}`;
+                resultContainer.style.display = 'block';
+                document.getElementById('riskForm').style.display = 'none'; // Hide the form
+            }
+        } else {
+            alert('Please select an answer before proceeding.');
+        }
     });
+
+    // Show the first question
+    showQuestion();
 });
