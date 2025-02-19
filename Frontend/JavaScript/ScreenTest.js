@@ -2,34 +2,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const questions = document.querySelectorAll('.question');
     const nextButton = document.getElementById('next-btn');
     const resultContainer = document.getElementById('result');
+    const form = document.getElementById('riskForm');
     let currentQuestionIndex = 0;
 
-    // Hide all questions initially
     function resetState() {
-        questions.forEach(question => {
-            question.style.display = 'none';
-        });
+        questions.forEach(q => q.style.display = 'none');
     }
 
-    // Show the current question
     function showQuestion() {
         resetState();
         questions[currentQuestionIndex].style.display = 'block';
     }
 
-    // Show or hide additional questions based on answers
     function handleAdditionalQuestions() {
-        const q5Answer = document.querySelector('input[name="q5"]:checked');
-        const additionalQuestion1 = document.getElementById('additionalQuestion1');
+        const q7Answer = document.querySelector('input[name="q7"]:checked');
+        const q9Answer = document.querySelector('input[name="q9"]:checked');
 
-        if (q5Answer && q5Answer.value === 'Yes') {
-            additionalQuestion1.style.display = 'block';
+        if (q7Answer && q7Answer.value === 'Yes') {
+            document.getElementById('additionalQuestion1').style.display = 'block';
         } else {
-            additionalQuestion1.style.display = 'none';
+            document.getElementById('additionalQuestion1').style.display = 'none';
+            if (currentQuestionIndex === 6) {
+                currentQuestionIndex++; // Skip additional question
+            }
+        }
+
+        if (q9Answer && q9Answer.value === 'Yes') {
+            document.getElementById('additionalQuestion2').style.display = 'block';
+        } else {
+            document.getElementById('additionalQuestion2').style.display = 'none';
+            if (currentQuestionIndex === 8) {
+                currentQuestionIndex++; // Skip additional question
+            }
         }
     }
 
-    // Calculate risk level based on answers
     function calculateRiskLevel() {
         const scores = {
             "All of the time": 4,
@@ -42,45 +49,35 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         let totalScore = 0;
-        const formData = new FormData(document.getElementById('riskForm'));
+        const formData = new FormData(form);
 
-        for (let [key, value] of formData.entries()) {
+        for (let [_, value] of formData.entries()) {
             totalScore += scores[value] || 0;
         }
 
-        let riskLevel;
-        if (totalScore >= 35) {
-            riskLevel = "High";
-        } else if (totalScore >= 25) {
-            riskLevel = "Moderate";
-        } else {
-            riskLevel = "Low";
-        }
-
-        return riskLevel;
+        return totalScore >= 35 ? "High" : totalScore >= 25 ? "Moderate" : "Low";
     }
 
-    // Handle next button click
     nextButton.addEventListener('click', function() {
         const selectedRadio = questions[currentQuestionIndex].querySelector('input[type="radio"]:checked');
-        if (selectedRadio) {
-            if (currentQuestionIndex === 2) { // Assuming question 3 is where q5 is
-                handleAdditionalQuestions();
-            }
-            if (currentQuestionIndex < questions.length - 1) {
-                currentQuestionIndex++;
-                showQuestion();
-            } else {
-                const riskLevel = calculateRiskLevel();
-                resultContainer.innerText = `Risk Level: ${riskLevel}`;
-                resultContainer.style.display = 'block';
-                document.getElementById('riskForm').style.display = 'none'; // Hide the form
-            }
-        } else {
+        if (!selectedRadio) {
             alert('Please select an answer before proceeding.');
+            return;
+        }
+
+        if (currentQuestionIndex === 6 || currentQuestionIndex === 8) {
+            handleAdditionalQuestions();
+        }
+
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            showQuestion();
+        } else {
+            resultContainer.innerText = `Risk Level: ${calculateRiskLevel()}`;
+            resultContainer.style.display = 'block';
+            form.style.display = 'none';
         }
     });
 
-    // Show the first question
     showQuestion();
 });
