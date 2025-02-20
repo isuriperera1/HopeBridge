@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('riskForm');
     let currentQuestionIndex = 0;
 
+    const answers = {};
+
     function resetState() {
         questions.forEach(q => q.style.display = 'none');
     }
@@ -49,21 +51,24 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         let totalScore = 0;
-        const formData = new FormData(form);
-
-        for (let [_, value] of formData.entries()) {
-            totalScore += scores[value] || 0;
+        for (let answer in answers) {
+            totalScore += scores[answers[answer]] || 0;
         }
 
         return totalScore >= 35 ? "High" : totalScore >= 25 ? "Moderate" : "Low";
     }
 
-    nextButton.addEventListener('click', function() {
+    nextButton.addEventListener('click', async function() {
         const selectedRadio = questions[currentQuestionIndex].querySelector('input[type="radio"]:checked');
         if (!selectedRadio) {
             alert('Please select an answer before proceeding.');
             return;
         }
+
+        // Store the answer
+        const answer = selectedRadio.value;
+        const questionName = selectedRadio.name;
+        answers[questionName] = answer;
 
         if (currentQuestionIndex === 6 || currentQuestionIndex === 8) {
             handleAdditionalQuestions();
@@ -73,9 +78,25 @@ document.addEventListener('DOMContentLoaded', function() {
             currentQuestionIndex++;
             showQuestion();
         } else {
-            resultContainer.innerText = `Risk Level: ${calculateRiskLevel()}`;
+            // Send answers to the backend
+            await fetch('http://127.0.0.1:5000/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(answers)
+            });
+
+            // Calculate risk level
+            const riskLevel = calculateRiskLevel();
+            resultContainer.innerText = `Risk Level: ${riskLevel}`;
             resultContainer.style.display = 'block';
             form.style.display = 'none';
+
+            // Send risk level to backend
+            await fetch('http://127.0.0.1:5000/calculate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(answers)
+            });
         }
     });
 
