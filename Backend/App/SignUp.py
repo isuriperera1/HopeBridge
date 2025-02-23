@@ -6,20 +6,20 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app, resources={r"/signup": {"origins": "*"}})
 
-# ✅ Fix MongoDB URI Format (Ensure Correct Database Name)
+# Fix MongoDB URI Format (Ensure Correct Database Name)
 app.config["MONGO_URI"] = "mongodb+srv://Vinethma:2003Asmi15@cluster0.xrhve.mongodb.net/HopeBridge?retryWrites=true&w=majority"
 
-# ✅ Initialize PyMongo
+#  Initialize PyMongo
 mongo = PyMongo(app)
 
-# ✅ Ensure MongoDB Connection is Established
+# Ensure MongoDB Connection is Established
 try:
     mongo.db.list_collection_names()  # Test MongoDB Connection
     print("✅ Connected to MongoDB")
 except Exception as e:
     print(f"❌ MongoDB Connection Error: {e}")
 
-# ✅ Access 'users' Collection
+# Access 'users' Collection
 users_collection = mongo.db.users
 
 

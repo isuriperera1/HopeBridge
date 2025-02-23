@@ -6,7 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
-# ✅ MongoDB Connection
+# MongoDB Connection
 app.config["MONGO_URI"] = "mongodb+srv://Vinethma:2003Asmi15@cluster0.xrhve.mongodb.net/HopeBridge?retryWrites=true&w=majority"
 mongo = PyMongo(app)
 
@@ -19,12 +19,12 @@ def login():
     email = data.get("email")
     password = data.get("password")
 
-    # ✅ Check if user exists
+    # Check if user exists
     user = users_collection.find_one({"email": email})
     if not user:
         return jsonify({"error": "User does not exist"}), 401
 
-    # ✅ Verify password
+    # Verify password
     if not check_password_hash(user["password"], password):
         return jsonify({"error": "Invalid email or password"}), 401
 
