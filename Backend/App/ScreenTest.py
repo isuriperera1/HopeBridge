@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from pymongo import MongoClient
-import hashlib
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -40,20 +39,19 @@ def calculate_risk():
         "No": 0
     }
 
-    total_score = 0
-    for answer in data.values():
-        total_score += scores.get(answer, 0)
+    total_score = sum(scores.get(answer, 0) for answer in data.values())
 
     # Determine the risk level
-    risk_level = "Low"
     if total_score >= 35:
         risk_level = "High"
     elif total_score >= 25:
         risk_level = "Moderate"
+    else:
+        risk_level = "Low"
 
     # Store the risk level in MongoDB
     try:
-        risk_collection.insert_one({"risk_level": risk_level})
+        risk_collection.insert_one({"risk_level": risk_level, "answers": data})
         print(f"Risk Level '{risk_level}' saved to MongoDB")
     except Exception as e:
         print("Error saving risk level to MongoDB:", e)

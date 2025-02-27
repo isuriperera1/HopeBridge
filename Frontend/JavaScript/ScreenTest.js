@@ -1,10 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const questions = document.querySelectorAll('.question');
-    const nextButton = document.getElementById('next-btn');
+document.addEventListener('DOMContentLoaded', function () {
+    const questions = Array.from(document.querySelectorAll('.question'));
     const resultContainer = document.getElementById('result');
     const form = document.getElementById('riskForm');
     let currentQuestionIndex = 0;
-
     const answers = {};
 
     function resetState() {
@@ -13,92 +11,81 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showQuestion() {
         resetState();
-        questions[currentQuestionIndex].style.display = 'block';
-    }
-
-    function handleAdditionalQuestions() {
-        const q7Answer = document.querySelector('input[name="q7"]:checked');
-        const q9Answer = document.querySelector('input[name="q9"]:checked');
-
-        if (q7Answer && q7Answer.value === 'Yes') {
-            document.getElementById('additionalQuestion1').style.display = 'block';
+        if (currentQuestionIndex < questions.length) {
+            questions[currentQuestionIndex].style.display = 'block';
         } else {
-            document.getElementById('additionalQuestion1').style.display = 'none';
-            if (currentQuestionIndex === 6) {
-                currentQuestionIndex++; // Skip additional question
-            }
+            submitAnswers();
         }
+    }
 
-        if (q9Answer && q9Answer.value === 'Yes') {
-            document.getElementById('additionalQuestion2').style.display = 'block';
+    document.querySelectorAll('.answer-option').forEach(option => {
+        option.addEventListener('click', function () {
+            let parent = this.closest('.question');
+            let questionIndex = questions.indexOf(parent);
+            let questionId = parent.id;
+
+            // Save the selected answer
+            answers[questionIndex] = this.dataset.value;
+
+            // Remove 'selected' class from other options and highlight the chosen one
+            parent.querySelectorAll('.answer-option').forEach(opt => opt.classList.remove('selected'));
+            this.classList.add('selected');
+
+            setTimeout(() => {
+                moveToNextQuestion(questionId, this.dataset.value);
+            }, 300); // Small delay for UI feedback
+        });
+    });
+
+    function moveToNextQuestion(questionId, answer) {
+        if (questionId === "SelectiveQuestion1" && answer === "No") {
+            currentQuestionIndex = findNextQuestionIndex("additionalQuestion1") + 1;
+        } else if (questionId === "SelectiveQuestion2" && answer === "No") {
+            // If "No" is chosen for "Have you ever tried to kill yourself?", skip additionalQuestion1
+            currentQuestionIndex = findNextQuestionIndex("additionalQuestion2") + 1;
         } else {
-            document.getElementById('additionalQuestion2').style.display = 'none';
-            if (currentQuestionIndex === 8) {
-                currentQuestionIndex++; // Skip additional question
-            }
-        }
-    }
-
-    function calculateRiskLevel() {
-        const scores = {
-            "All of the time": 4,
-            "Most of the time": 3,
-            "Some of the time": 2,
-            "A little of the time": 1,
-            "None of the time": 0,
-            "Yes": 10,
-            "No": 0
-        };
-
-        let totalScore = 0;
-        for (let answer in answers) {
-            totalScore += scores[answers[answer]] || 0;
-        }
-
-        return totalScore >= 35 ? "High" : totalScore >= 25 ? "Moderate" : "Low";
-    }
-
-    nextButton.addEventListener('click', async function() {
-        const selectedRadio = questions[currentQuestionIndex].querySelector('input[type="radio"]:checked');
-        if (!selectedRadio) {
-            alert('Please select an answer before proceeding.');
-            return;
-        }
-
-        // Store the answer
-        const answer = selectedRadio.value;
-        const questionName = selectedRadio.name;
-        answers[questionName] = answer;
-
-        if (currentQuestionIndex === 6 || currentQuestionIndex === 8) {
-            handleAdditionalQuestions();
-        }
-
-        if (currentQuestionIndex < questions.length - 1) {
+            // Move to the next question normally
             currentQuestionIndex++;
-            showQuestion();
-        } else {
-            // Send answers to the backend
-            await fetch('http://127.0.0.1:5000/submit', {
+        }
+        showQuestion();
+    }
+
+    function findNextQuestionIndex(questionId) {
+        return questions.findIndex(q => q.id === questionId);
+    }
+
+    async function submitAnswers() {
+        try {
+            // Submit answers to backend
+            let response = await fetch('http://127.0.0.1:5000/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(answers)
             });
 
-            // Calculate risk level
-            const riskLevel = calculateRiskLevel();
-            resultContainer.innerText = `Risk Level: ${riskLevel}`;
+            if (!response.ok) {
+                throw new Error("Failed to submit answers");
+            }
+
+            // Send answers for risk calculation
+            let riskResponse = await fetch('http://127.0.0.1:5000/calculate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(answers)
+            });
+
+            let riskData = await riskResponse.json();
+
+            // Display risk level
+            resultContainer.innerText = `Thank you for completing the test! Your risk level is: ${riskData.risk_level}`;
             resultContainer.style.display = 'block';
             form.style.display = 'none';
-
-            // Send risk level to backend
-            await fetch('http://127.0.0.1:5000/calculate', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(answers)
-            });
+        } catch (error) {
+            console.error("Error:", error);
+            resultContainer.innerText = 'An error occurred. Please try again later.';
+            resultContainer.style.display = 'block';
         }
-    });
+    }
 
     showQuestion();
 });

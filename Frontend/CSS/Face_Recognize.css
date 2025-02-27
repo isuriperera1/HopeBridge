@@ -1,0 +1,209 @@
+/* General Page Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1E3C72, #2A5298); /* Soothing blue gradient */
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Background Blur Effect */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("https://campuscommerce.com/wp-content/uploads/shutterstock_1184139997_800x400.jpg") no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(10px) brightness(0.6);
+    z-index: -1;
+}
+
+/* Container Styling */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 3vw;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 85%;
+    max-width: 500px;
+    text-align: center;
+    color: #F5F7FA;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+
+    /* Fix container height & margins */
+    min-height: auto;
+    margin: 5vh auto; /* Space from top & bottom */
+}
+
+/* Hover Effect for Container */
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Heading */
+.container h1 {
+    font-size: clamp(22px, 2.5vw, 30px);
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #B0C4DE;
+    text-shadow: 0 0 10px rgba(176, 196, 222, 0.5);
+    animation: textGlow 2s infinite alternate;
+}
+
+/* Heading Glow Effect */
+@keyframes textGlow {
+    0% { text-shadow: 0 0 10px rgba(176, 196, 222, 0.5); }
+    100% { text-shadow: 0 0 20px rgba(176, 196, 222, 0.8); }
+}
+
+/* Video & Canvas */
+.video-container {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(176, 196, 222, 0.5);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 1em;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: clamp(14px, 1.5vw, 18px);
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(45deg, #4C669F, #3B5998);
+    color: white;
+    box-shadow: 0 4px 10px rgba(79, 110, 159, 0.3);
+}
+
+/* Button Hover Effect */
+button:hover {
+    background: linear-gradient(45deg, #3B5998, #4C669F);
+    box-shadow: 0 6px 15px rgba(79, 110, 159, 0.5);
+    transform: scale(1.05);
+}
+
+/* Button Click Effect */
+button:active {
+    transform: scale(0.98);
+}
+
+/* Loading Indicator */
+#loading {
+    display: none;
+    color: #DDE6ED;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Image Preview */
+#imagePreview {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(176, 196, 222, 0.5);
+    margin-top: 15px;
+    display: none; /* Initially hidden */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect on Image */
+#imagePreview:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(176, 196, 222, 0.8);
+}
+
+/* Results Section */
+#results {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2vw;
+    border-radius: 12px;
+    margin-top: 15px;
+    text-align: left;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Depression Level */
+#depressionLevel {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: bold;
+    color: #B0C4DE;
+    text-shadow: 0 0 10px rgba(176, 196, 222, 0.5);
+}
+
+/* Hide Emotion Scores */
+#emotionScores {
+    display: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 90%;
+        min-height: auto;
+        margin: 7vh auto;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+/* Mobile Phones */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 5vw;
+        min-height: auto;
+        margin: 7vh auto;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+/* Small Mobile Screens */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 98%;
+        padding: 6vw;
+        min-height: auto;
+        margin: 10vh auto;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

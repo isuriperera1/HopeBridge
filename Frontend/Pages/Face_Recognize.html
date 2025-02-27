@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+    <link rel="stylesheet" href="../CSS/Face_Recognize.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Emotion Detection</h1>
 
+        <!-- Video and Canvas for webcam feed -->
+        <div class="video-container">
+            <video id="webcam" autoplay></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+        </div>
+
+        <!-- Buttons for capturing image -->
+        <button id="start-webcam">Start Webcam</button>
+        <button id="captureButton">Capture Image</button>
+
+        <!-- Loading indication -->
+        <div id="loading" class="hidden">Processing...</div>
+
+        <!-- Image Preview -->
+        <img id="imagePreview" alt="Captured Image" class="hidden">
+
+        <!-- Emotion and Depression Results -->
+        <div id="results">
+            <p><strong>Depression Level:</strong></p>
+            <p id="depressionLevel"></p>
+        </div>
+    </div>
+
+    <script src="../JavaScript/Face_Recognize.js"></script>
 </body>
 </html>
