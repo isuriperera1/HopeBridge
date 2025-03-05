@@ -5,6 +5,8 @@ from typing import Text, Dict, Any, List, Tuple
 import re
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
+from pymongo import MongoClient
+from datetime import datetime
 
 # Download VADER lexicon for sentiment analysis
 nltk.download('vader_lexicon')
@@ -17,6 +19,12 @@ suicide_keywords = {
     "burden": 15, "pain": 25, "goodbye": 35, "disappear": 25,
     "suffering": 25, "useless": 20
 }
+
+# MongoDB Connection
+MONGO_URI = "mongodb+srv://Vinethma:2003Asmi15@cluster0.xrhve.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+client = MongoClient(MONGO_URI)
+db = client["HopeBridge"]  # Database name
+collection = db["Chatbot"]  # Collection name
 
 class ActionHandleQuestionFlow(Action):
     def name(self) -> Text:
@@ -98,16 +106,19 @@ class ActionHandleQuestionFlow(Action):
         final_score, risk_category = self.calculate_risk(user_responses)
 
         # Display recommendation based on risk level
-        if risk_category == "High Risk 🚨":
+        if risk_category == "High":
             dispatcher.utter_message(text="Your well-being is important. Please seek immediate help from a mental health professional or reach out to a trusted support system. If you're in crisis, contact a helpline immediately, below are the details of National Institute of Mental Health(NIMH):")
             dispatcher.utter_message(text="National Mental Health Helpline: 1926")
             dispatcher.utter_message(text="Telephone: +94 112 578 234 - 7")
             dispatcher.utter_message(text="Day Treatment Centre: +94 112 578 556")
-        elif risk_category == "Medium Risk ⚠️":
+        elif risk_category == "Medium":
             dispatcher.utter_message(text="You might be going through a rough time. Consider talking to a close friend, practicing relaxation techniques, or seeking professional guidance if needed.")
             dispatcher.utter_message(text="Here is an organization where you can get counselling services: Courage Compassion Commitment (CCC) Foundation - 1333, +94 112 692 909")
         else:
             dispatcher.utter_message(text="It’s great that you're doing well! Keep maintaining a healthy routine, engage in activities that make you happy, and stay connected with supportive people. 🌿")
+
+        # Store conversation data in MongoDB
+        self.store_conversation_data(tracker, user_responses, risk_category)
 
         # End conversation
         dispatcher.utter_message(response="utter_goodbye")
@@ -137,10 +148,25 @@ class ActionHandleQuestionFlow(Action):
 
         # Determine Risk Level
         if final_risk_score >= 70:
-            risk_level = "High Risk 🚨"
+            risk_level = "High"
         elif 40 <= final_risk_score < 70:
-            risk_level = "Medium Risk ⚠️"
+            risk_level = "Medium"
         else:
-            risk_level = "Low Risk ✅"
+            risk_level = "Low"
 
         return final_risk_score, risk_level
+
+    def store_conversation_data(self, tracker: Tracker, user_responses: List[Text], risk_category: Text):
+        """Store conversation data in MongoDB."""
+
+        # Extract user information
+        user_id = tracker.sender_id  # Unique ID for the user
+        conversation_data = {
+            "user_id": user_id,
+            "responses": user_responses,
+            "risk_category": risk_category,
+            "timestamp": datetime.now().isoformat()
+        }
+
+        # Insert data into MongoDB
+        collection.insert_one(conversation_data)
