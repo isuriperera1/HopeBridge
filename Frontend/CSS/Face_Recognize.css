@@ -1,68 +1,71 @@
 /* General Page Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Nunito', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1E3C72, #2A5298); /* Soothing blue gradient */
+    background: black;
     margin: 0;
+    padding: 0;
     overflow-x: hidden;
 }
 
 /* Background Blur Effect */
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("https://campuscommerce.com/wp-content/uploads/shutterstock_1184139997_800x400.jpg") no-repeat center center fixed;
+    background: url("https://t4.ftcdn.net/jpg/05/40/33/35/360_F_540333561_F0l1emNgMqc8qTvwZIFawm2ZncjHhOkM.jpg") no-repeat center center fixed;
     background-size: cover;
-    filter: blur(10px) brightness(0.6);
+    filter: blur(8px) brightness(0.5);
     z-index: -1;
 }
 
 /* Container Styling */
 .container {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
+    background: rgba(210, 224, 251, 0.25);
+    backdrop-filter: blur(15px);
     padding: 3vw;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    width: 85%;
-    max-width: 500px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(210, 224, 251, 0.3);
+    width: 90%;
+    max-width: 550px;
     text-align: center;
-    color: #F5F7FA;
+    color: #F9F3CC;
     animation: fadeIn 1s ease-in-out;
     transition: transform 0.3s ease-in-out;
-
-    /* Fix container height & margins */
-    min-height: auto;
-    margin: 5vh auto; /* Space from top & bottom */
+    margin: 5vh auto;
 }
 
 /* Hover Effect for Container */
 .container:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(210, 224, 251, 0.4);
 }
 
-/* Heading */
+/* Heading - Gradient Text Fill with Text Border */
 .container h1 {
-    font-size: clamp(22px, 2.5vw, 30px);
+    font-family: 'Arial', sans-serif;
+    font-size: clamp(24px, 3vw, 32px);
     font-weight: 700;
     margin-bottom: 15px;
-    color: #B0C4DE;
-    text-shadow: 0 0 10px rgba(176, 196, 222, 0.5);
+    background: linear-gradient(45deg, #0B3D2E, #1B5E48, #216869, #2E8B57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 10px rgba(33, 104, 105, 0.7);
+    -webkit-text-stroke: 0.8px #D7E5CA;
     animation: textGlow 2s infinite alternate;
 }
 
 /* Heading Glow Effect */
 @keyframes textGlow {
-    0% { text-shadow: 0 0 10px rgba(176, 196, 222, 0.5); }
-    100% { text-shadow: 0 0 20px rgba(176, 196, 222, 0.8); }
+    0% { text-shadow: 0 0 10px rgba(33, 104, 105, 0.5); }
+    100% { text-shadow: 0 0 20px rgba(33, 104, 105, 0.9); }
 }
 
 /* Video & Canvas */
@@ -76,7 +79,7 @@ body::before {
 video {
     width: 100%;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(176, 196, 222, 0.5);
+    box-shadow: 0 0 12px rgba(142, 172, 205, 0.5);
 }
 
 /* Buttons */
@@ -84,34 +87,39 @@ button {
     width: 100%;
     padding: 1em;
     margin: 10px 0;
-    border: none;
-    border-radius: 12px;
+    border: 2px solid rgba(249, 243, 204, 0.6);
+    border-radius: 15px;
     font-size: clamp(14px, 1.5vw, 18px);
     font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
-    background: linear-gradient(45deg, #4C669F, #3B5998);
-    color: white;
-    box-shadow: 0 4px 10px rgba(79, 110, 159, 0.3);
+    transition: 0.4s ease-in-out;
+    background: linear-gradient(45deg, #D7E5CA, #8EACCD);
+    color: #1E2A3A;
+    box-shadow: 0 4px 15px rgba(142, 172, 205, 0.4);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Button Hover Effect */
+/* Hover Effect - Advanced Glow and Gradient */
 button:hover {
-    background: linear-gradient(45deg, #3B5998, #4C669F);
-    box-shadow: 0 6px 15px rgba(79, 110, 159, 0.5);
-    transform: scale(1.05);
+    background: linear-gradient(45deg, #F9F3CC, #D2E0FB, #8EACCD);
+    border: 2px solid #D2E0FB;
+    box-shadow: 0 8px 25px rgba(142, 172, 205, 0.7);
+    transform: scale(1.1);
+    transition: background 0.4s ease-in-out, transform 0.2s ease-in-out;
 }
 
-/* Button Click Effect */
+/* Button Active (Click) Effect */
 button:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
+    box-shadow: 0 4px 10px rgba(142, 172, 205, 0.5);
 }
 
 /* Loading Indicator */
 #loading {
     display: none;
-    color: #DDE6ED;
+    color: #D2E0FB;
     font-size: 18px;
     font-weight: bold;
 }
@@ -120,61 +128,61 @@ button:active {
 #imagePreview {
     width: 100%;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(176, 196, 222, 0.5);
+    box-shadow: 0 0 12px rgba(142, 172, 205, 0.6);
     margin-top: 15px;
-    display: none; /* Initially hidden */
+    display: none;
     transition: transform 0.3s ease-in-out;
 }
 
 /* Hover Effect on Image */
 #imagePreview:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(176, 196, 222, 0.8);
+    box-shadow: 0 0 20px rgba(142, 172, 205, 0.8);
 }
 
 /* Results Section */
 #results {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(249, 243, 204, 0.15);
     padding: 2vw;
     border-radius: 12px;
     margin-top: 15px;
     text-align: left;
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(249, 243, 204, 0.5);
+    box-shadow: 0 0 15px rgba(249, 243, 204, 0.2);
 }
 
 /* Depression Level */
 #depressionLevel {
     font-size: clamp(16px, 2vw, 20px);
     font-weight: bold;
-    color: #B0C4DE;
-    text-shadow: 0 0 10px rgba(176, 196, 222, 0.5);
-}
-
-/* Hide Emotion Scores */
-#emotionScores {
-    display: none;
+    color: #D2E0FB;
+    text-shadow: 0 0 12px rgba(210, 224, 251, 0.7);
 }
 
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
     .container {
-        width: 90%;
-        min-height: auto;
+        width: 95%;
+        padding: 5vw;
         margin: 7vh auto;
+    }
+
+    h1 {
+        font-size: 24px;
     }
 
     button {
         font-size: 16px;
+        padding: 12px;
     }
 }
 
 /* Mobile Phones */
 @media screen and (max-width: 768px) {
     .container {
-        width: 95%;
-        padding: 5vw;
+        width: 98%;
+        padding: 6vw;
         min-height: auto;
         margin: 7vh auto;
     }
@@ -184,16 +192,16 @@ button:active {
     }
 
     button {
-        font-size: 15px;
-        padding: 12px;
+        font-size: 14px;
+        padding: 10px;
     }
 }
 
 /* Small Mobile Screens */
 @media screen and (max-width: 480px) {
     .container {
-        width: 98%;
-        padding: 6vw;
+        width: 100%;
+        padding: 7vw;
         min-height: auto;
         margin: 10vh auto;
     }
@@ -203,7 +211,7 @@ button:active {
     }
 
     button {
-        font-size: 14px;
-        padding: 10px;
+        font-size: 12px;
+        padding: 8px;
     }
 }
