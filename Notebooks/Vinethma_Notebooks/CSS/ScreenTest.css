@@ -1,0 +1,298 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fixed Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Adjust Body Padding so Content is not hidden under Header */
+body {
+    font-family: 'Nunito', sans-serif;
+    background: radial-gradient(circle, #D2E0FB 0%, #8EACCD 100%);
+    color: #2A2A2A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    padding-top: 80px;  /* Prevent content from being hidden under the fixed header */
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    color: #000;
+    background: #f1f1f1;
+}
+
+/* Dropdown */
+.dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.dropdown a:hover {
+    background: #f1f1f1;
+}
+
+/* Show Dropdown on Hover */
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+/* Login Button */
+.login-btn {
+    background: #000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #767676;
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 1s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    margin-bottom: 50px; /* Added margin below the container */
+}
+
+.container:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Headings */
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    color: #6B7AA1;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 30px rgba(107, 122, 161, 0.9);
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Questions */
+.question {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.question:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+}
+
+.question label {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #34495E;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* Answer Box */
+.answer-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Answer Option Styling */
+.answer-option {
+    padding: 14px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    background: rgba(255, 255, 255, 0.35);
+    color: #14416e;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.answer-option:hover {
+    background: #D0E8C5;
+    border: #5B9279 2px solid;
+    box-shadow: 0 0 15px rgba(249, 243, 204, 0.7);
+    transform: translateY(-2px);
+    color: #2C3E50;
+}
+
+/* Selected Answer Effect */
+.answer-option:active {
+    background: #D7E5CA;
+    border-color: #5B9279;
+    color: white;
+    box-shadow: 0 0 18px rgba(163, 201, 168, 0.8);
+}
+
+/* Result Box */
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6B7AA1;
+    display: none;
+    animation: fadeIn 0.8s ease-in-out;
+    box-shadow: 0 0 25px rgba(107, 122, 161, 0.7);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 18px;
+        border-radius: 0;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+    .question label {
+        font-size: 1rem;
+    }
+    .answer-option {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    button {
+        font-size: 0.95rem;
+        padding: 10px 16px;
+    }
+}

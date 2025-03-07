@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Risk Calculator</title>
+    <link rel="stylesheet" href="../CSS/ScreenTest.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Depression Risk Calculator</h1>
+        <form id="riskForm">
+            <div class="question">
+                <label>In the past 4 weeks, did you feel so sad that nothing could cheer you up?</label>
+                <div>
+                    <input type="radio" name="q1" value="All of the time" required> All of the time<br>
+                    <input type="radio" name="q1" value="Most of the time"> Most of the time<br>
+                    <input type="radio" name="q1" value="Some of the time"> Some of the time<br>
+                    <input type="radio" name="q1" value="A little of the time"> A little of the time<br>
+                    <input type="radio" name="q1" value="None of the time"> None of the time<br>
+                </div>
+            </div>
+            <div class="question">
+                <label>In the past 4 weeks, how often did you feel no hope for the future?</label>
+                <div>
+                    <input type="radio" name="q2" value="All of the time" required> All of the time<br>
+                    <input type="radio" name="q2" value="Most of the time"> Most of the time<br>
+                    <input type="radio" name="q2" value="Some of the time"> Some of the time<br>
+                    <input type="radio" name="q2" value="A little of the time"> A little of the time<br>
+                    <input type="radio" name="q2" value="None of the time"> None of the time<br>
+                </div>
+            </div>
+            <div class="question">
+                <label>In the past 4 weeks, how often did you feel intense shame or guilt?</label>
+                <div>
+                    <input type="radio" name="q3" value="All of the time" required> All of the time<br>
+                    <input type="radio" name="q3" value="Most of the time"> Most of the time<br>
+                    <input type="radio" name="q3" value="Some of the time"> Some of the time<br>
+                    <input type="radio" name="q3" value="A little of the time"> A little of the time<br>
+                    <input type="radio" name="q3" value="None of the time"> None of the time<br>
+                </div>
+            </div>
+            <div class="question">
+                <label>In the past 4 weeks, how often did you feel worthless?</label>
+                <div>
+                    <input type="radio" name="q4" value="All of the time" required> All of the time<br>
+                    <input type="radio" name="q4" value="Most of the time"> Most of the time<br>
+                    <input type="radio" name="q4" value="Some of the time"> Some of the time<br>
+                    <input type="radio" name="q4" value="A little of the time"> A little of the time<br>
+                    <input type="radio" name="q4" value="None of the time"> None of the time<br>
+                </div>
+            </div>
+            <div class="question">
+                <label>Have things been so bad lately that you have thought about killing yourself?</label>
+                <div>
+                    <input type="radio" name="q5" value="Yes" required> Yes<br>
+                    <input type="radio" name="q5" value="No"> No<br>
+                </div>
+            </div>
+            <div class="question">
+                <label>Have you gone through any upsetting events recently?</label>
+                <div>
+                    <input type="radio" name="q6" value="Yes" required> Yes<br>
+                    <input type="radio" name="q6" value="No"> No<br>
+                </div>
+            </div>
+            <div class="question">
+                <label>Have you ever tried to kill yourself?</label>
+                <div>
+                    <input type="radio" name="q7" value="Yes" required> Yes<br>
+                    <input type="radio" name="q7" value="No"> No<br>
+                </div>
+            </div>
+            <div class="question" id="additionalQuestion1" style="display: none;">
+                <label>How many times?</label>
+                <div>
+                    <input type="radio" name="q7_times" value="Once"> Once<br>
+                    <input type="radio" name="q7_times" value="Twice"> Twice<br>
+                    <input type="radio" name="q7_times" value="3+"> 3+<br>
+                </div>
+            </div>
+            <div class="question">
+                <label>Do you have any friends/family members you can confide in if you have a serious problem?</label>
+                <div>
+                    <input type="radio" name="q9" value="Yes" required> Yes<br>
+                    <input type="radio" name="q9" value="No"> No<br>
+                </div>
+            </div>
+            <div class="question" id="additionalQuestion2" style="display: none;">
+                <label>How often are you in contact with this/these person/people?</label>
+                <div>
+                    <input type="radio" name="q9_times" value="Daily"> Daily<br>
+                    <input type="radio" name="q9_times" value="A few days a week"> A few days a week<br>
+                    <input type="radio" name="q9_times" value="Weekly"> Weekly<br>
+                    <input type="radio" name="q9_times" value="Monthly"> Monthly<br>
+                    <input type="radio" name="q9_times" value="Less than a month"> Less than a month<br>
+                </div>
+            </div>
+            <div class="question">
+                <label>Do you have a current plan for how you would attempt suicide?</label>
+                <div>
+                    <input type="radio" name="q8" value="Yes" required> Yes<br>
+                    <input type="radio" name="q8" value="No"> No<br>
+                </div>
+            </div>
+            <button type="button" id="next-btn">Next</button>
+        </form>
+        <div id="result" class="result" style="display: none;"></div>
+    </div>
+    <script src="../JavaScript/ScreenTest.js"></script>
+</body>
+</html>

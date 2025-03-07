@@ -1,0 +1,151 @@
+body {
+    font-family: 'commercial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    margin: 0;
+    overflow: auto;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("https://campuscommerce.com/wp-content/uploads/shutterstock_1184139997_800x400.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+
+.container {
+    background: rgba(128, 128, 128, 0.2);
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    width: 100%;
+    max-width:500px;
+    margin: 20px;
+}
+.container h2 {
+    text-align: center;
+    color: #14416e;
+    font-size: 24px;
+    font-weight: 600;
+}
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+.form-group label {
+    margin-bottom: 8px;
+    color: #30669c;
+    font-weight: 600;
+    font-size: 16px;
+}
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #61c283;
+    border-radius: 10px;
+    background: rgba(226, 246, 202, 0.5);
+    transition: 0.3s;
+    font-size: 14px;
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+}
+.form-group input:focus, .form-group select:focus {
+    border-color: #78C1F3;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(120, 193, 243, 0.5);
+}
+button {
+    width: 100%;
+    padding: 16px;
+    background: #14416e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+button:hover {
+    background: #1fb2db;
+    color: black;
+}
+@media screen and (max-width: 1280px) {
+    .container {
+        max-width: 550px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 500px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 400px;
+    }
+    .container h2 {
+        font-size: 24px;
+    }
+    .form-group label {
+        font-size: 14px;
+    }
+    .form-group input, .form-group select {
+        font-size: 14px;
+    }
+    button {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 90%;
+        padding: 30px;
+    }
+    .container h2 {
+        font-size: 22px;
+    }
+    .form-group label {
+        font-size: 14px;
+    }
+    .form-group input, .form-group select {
+        padding: 12px;
+        font-size: 14px;
+    }
+    button {
+        padding: 14px;
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .container {
+        max-width: 95%;
+    }
+    .container h2 {
+        font-size: 20px;
+    }
+    .form-group label {
+        font-size: 13px;
+    }
+    .form-group input, .form-group select {
+        font-size: 13px;
+    }
+    button {
+        font-size: 14px;
+    }
+}
