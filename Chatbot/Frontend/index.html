@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
+    <title>HopeBridge Chatbot</title>
     <style>
         * {
             margin: 0;
@@ -13,16 +13,108 @@
 
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100vh;
             background-image: url('A_soft,_caring,_and_smooth_background_image.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            position: relative;
+            z-index: 1; /* Ensures background does not interfere */
         }
 
+        /* Header Styling */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: white;
+            border-bottom: 2px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Ensures it stays above other elements */
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        /* Navigation Menu */
+        .nav {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+
+        .nav-link:hover {
+            background: #f1f1f1;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            border-radius: 5px;
+            z-index: 1100; /* Ensures dropdown appears above everything */
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .dropdown a:hover {
+            background: #f1f1f1;
+        }
+
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+
+        /* Login Button */
+        .login-btn {
+            background: black;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #767676;
+        }
+
+        /* Chatbot Container */
         .chat-container {
             width: 80%;
             height: 80vh;
@@ -32,6 +124,9 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             overflow: hidden;
+            margin: 100px auto 20px; /* Added margin so it does not overlap with header */
+            position: relative;
+            z-index: 900;
         }
 
         .chat-header {
@@ -103,10 +198,39 @@
         }
     </style>
 </head>
-<body onload="sendAutoMessage()">  <!-- Automatically starts conversation -->
+<body onload="sendAutoMessage()">
 
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="HopeBridgeLogonew.PNG" alt="HopeBridge Logo">
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Test</a>
+                    <div class="dropdown">
+                        <a href="#face">Face Recognition</a>
+                        <a href="#screen-test">Screen Test</a>
+                        <a href="#journal">Journal Entries</a>
+                        <a href="#chatbot">Chatbot</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="#treatment" class="nav-link">Treatment</a></li>
+                <li class="nav-item"><a href="#profile" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="#about-us" class="nav-link">About Us</a></li>
+            </ul>
+        </nav>
+
+        <button class="login-btn">Login</button>
+    </header>
+
+    <!-- Chatbot -->
     <div class="chat-container">
-        <div class="chat-header"> Questionnaire Chatbot</div>
+        <div class="chat-header">Hopebot 🫂</div>
         <div class="chat-box" id="chat-box"></div>
         <div class="input-container">
             <input type="text" id="user-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
