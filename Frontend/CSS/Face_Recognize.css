@@ -1,14 +1,120 @@
-/* General Page Styles */
-body {
-    font-family: 'Nunito', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: black;
+/* Reset default styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fixed Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Adjust Body Padding so Content is not hidden under Header */
+body {
+    font-family: 'Nunito', sans-serif;
+    background: radial-gradient(circle, #D2E0FB 0%, #8EACCD 100%);
+    color: #2A2A2A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
     overflow-x: hidden;
+    padding-top: 80px;  /* Prevents content from overlapping with the fixed header */
+    justify-content: center;
+    margin: 0;
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    color: #000;
+    background: #f1f1f1;
+}
+
+/* Dropdown */
+.dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.dropdown a:hover {
+    background: #f1f1f1;
+}
+
+/* Show Dropdown on Hover */
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+/* Login Button */
+.login-btn {
+    background: #000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+    width: auto;
+}
+
+.login-btn:hover {
+    background: #767676;
 }
 
 /* Background Blur Effect */
@@ -39,33 +145,13 @@ body::before {
     color: #F9F3CC;
     animation: fadeIn 1s ease-in-out;
     transition: transform 0.3s ease-in-out;
-    margin: 5vh auto;
+    margin: 10vh auto 5vh; /* Added margin bottom */
 }
 
 /* Hover Effect for Container */
 .container:hover {
     transform: scale(1.03);
     box-shadow: 0 12px 30px rgba(210, 224, 251, 0.4);
-}
-
-/* Heading - Gradient Text Fill with Text Border */
-.container h1 {
-    font-family: 'Arial', sans-serif;
-    font-size: clamp(24px, 3vw, 32px);
-    font-weight: 700;
-    margin-bottom: 15px;
-    background: linear-gradient(45deg, #0B3D2E, #1B5E48, #216869, #2E8B57);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0px 0px 10px rgba(33, 104, 105, 0.7);
-    -webkit-text-stroke: 0.8px #D7E5CA;
-    animation: textGlow 2s infinite alternate;
-}
-
-/* Heading Glow Effect */
-@keyframes textGlow {
-    0% { text-shadow: 0 0 10px rgba(33, 104, 105, 0.5); }
-    100% { text-shadow: 0 0 20px rgba(33, 104, 105, 0.9); }
 }
 
 /* Video & Canvas */
@@ -87,41 +173,24 @@ button {
     width: 100%;
     padding: 1em;
     margin: 10px 0;
-    border: 2px solid rgba(249, 243, 204, 0.6);
     border-radius: 15px;
-    font-size: clamp(14px, 1.5vw, 18px);
+    font-size: 18px;
     font-weight: 600;
-    text-transform: uppercase;
     cursor: pointer;
     transition: 0.4s ease-in-out;
     background: linear-gradient(45deg, #D7E5CA, #8EACCD);
     color: #1E2A3A;
     box-shadow: 0 4px 15px rgba(142, 172, 205, 0.4);
-    position: relative;
-    overflow: hidden;
 }
 
-/* Hover Effect - Advanced Glow and Gradient */
+/* Hover Effect */
 button:hover {
     background: linear-gradient(45deg, #F9F3CC, #D2E0FB, #8EACCD);
-    border: 2px solid #D2E0FB;
-    box-shadow: 0 8px 25px rgba(142, 172, 205, 0.7);
     transform: scale(1.1);
-    transition: background 0.4s ease-in-out, transform 0.2s ease-in-out;
 }
 
-/* Button Active (Click) Effect */
 button:active {
     transform: scale(0.97);
-    box-shadow: 0 4px 10px rgba(142, 172, 205, 0.5);
-}
-
-/* Loading Indicator */
-#loading {
-    display: none;
-    color: #D2E0FB;
-    font-size: 18px;
-    font-weight: bold;
 }
 
 /* Image Preview */
@@ -134,10 +203,8 @@ button:active {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Hover Effect on Image */
 #imagePreview:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(142, 172, 205, 0.8);
 }
 
 /* Results Section */
@@ -148,16 +215,6 @@ button:active {
     margin-top: 15px;
     text-align: left;
     color: white;
-    border: 2px solid rgba(249, 243, 204, 0.5);
-    box-shadow: 0 0 15px rgba(249, 243, 204, 0.2);
-}
-
-/* Depression Level */
-#depressionLevel {
-    font-size: clamp(16px, 2vw, 20px);
-    font-weight: bold;
-    color: #D2E0FB;
-    text-shadow: 0 0 12px rgba(210, 224, 251, 0.7);
 }
 
 /* Responsive Design */
@@ -167,15 +224,6 @@ button:active {
         padding: 5vw;
         margin: 7vh auto;
     }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    button {
-        font-size: 16px;
-        padding: 12px;
-    }
 }
 
 /* Mobile Phones */
@@ -183,12 +231,6 @@ button:active {
     .container {
         width: 98%;
         padding: 6vw;
-        min-height: auto;
-        margin: 7vh auto;
-    }
-
-    h1 {
-        font-size: 22px;
     }
 
     button {
@@ -202,7 +244,6 @@ button:active {
     .container {
         width: 100%;
         padding: 7vw;
-        min-height: auto;
         margin: 10vh auto;
     }
 
