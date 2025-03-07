@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personal Journal</title>
+    <style>
+	
+		.header {
+			width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #fff; /* White background */
+            border-bottom: 2px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        /* Logo Image */
+        .logo img {
+            height: 50px; /* Adjust image height */
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #000; /* Black text */
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            transition: 0.3s;
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        .nav-link:hover {
+            color: #000;
+            background: #f1f1f1; /* Light gray background on hover */
+        }
+
+        /* Dropdown */
+        .dropdown {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .dropdown a:hover {
+            background: #f1f1f1; /* Light gray background on hover */
+        }
+
+        /* Show Dropdown on Hover */
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+
+        /* Login Button */
+        .login-btn {
+            background: #000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #767676;
+        }
+		
+        body {
+			font-family: 'Arial', sans-serif;
+			background-color: #C5D3E8;
+			margin: 0;
+			display: flex;
+			flex-direction: column; /* Stack header on top and content below */
+			align-items: center;
+			height: 100vh;
+		}
+
+		.container {
+			background-color: #FFFFFF; /* Changed from #FFF8DE (yellow) to white */
+			padding: 30px;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			text-align: center;
+			width: 50%;
+			margin-left: 25px;
+			flex-grow: 1;
+		}
+
+		h1 {
+			color: #4A4A4A;
+			font-size: 28px;
+			margin-bottom: 15px;
+		}
+
+		.journal-history {
+			background-color: #FFFFFF; /* Changed from #FFF8DE (yellow) to white */
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			width: 25%;
+			height: 80vh;
+			overflow-y: auto;
+			margin-right: 20px;
+		}
+
+		.journal-history h3 {
+			color: #4A4A4A;
+			font-size: 22px;
+			margin-bottom: 20px;
+		}
+
+		.entry {
+			background-color: #D0E8C5;
+			padding: 15px;
+			margin-bottom: 10px;
+			border-radius: 8px;
+			box-sizing: border-box;
+		}
+
+		.entry p {
+			margin: 5px 0;
+		}
+
+		textarea {
+			width: 100%;
+			height: 150px;
+			padding: 15px;
+			border: 2px solid #A6AEBF;
+			border-radius: 8px;
+			font-size: 16px;
+			box-sizing: border-box;
+			background-color: #D0E8C5;
+			color: #333;
+			resize: none;
+		}
+
+		textarea::placeholder {
+			color: #666;
+			font-style: italic;
+		}
+
+		button {
+			background-color: #000000; /* Changed from #A6AEBF to black */
+			color: white;
+			border: none;
+			padding: 12px 20px;
+			font-size: 16px;
+			margin-top: 15px;
+			cursor: pointer;
+			border-radius: 8px;
+			transition: 0.3s;
+		}
+
+		button:hover {
+			background-color: #4A4A4A;
+		}
+
+		.popup {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: white;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			text-align: center;
+			width: 300px;
+		}
+
+		.popup h2 {
+			margin-bottom: 10px;
+		}
+
+		.popup p {
+			font-size: 16px;
+			color: #555;
+		}
+
+		.popup button {
+			background-color: #000000; /* Changed from #4A4A4A to black */
+			color: white;
+			border: none;
+			padding: 8px 15px;
+			cursor: pointer;
+			margin-top: 10px;
+			border-radius: 5px;
+		}
+
+		.popup button:hover {
+			background-color: #333;
+		}
+
+		.wrapper {
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			height: 100vh;
+			width: 100%;
+			padding: 30px;
+			box-sizing: border-box;
+		}
+
+    </style>
+</head>
+<body>
+	
+	<!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="HopeBridgeLogonew.PNG" alt="HopeBridge Logo">  <!-- Replace with your logo -->
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                
+                <!-- Test with Dropdown -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Test</a>
+                    <div class="dropdown">
+                        <a href="#face">Face Recognition</a>
+                        <a href="#screen-test">Screen Test</a>
+                        <a href="#journal">Journal Entries</a>
+                        <a href="#chatbot">Chatbot</a>
+                    </div>
+                </li>
+
+                <li class="nav-item"><a href="#treatment" class="nav-link">Treatment</a></li>
+                <li class="nav-item"><a href="#profile" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="#about-us" class="nav-link">About Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Login Button -->
+        <button class="login-btn">Login</button>
+    </header>
+
+    <div class="wrapper">
+        <!-- Left Sidebar for Journal History -->
+        <div class="journal-history" id="saved-entries">
+            <h3>Journal History</h3>
+            <!-- Entries will appear here -->
+        </div>
+
+        <!-- Main Area for Writing and Analyzing -->
+        <div class="container">
+            <h1>Your Personal Journal 📝</h1>
+            <form id="text-form">
+                <textarea id="text-input" placeholder="This is a safe space, write what you feel..."></textarea>
+                <button type="submit">Save and Analyze</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Popup Box -->
+    <div id="popup" class="popup">
+        <h2 id="popup-title"></h2>
+        <p id="popup-message"></p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+
+    <script>
+        document.getElementById("text-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const text = document.getElementById("text-input").value.trim();
+
+            if (!text) {
+                showPopup("Error", "Please enter some text.");
+                return;
+            }
+
+            // Save journal entry locally
+            const date = new Date().toLocaleString();
+            const entry = { date, text };
+
+            // Get existing entries from localStorage or initialize empty array
+            let entries = JSON.parse(localStorage.getItem('journalEntries')) || [];
+            entries.push(entry);
+            localStorage.setItem('journalEntries', JSON.stringify(entries));
+
+            // Display new entry in the sidebar
+            displayEntries(entries);
+
+            const apiUrl = "https://4856-34-16-186-32.ngrok-free.app/analyze";
+
+            fetch(apiUrl, { 
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ text })
+			})
+			.then(response => response.json())  // Parse response as JSON
+			.then(data => {
+				// Check risk level from API response
+				const risk = data.suicide_risk;
+
+				if (risk === "High Risk" || risk === "Medium Risk") {
+					showPopup("Thank You", "Thank you for sharing. HopeBridge is always here to listen ❤️");
+				} else {
+					showPopup("Thank You", "Thank you for sharing. HopeBridge is always here to listen ❤️");
+				}
+			})
+			.catch(() => {
+				// Even if there's an error, still show a general thank-you message
+				showPopup("Thank You", "Thank you for sharing. HopeBridge is always here to listen ❤️");
+			});
+        });
+
+        function displayEntries(entries) {
+            const savedEntriesDiv = document.getElementById('saved-entries');
+            savedEntriesDiv.innerHTML = '<h3>Journal History</h3>';  // Reset the list
+
+            entries.forEach(entry => {
+                const entryDiv = document.createElement('div');
+                entryDiv.classList.add('entry');
+                entryDiv.innerHTML = `
+                    <p><strong>${entry.date}</strong></p>
+                    <p>${entry.text}</p>
+                `;
+                savedEntriesDiv.appendChild(entryDiv);
+            });
+        }
+
+        function showPopup(title, message) {
+            document.getElementById("popup-title").innerText = title;
+            document.getElementById("popup-message").innerText = message;
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+			document.getElementById("popup").style.display = "none";
+			location.reload();  // Refresh the page after closing the popup
+		}
+
+		
+        // On page load, display any saved entries
+        window.onload = function() {
+            const entries = JSON.parse(localStorage.getItem('journalEntries')) || [];
+            displayEntries(entries);
+        };
+    </script>
+
+</body>
+</html>
+
+
