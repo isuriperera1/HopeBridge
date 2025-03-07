@@ -5,17 +5,113 @@
     box-sizing: border-box;
 }
 
+/* Fixed Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Adjust Body Padding so Content is not hidden under Header */
 body {
     font-family: 'Nunito', sans-serif;
     background: radial-gradient(circle, #D2E0FB 0%, #8EACCD 100%);
     color: #2A2A2A;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
-    padding: 20px;
+    padding-top: 80px;  /* Prevent content from being hidden under the fixed header */
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    color: #000;
+    background: #f1f1f1;
+}
+
+/* Dropdown */
+.dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.dropdown a:hover {
+    background: #f1f1f1;
+}
+
+/* Show Dropdown on Hover */
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+/* Login Button */
+.login-btn {
+    background: #000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #767676;
 }
 
 /* Container */
@@ -31,6 +127,8 @@ body {
     animation: fadeIn 1s ease-in-out;
     border: 1px solid rgba(255, 255, 255, 0.25);
     transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    margin-bottom: 50px; /* Added margin below the container */
 }
 
 .container:hover {
@@ -75,7 +173,7 @@ form {
     font-family: 'Arial', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #34495E; /* Dark Blue-Gray for questions */
+    color: #34495E;
     margin-bottom: 12px;
     display: block;
 }
@@ -98,7 +196,7 @@ form {
     cursor: pointer;
     transition: all 0.4s ease;
     background: rgba(255, 255, 255, 0.35);
-    color: #14416e; /* Dark Blue-Gray for answers */
+    color: #14416e;
     position: relative;
     overflow: hidden;
 }
@@ -109,14 +207,14 @@ form {
     border: #5B9279 2px solid;
     box-shadow: 0 0 15px rgba(249, 243, 204, 0.7);
     transform: translateY(-2px);
-    color: #2C3E50; /* Slightly darker text on hover */
+    color: #2C3E50;
 }
 
 /* Selected Answer Effect */
 .answer-option:active {
     background: #D7E5CA;
     border-color: #5B9279;
-    color: white; /* White text when selected */
+    color: white;
     box-shadow: 0 0 18px rgba(163, 201, 168, 0.8);
 }
 
@@ -133,27 +231,6 @@ form {
     display: none;
     animation: fadeIn 0.8s ease-in-out;
     box-shadow: 0 0 25px rgba(107, 122, 161, 0.7);
-}
-
-/* Button */
-button {
-    background: linear-gradient(90deg, #A3C9A8, #5B9279);
-    color: white;
-    border: none;
-    padding: 14px 22px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 12px;
-    transition: all 0.4s ease-in-out;
-    box-shadow: 0 6px 25px rgba(163, 201, 168, 0.4);
-}
-
-/* Button Click Effect */
-button:active {
-    background: #5B9279;
-    box-shadow: 0 0 25px rgba(91, 146, 121, 0.8);
-    transform: scale(0.98);
 }
 
 /* Animations */
@@ -180,47 +257,21 @@ button:active {
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-    .container {
-        width: 85%;
-    }
-    h1 {
-        font-size: 1.8rem;
-    }
-}
-
 @media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
     .container {
         width: 95%;
         padding: 25px;
-    }
-    h1 {
-        font-size: 1.5rem;
-    }
-    .answer-box {
-        gap: 8px;
-    }
-}
-
-@media (max-width: 600px) {
-    .container {
-        width: 100%;
-        padding: 20px;
-        border-radius: 10px;
-    }
-    h1 {
-        font-size: 1.4rem;
-    }
-    .question label {
-        font-size: 1.1rem;
-    }
-    .answer-option {
-        font-size: 0.95rem;
-        padding: 10px;
-    }
-    button {
-        padding: 12px 18px;
-        font-size: 1rem;
     }
 }
 

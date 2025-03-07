@@ -30,7 +30,6 @@ def signup():
     if users_collection.find_one({"email": data.get("email")}):
         return jsonify({"error": "Email already registered"}), 400
 
-    hashed_password = generate_password_hash(data["password"])
     user_data = {
         "firstName": data["firstName"],
         "lastName": data["lastName"],
@@ -40,7 +39,7 @@ def signup():
         "dob": data["dob"],
         "district": data["district"],
         "email": data["email"],
-        "password": hashed_password,
+        "password": data["password"],
     }
     users_collection.insert_one(user_data)
     return jsonify({"message": "User registered successfully"}), 201
