@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HopeBridge</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #FFF;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .header {
+      background-color: #A6AEBF;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #C5D3E8;
+    }
+    .logo {
+      font-size: 28px;
+      color: #fff;
+      margin: 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: text-decoration 0.3s;
+  padding: 8px 0; /* Removed background and padding */
+}
+.nav-link:hover {
+  text-decoration: underline; /* Underline effect on hover */
+}
+
+
+    /* Main Content */
+    .main {
+      padding: 30px;
+    }
+
+    /* Welcome Section */
+    .welcome-section {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #D0E8C5;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeUp 1.5s ease-in-out;
+      animation-iteration-count: 1;
+    }
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .title {
+      font-size: 36px;
+      color: #333;
+    }
+    .subtitle {
+      font-size: 18px;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    /* How It Works Section */
+    .how-it-works-section {
+      max-width: 1200px;
+      margin: 50px auto;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+    .step-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 50px;
+    }
+    .step-container.reverse {
+      flex-direction: row-reverse;
+    }
+    .step-description {
+      width: 50%;
+      padding: 20px;
+    }
+    .step-description h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    .step-description p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+    }
+    .step-image-container {
+      position: relative;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .step-image {
+      width: 80%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+    .arrow {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      animation: bounce 2s infinite;
+    }
+    .arrow img {
+      width: 40px;
+      height: auto;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* Why Choose HopeBridge Section */
+    .why-section {
+      max-width: 1200px;
+      margin: 50px auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #FFF8DE;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    }
+    .why-image {
+      width: 40%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .why-description {
+      width: 55%;
+    }
+    .why-title {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .why-text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #A6AEBF;
+      padding: 25px;
+      text-align: center;
+      color: #fff;
+      border-top: 2px solid #C5D3E8;
+    }
+    .footer-link {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1 class="logo">HopeBridge</h1>
+    <nav class="nav">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#face" class="nav-link">Face</a>
+      <a href="#screen-test" class="nav-link">Screen Test</a>
+      <a href="#journal" class="nav-link">Journal</a>
+      <a href="#chat" class="nav-link">Chat</a>
+      <a href="#treatment" class="nav-link">Treatment</a>
+      <a href="#profile" class="nav-link">Profile</a>
+      <a href="#about-us" class="nav-link">About Us</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <section class="welcome-section">
+      <h2 class="title">You Deserve to Be Happy</h2>
+      <p class="subtitle">Explore our services to find the best care for you and your loved ones.</p>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section">
+      <h2 class="section-title">How It Works</h2>
+      <!-- Step 1 -->
+      <div class="step-container">
+        <div class="step-description">
+          <h3>Face Recognition Analysis</h3>
+          <p>Our AI scans facial expressions to detect emotions like stress, anxiety, and sadness. It tracks changes over time, providing real-time feedback and support. Users receive insights into mood patterns and personalized well-being recommendations.</p>
+        </div>
+        <div class="step-image-container">
+          <img src="face.jpg" alt="Face Recognition" class="step-image">
+        </div>
+      </div>
+
+      <div class="arrow">
+        <img src="https://assets.betterhelp.com/betterhelp_two/icons/arrow-down-green-2.png" alt="Arrow Down">
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-container reverse">
+        <div class="step-description">
+          <h3>Screen Test</h3>
+          <p>A clinically backed test assesses symptoms of anxiety, depression, and stress. AI analyzes responses to give instant feedback and suggest self-care or professional help. The test helps users understand their mental well-being in a structured way.</p>
+        </div>
+        <div class="step-image-container">
+          <img src="screentest2.jpg" alt="Screen Test" class="step-image">
+        </div>
+      </div>
+
+      <div class="arrow">
+        <img src="https://assets.betterhelp.com/betterhelp_two/icons/arrow-down-green-2.png" alt="Arrow Down">
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-container">
+        <div class="step-description">
+          <h3>Journal Entries</h3>
+          <p>A guided journal allows users to record thoughts and emotions daily. AI-generated prompts encourage self-reflection and emotional tracking. Over time, journal insights help recognize patterns and improve emotional resilience.</p>
+        </div>
+        <div class="step-image-container">
+          <img src="journal1.jpg" alt="Journal Entries" class="step-image">
+        </div>
+      </div>
+
+      <div class="arrow">
+        <img src="https://assets.betterhelp.com/betterhelp_two/icons/arrow-down-green-2.png" alt="Arrow Down">
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-container reverse">
+        <div class="step-description">
+          <h3>Chatbot Support</h3>
+          <p>A 24/7 AI chatbot provides emotional support, coping techniques, and mindfulness exercises. It recognizes distress signals and can escalate to a therapist if needed. Users receive instant, compassionate assistance anytime, anywhere.</p>
+        </div>
+        <div class="step-image-container">
+          <img src="chatbot1.jpg" alt="Chatbot Support" class="step-image">
+        </div>
+      </div>
+
+      <div class="arrow">
+        <img src="https://assets.betterhelp.com/betterhelp_two/icons/arrow-down-green-2.png" alt="Arrow Down">
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step-container">
+        <div class="step-description">
+          <h3>Treatments and Recommendations</h3>
+          <p>Based on assessments, users get personalized treatment plans and therapist recommendations. The system filters therapists by specialization and location for tailored support. It also suggests therapy sessions, self-care resources, and wellness activities.</p>
+        </div>
+        <div class="step-image-container">
+          <img src="treatment.jpg" alt="Treatments and Recommendations" class="step-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose HopeBridge Section -->
+    <section class="why-section">
+      <img src="why.jpg" alt="Why Choose HopeBridge" class="why-image">
+      <div class="why-description">
+        <h3 class="why-title">Why Choose HopeBridge?</h3>
+        <p class="why-text">At HopeBridge, we provide licensed therapists who are dedicated to helping you overcome life's challenges. Whether it's stress, depression, or personal growth, we are here to support you with personalized care. Our online platform allows you to connect with experts anytime, anywhere.</p>
+        <p class="why-text">Join thousands of others who have found peace and fulfillment through our services.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 HopeBridge. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:help@HopeBridge.com" class="footer-link">help@HopeBridge.com</a> | Call: +1 (800) 123-4567</p>
+    <div class="footer-links">
+      <a href="#privacy-policy">Privacy Policy</a> | 
+      <a href="#terms">Terms of Service</a> | 
+      <a href="#faq">FAQ</a> | 
+      <a href="#social">Follow us on Social Media</a>
+    </div>
+  </footer>
+  
+</body>
+</html>
