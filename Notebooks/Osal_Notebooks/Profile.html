@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit My Profile</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #C5D3E8;
+            margin: 0;
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        .container {
+			background-color: #FFF8DE;
+			padding: 20px;
+			border-radius: 10px;
+			width: 90%; /* Increased width */
+			max-width: 900px; /* Optional: Prevents it from becoming too wide on large screens */
+			box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+		}
+
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        /* Profile Form Grid Layout */
+        .profile-form {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .profile-section {
+            width: 48%; /* Each section takes almost half */
+        }
+
+        .profile-section label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .profile-section input,
+        .profile-section select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #A6AEBF;
+            border-radius: 5px;
+        }
+
+        .profile-section input:disabled,
+        .profile-section select:disabled {
+            background-color: #D0E8C5;
+            color: #666;
+        }
+
+        /* Save Button */
+        .save-btn {
+            display: block;
+            width: 50%;
+            margin: 20px auto 0;
+            background-color: #A6AEBF;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .save-btn:hover {
+            background-color: #8b97a8;
+        }
+
+        /* Hide confirm password by default */
+        #confirm-password-container {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Edit My Profile</h1>
+
+        <div class="profile-form">
+            <!-- Left Side: Editable Fields -->
+            <div class="profile-section">
+                <label>First Name:</label>
+                <input type="text" id="first-name" value="Amal">
+
+                <label>Last Name:</label>
+                <input type="text" id="last-name" value="De Silva">
+
+                <label>Date of Birth:</label>
+                <input type="date" id="dob" value="2003-06-15">
+
+                <label>District:</label>
+                <select id="district">
+                    <option>Maharagama</option>
+                    <option>Rajagiriya</option>
+                    <option>Mount Lavinia</option>
+                    <option>Colombo 10</option>
+                    <option>Colombo 02</option>
+                    <option>Colombo 07</option>
+                    <option>Colombo 05</option>
+                    <option>Kohuwala</option>
+                    <option>Colombo 03</option>
+                    <option>Wattala</option>
+                    <option>Ragama</option>
+                    <option>Nugegoda</option>
+                    <option>Malabe</option>
+                    <option>Battaramulla</option>
+                    <option>Kadawatha</option>
+                    <option>Homagama</option>
+                    <option>Galle</option>
+                    <option>Kalutara</option>
+                    <option>Negombo</option>
+                    <option>Ambalangoda</option>
+                    <option>Kurunegala</option>
+                    <option>Kandy</option>
+                    <option>Jayawardenepura</option>
+                    <option>Thalawathugoda</option>
+                    <option>Moratuwa</option>
+                    <option>Badulla</option>
+                    <option>Dehiwala</option>
+                    <option>Colombo 06</option>
+                    <option>Colombo 08</option>
+                    <option>Colombo 13</option>
+                </select>
+
+                <label>Password:</label>
+                <input type="password" id="password" placeholder="Change password" oninput="showConfirmPassword()">
+
+                <!-- Confirm Password (Hidden Initially) -->
+                <div id="confirm-password-container">
+                    <label>Confirm Password:</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm new password">
+                    <p id="password-error" style="color: red; display: none;">Passwords do not match</p>
+                </div>
+            </div>
+
+            <!-- Right Side: Uneditable Fields -->
+            <div class="profile-section">
+                <label>Username:</label>
+                <input type="text" id="username" value="amalde" disabled>
+
+                <label>Email:</label>
+                <input type="text" id="email" value="amalde12@example.com" disabled>
+
+                <label>Phone Number:</label>
+                <input type="text" id="phone" value="+94 712345678" disabled>
+
+                <label>Gender:</label>
+                <select id="gender" disabled>
+                    <option selected>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Save Button -->
+        <button class="save-btn" onclick="saveProfile()">Save</button>
+    </div>
+
+    <script>
+        function saveProfile() {
+            let firstName = document.getElementById("first-name").value;
+            let lastName = document.getElementById("last-name").value;
+            let dob = document.getElementById("dob").value;
+            let district = document.getElementById("district").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirm-password").value;
+
+            // Password validation
+            if (password !== "" && password !== confirmPassword) {
+                document.getElementById("password-error").style.display = "block";
+                return;
+            } else {
+                document.getElementById("password-error").style.display = "none";
+            }
+
+            // Save to localStorage
+            localStorage.setItem("savedFirstName", firstName);
+            localStorage.setItem("savedLastName", lastName);
+            localStorage.setItem("savedDOB", dob);
+            localStorage.setItem("savedDistrict", district);
+
+            if (password !== "") {
+                localStorage.setItem("savedPassword", password);
+            }
+
+            alert("Profile saved successfully!");
+        }
+
+        function showConfirmPassword() {
+            let password = document.getElementById("password").value;
+            let confirmPasswordContainer = document.getElementById("confirm-password-container");
+
+            if (password.length > 0) {
+                confirmPasswordContainer.style.display = "block";
+            } else {
+                confirmPasswordContainer.style.display = "none";
+            }
+        }
+
+        // Load saved data when page loads
+        window.onload = function() {
+            if (localStorage.getItem("savedFirstName")) {
+                document.getElementById("first-name").value = localStorage.getItem("savedFirstName");
+            }
+            if (localStorage.getItem("savedLastName")) {
+                document.getElementById("last-name").value = localStorage.getItem("savedLastName");
+            }
+            if (localStorage.getItem("savedDOB")) {
+                document.getElementById("dob").value = localStorage.getItem("savedDOB");
+            }
+            if (localStorage.getItem("savedDistrict")) {
+                document.getElementById("district").value = localStorage.getItem("savedDistrict");
+            }
+        };
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
