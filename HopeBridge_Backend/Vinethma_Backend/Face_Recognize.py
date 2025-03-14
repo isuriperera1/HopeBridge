@@ -11,7 +11,7 @@ import io
 app = Flask(__name__)
 CORS(app)
 
-model = load_model('../Pre-trained_Models/FR_Model.h5')
+model = load_model(r"C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\ML Models\Vinethma_MLModels\FR_Model.h5")
 emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
