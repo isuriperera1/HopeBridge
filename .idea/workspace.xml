@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1ca5f688-0cd4-4185-b608-51332cc6499d" name="Changes" comment="change pre-trained model" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AsminiKOD&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/isuriperera1/HopeBridge.git&quot;,
+    &quot;accountId&quot;: &quot;8a2ad77f-ab2d-474f-97c3-ef65f49d74ba&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2syPHRuk5QMOsdBfFTfFxaO5X5r" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.Face_Recognize.html.executor": "Run",
+    "JavaScript Debug.Login.html.executor": "Run",
+    "JavaScript Debug.ScreenTest.html.executor": "Run",
+    "JavaScript Debug.SignUp.html.executor": "Run",
+    "JavaScript Debug.screen.html.executor": "Run",
+    "Node.js.Login.js.executor": "Run",
+    "Python.Face_Recognize.executor": "Run",
+    "Python.Login.executor": "Run",
+    "Python.ScreenTest.executor": "Run",
+    "Python.SignUp.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/IIT/AIDS_2 year/Data Science/HopeBridge",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge\Frontend\Images" />
+      <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge\Backend\ScreenTest" />
+      <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge\Backend\App" />
+      <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge\Backend" />
+      <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge\Frontend\JavaScript" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-PY-243.23654.177" />
+        <option value="bundled-python-sdk-91d3a02ef49d-43b77aa2d136-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.23654.177" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ca5f688-0cd4-4185-b608-51332cc6499d" name="Changes" comment="" />
+      <created>1739424753649</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739424753649</updated>
+      <workItem from="1739424754955" duration="6011000" />
+      <workItem from="1739552268871" duration="851000" />
+      <workItem from="1739892808525" duration="4993000" />
+      <workItem from="1739933070036" duration="5012000" />
+      <workItem from="1740019381084" duration="13122000" />
+      <workItem from="1740063500192" duration="4143000" />
+      <workItem from="1740282313360" duration="8744000" />
+      <workItem from="1740303558759" duration="1790000" />
+      <workItem from="1740633151880" duration="10502000" />
+      <workItem from="1740720837123" duration="751000" />
+      <workItem from="1740980086445" duration="2715000" />
+      <workItem from="1741063626612" duration="5971000" />
+      <workItem from="1741225068656" duration="8142000" />
+      <workItem from="1741326004192" duration="3628000" />
+      <workItem from="1741580692677" duration="6989000" />
+      <workItem from="1741857443915" duration="5341000" />
+      <workItem from="1741920866149" duration="953000" />
+    </task>
+    <task id="LOCAL-00001" summary="Front end and back end">
+      <option name="closed" value="true" />
+      <created>1739427582906</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739427582906</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Front end and back end">
+      <option name="closed" value="true" />
+      <created>1739429641332</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739429641332</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Front end and back end mn">
+      <option name="closed" value="true" />
+      <created>1739435599033</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739435599033</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Front end and back end of screen test">
+      <option name="closed" value="true" />
+      <created>1739896394037</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739896394037</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Front end of screen test">
+      <option name="closed" value="true" />
+      <created>1739897409490</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739897409491</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Front end of screen test">
+      <option name="closed" value="true" />
+      <created>1739944346458</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739944346458</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Screen test back and face backend">
+      <option name="closed" value="true" />
+      <created>1740034664297</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1740034664297</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Face backend">
+      <option name="closed" value="true" />
+      <created>1740283528265</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1740283528265</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Screen and face Front end and end point">
+      <option name="closed" value="true" />
+      <created>1740647377415</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1740647377415</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Advancing Face recognize and screen test">
+      <option name="closed" value="true" />
+      <created>1741225143429</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1741225143430</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix error sign and screen nav bar">
+      <option name="closed" value="true" />
+      <created>1741321853425</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1741321853425</updated>
+    </task>
+    <task id="LOCAL-00012" summary="face header">
+      <option name="closed" value="true" />
+      <created>1741323747647</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1741323747647</updated>
+    </task>
+    <task id="LOCAL-00013" summary="change pre-trained model">
+      <option name="closed" value="true" />
+      <created>1741860281331</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1741860281331</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Front end and back end" />
+    <MESSAGE value="Front end and back end mn" />
+    <MESSAGE value="Front end and back end of screen test" />
+    <MESSAGE value="Front end of screen test" />
+    <MESSAGE value="Screen test back and face backend" />
+    <MESSAGE value="Face backend" />
+    <MESSAGE value="Screen and face Front end and end point" />
+    <MESSAGE value="Advancing Face recognize and screen test" />
+    <MESSAGE value="fix error sign and screen nav bar" />
+    <MESSAGE value="face header" />
+    <MESSAGE value="change pre-trained model" />
+    <option name="LAST_COMMIT_MESSAGE" value="change pre-trained model" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/HopeBridge$SignUp.coverage" NAME="SignUp Coverage Results" MODIFIED="1741867145624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend/App" />
+    <SUITE FILE_PATH="coverage/HopeBridge$Face_Recognize.coverage" NAME="Face_Recognize Coverage Results" MODIFIED="1741866704062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend/App" />
+    <SUITE FILE_PATH="coverage/HopeBridge$Login.coverage" NAME="Login Coverage Results" MODIFIED="1741585684461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend/App" />
+    <SUITE FILE_PATH="coverage/HopeBridge$ScreenTest.coverage" NAME="ScreenTest Coverage Results" MODIFIED="1741584896935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend/App" />
+  </component>
+</project>
