@@ -84,10 +84,10 @@ treatment_collection = db.Recommendations  # Treatment recommendations
 doctor_collection = db.Doctors  # Doctor list
 
 # Load trained KNN model, scaler, and encoders
-knn_model = joblib.load("knn_model.pkl")
-scaler = joblib.load("scaler.pkl")
-specialization_encoder = joblib.load("label_encoder_specialization.pkl")
-district_encoder = joblib.load("label_encoder_district.pkl")
+knn_model = joblib.load(r"C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\ML Models\Isuri_MLModels\knn_model.pkl")
+scaler = joblib.load(r"C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\ML Models\Isuri_MLModels\scaler.pkll")
+specialization_encoder = joblib.load(r"C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\ML Models\Isuri_MLModels\label_encoder_specialization.pkl")
+district_encoder = joblib.load(r"C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\ML Models\Isuri_MLModels\label_encoder_district.pkl")
 
 # ------------------- User Authentication -------------------
 @app.route("/login", methods=["POST"])
