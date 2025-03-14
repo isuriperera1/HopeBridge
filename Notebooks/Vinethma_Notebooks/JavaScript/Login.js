@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (response.ok) {
                 alert("Login successful!");
-                window.location.href = "Home.html"; // Redirect to the home page
+                window.location.href = "file:///C:/Users/sanje/OneDrive/Pictures/IIT%20FIRST%20YEAR/2%20year%20-2024/2603/HopeBridge/Notebooks/Isuri_Notebooks/Home.html";
+ // Redirect to the home page
             } else {
                 alert(result.error || "Invalid email or password.");
             }

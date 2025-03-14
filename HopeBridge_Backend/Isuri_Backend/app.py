@@ -68,6 +68,19 @@ from werkzeug.security import check_password_hash
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})  # Allow all requests
 
+
+# Load the trained KNN model, scaler, and encoders
+
+# Connect to MongoDB Atlas (Updated to HopeBridge > Recommendations)
+app.config["MONGO_URI"] = "mongodb+srv://Vinethma:2003Asmi15@cluster0.xrhve.mongodb.net/HopeBridge?retryWrites=true&w=majority"
+#client = MongoClient(MONGO_URI)
+#db = client["HopeBridge"]  # ✅ Ensure database is HopeBridge
+#treatment_collection = db["Recommendations"]  # ✅ Ensure collection is Recommendations
+#doctor_collection = db["Doctors"]  # ✅ Ensure Doctors collection is referenced
+#
+
+
+
 # Configure Flask Session
 app.config["SECRET_KEY"] = "supersecretkey"  # Change this to a more secure key
 app.config["SESSION_TYPE"] = "filesystem"
@@ -85,7 +98,7 @@ doctor_collection = db.Doctors  # Doctor list
 
 # Load trained KNN model, scaler, and encoders
 knn_model = joblib.load(r"C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\ML Models\Isuri_MLModels\knn_model.pkl")
-scaler = joblib.load(r"C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\ML Models\Isuri_MLModels\scaler.pkll")
+scaler = joblib.load(r"C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\ML Models\Isuri_MLModels\scaler.pkl")
 specialization_encoder = joblib.load(r"C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\ML Models\Isuri_MLModels\label_encoder_specialization.pkl")
 district_encoder = joblib.load(r"C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\ML Models\Isuri_MLModels\label_encoder_district.pkl")
 
@@ -102,13 +115,12 @@ def login():
         return jsonify({"error": "User does not exist"}), 401
 
     # Verify password
-    if not check_password_hash(user["password"], password):
+    if not user["password"] == password:
         return jsonify({"error": "Invalid email or password"}), 401
 
-    # Store user in session
-    session["user_email"] = email
+    return jsonify({"message": "Login successful"}), 200
 
-    return jsonify({"message": "Login successful", "email": email}), 200
+
 
 @app.route("/logout", methods=["POST"])
 def logout():
@@ -184,14 +196,14 @@ def get_doctors():
         if not specialization or not district:
             return jsonify({"error": "Missing specialization or district"}), 400
 
-        # Use exact field names from MongoDB (fixing space issue)
+        # Use the exact field names from MongoDB (with spaces)
         query = {
-            "specialization": {"$regex": f"^{specialization}$", "$options": "i"},
-            "district": {"$regex": f"^{district}$", "$options": "i"}  # Fixed key (removed space)
+            "specialization": {"$regex": f"^{specialization} *$", "$options": "i"},
+            "district ": {"$regex": f"^{district} *$", "$options": "i"}
         }
 
         # Fetch doctors from MongoDB
-        doctors = list(doctor_collection.find(query, {"_id": 0}))
+        doctors = list(db["Recommendations"].find(query, {"_id": 0}))
 
         if not doctors:
             return jsonify({"message": "No doctors found"}), 404
@@ -200,11 +212,77 @@ def get_doctors():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+# @app.route("/get_doctors", methods=["POST"])
+# def get_doctors():
+#     try:
+#         data = request.json
+#         specialization = data.get("specialization", "").strip()
+#         district = data.get("district", "").strip()
+
+#         # Validate input
+#         if not specialization or not district:
+#             return jsonify({"error": "Missing specialization or district"}), 400
+
+#         # Use exact field names from MongoDB (fixing space issue)
+#         query = {
+#             "specialization": {"$regex": f"^{specialization}$", "$options": "i"},
+#             "district": {"$regex": f"^{district}$", "$options": "i"}  # Fixed key (removed space)
+#         }
+
+#         # Fetch doctors from MongoDB
+#         doctors = list(doctor_collection.find(query, {"_id": 0}))
+
+#         if not doctors:
+#             return jsonify({"message": "No doctors found"}), 404
+
+#         return jsonify(doctors), 200
+
+#     except Exception as e:
+#         return jsonify({"error": str(e)}), 500
 
 # ------------------- Treatment Page -------------------
 @app.route("/treatment")
 def treatment_page():
     return render_template("treatment.html")  # Serves treatment.html
+
+@app.route("/signup", methods=["POST"])
+def signup():
+    data = request.json
+
+    if users_collection.find_one({"email": data.get("email")}):
+        return jsonify({"error": "Email already registered"}), 400
+
+    user_data = {
+        "firstName": data["firstName"],
+        "lastName": data["lastName"],
+        "age": data["age"],
+        "gender": data["gender"],
+        "telephone": data["telephone"],
+        "dob": data["dob"],
+        "district": data["district"],
+        "email": data["email"],
+        "password": data["password"],
+    }
+    users_collection.insert_one(user_data)
+    return jsonify({"message": "User registered successfully"}), 201
+
+@app.route('/process-image', methods=['POST'])
+def process_uploaded_image():
+    try:
+        file = request.files['image']
+        if not file:
+            return jsonify({"error": "No file provided"}), 400
+
+        img = PILImage.open(io.BytesIO(file.read()))
+        _, depression_level = process_image(img)
+
+        if depression_level == "No face detected. Please upload a clear image with a visible face.":
+            return jsonify({"error": depression_level}), 400
+
+        return jsonify({"depression_level": depression_level})
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

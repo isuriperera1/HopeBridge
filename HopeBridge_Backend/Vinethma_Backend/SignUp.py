@@ -23,26 +23,26 @@ except Exception as e:
 users_collection = mongo.db.users
 
 
-@app.route("/signup", methods=["POST"])
-def signup():
-    data = request.json
+# @app.route("/signup", methods=["POST"])
+# def signup():
+#     data = request.json
 
-    if users_collection.find_one({"email": data.get("email")}):
-        return jsonify({"error": "Email already registered"}), 400
+#     if users_collection.find_one({"email": data.get("email")}):
+#         return jsonify({"error": "Email already registered"}), 400
 
-    user_data = {
-        "firstName": data["firstName"],
-        "lastName": data["lastName"],
-        "age": data["age"],
-        "gender": data["gender"],
-        "telephone": data["telephone"],
-        "dob": data["dob"],
-        "district": data["district"],
-        "email": data["email"],
-        "password": data["password"],
-    }
-    users_collection.insert_one(user_data)
-    return jsonify({"message": "User registered successfully"}), 201
+#     user_data = {
+#         "firstName": data["firstName"],
+#         "lastName": data["lastName"],
+#         "age": data["age"],
+#         "gender": data["gender"],
+#         "telephone": data["telephone"],
+#         "dob": data["dob"],
+#         "district": data["district"],
+#         "email": data["email"],
+#         "password": data["password"],
+#     }
+#     users_collection.insert_one(user_data)
+#     return jsonify({"message": "User registered successfully"}), 201
 
 
 if __name__ == "__main__":
