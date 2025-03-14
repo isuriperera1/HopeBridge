@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 from flask_pymongo import PyMongo
-from werkzeug.security import check_password_hash
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -25,7 +24,7 @@ def login():
         return jsonify({"error": "User does not exist"}), 401
 
     # Verify password
-    if not check_password_hash(user["password"], password):
+    if not user["password"] == password:
         return jsonify({"error": "Invalid email or password"}), 401
 
     return jsonify({"message": "Login successful"}), 200
