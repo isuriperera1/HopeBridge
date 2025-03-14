@@ -47,6 +47,9 @@
     &quot;accountId&quot;: &quot;8a2ad77f-ab2d-474f-97c3-ef65f49d74ba&quot;
   }
 }</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -68,8 +71,10 @@
     "Python.Login.executor": "Run",
     "Python.ScreenTest.executor": "Run",
     "Python.SignUp.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/IIT/AIDS_2 year/Data Science/HopeBridge",
     "list.type.of.created.stylesheet": "CSS",
@@ -262,11 +267,5 @@
     <MESSAGE value="face header" />
     <MESSAGE value="change pre-trained model" />
     <option name="LAST_COMMIT_MESSAGE" value="change pre-trained model" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HopeBridge$SignUp.coverage" NAME="SignUp Coverage Results" MODIFIED="1741867145624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend/App" />
-    <SUITE FILE_PATH="coverage/HopeBridge$Face_Recognize.coverage" NAME="Face_Recognize Coverage Results" MODIFIED="1741866704062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend/App" />
-    <SUITE FILE_PATH="coverage/HopeBridge$Login.coverage" NAME="Login Coverage Results" MODIFIED="1741585684461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend/App" />
-    <SUITE FILE_PATH="coverage/HopeBridge$ScreenTest.coverage" NAME="ScreenTest Coverage Results" MODIFIED="1741584896935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend/App" />
   </component>
 </project>
