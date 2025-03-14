@@ -1,0 +1,258 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fixed Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Adjust Body Padding so Content is not hidden under Header */
+body {
+    font-family: 'Nunito', sans-serif;
+    background: radial-gradient(circle, #D2E0FB 0%, #8EACCD 100%);
+    color: #2A2A2A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    padding-top: 80px;  /* Prevents content from overlapping with the fixed header */
+    justify-content: center;
+    margin: 0;
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    color: #000;
+    background: #f1f1f1;
+}
+
+/* Dropdown */
+.dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.dropdown a:hover {
+    background: #f1f1f1;
+}
+
+/* Show Dropdown on Hover */
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+/* Login Button */
+.login-btn {
+    background: #000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+    width: auto;
+}
+
+.login-btn:hover {
+    background: #767676;
+}
+
+/* Background Blur Effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("https://t4.ftcdn.net/jpg/05/40/33/35/360_F_540333561_F0l1emNgMqc8qTvwZIFawm2ZncjHhOkM.jpg") no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(8px) brightness(0.5);
+    z-index: -1;
+}
+
+/* Container Styling */
+.container {
+    background: rgba(210, 224, 251, 0.25);
+    backdrop-filter: blur(15px);
+    padding: 3vw;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(210, 224, 251, 0.3);
+    width: 90%;
+    max-width: 550px;
+    text-align: center;
+    color: #F9F3CC;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    margin: 10vh auto 5vh; /* Added margin bottom */
+}
+
+/* Hover Effect for Container */
+.container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(210, 224, 251, 0.4);
+}
+
+/* Video & Canvas */
+.video-container {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(142, 172, 205, 0.5);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 1em;
+    margin: 10px 0;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    background: linear-gradient(45deg, #D7E5CA, #8EACCD);
+    color: #1E2A3A;
+    box-shadow: 0 4px 15px rgba(142, 172, 205, 0.4);
+}
+
+/* Hover Effect */
+button:hover {
+    background: linear-gradient(45deg, #F9F3CC, #D2E0FB, #8EACCD);
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Image Preview */
+#imagePreview {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(142, 172, 205, 0.6);
+    margin-top: 15px;
+    display: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+#imagePreview:hover {
+    transform: scale(1.05);
+}
+
+/* Results Section */
+#results {
+    background: rgba(249, 243, 204, 0.15);
+    padding: 2vw;
+    border-radius: 12px;
+    margin-top: 15px;
+    text-align: left;
+    color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 95%;
+        padding: 5vw;
+        margin: 7vh auto;
+    }
+}
+
+/* Mobile Phones */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 98%;
+        padding: 6vw;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Small Mobile Screens */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 7vw;
+        margin: 10vh auto;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}

@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://www.shutterstock.com/shutterstock/photos/1981394444/display_1500/stock-vector-medical-treatment-therapies-prevention-mental-problem-support-mental-health-care-concept-1981394444.jpg') no-repeat center center/cover;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+}
+.login-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px #4c1f61;
+    text-align: center;
+    width: 350px;
+    border: 1px solid #bd3bbf;
+    backdrop-filter: blur(10px);
+}
+.login-box h2 {
+    margin-bottom: 20px;
+    color: black;
+}
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    color: black;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid white;
+    color: black;
+    font-size: 16px;
+    outline: none;
+}
+.options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: black;
+}
+.login-btn {
+    width: 100%;
+    background: linear-gradient(45deg, #563A9C, #6A42C2, #8B5DFF, #FFF7D1);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.login-btn:hover {
+    background: linear-gradient(45deg, #FFC7C7, #ED9ED6,#C683D7,#7071E8);
+}
+.register {
+    margin-top: 15px;
+    color: black;
+}
+.register a {
+    color: red;
+    text-decoration: none;
+}
+.register a:hover {
+    text-decoration: underline;
+}
+.forgot-password{
+    color: #1e3b9c;
+}
