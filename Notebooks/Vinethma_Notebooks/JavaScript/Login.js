@@ -60,11 +60,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (response.ok) {
                 alert("Login successful!");
+<<<<<<< HEAD
+                window.location.href = "file:///C:/Users/sanje/OneDrive/Pictures/IIT%20FIRST%20YEAR/2%20year%20-2024/2603/HopeBridge/Notebooks/Isuri_Notebooks/Home.html";
+ // Redirect to the home page
+=======
 
                 // Store username in localStorage
                 localStorage.setItem("username", result.username);
 
                 window.location.href = "Home.html"; // Redirect to home page
+>>>>>>> 918adbc32473d01b606ca34ac5cc12f81a2f7e49
             } else {
                 alert(result.error || "Invalid email or password.");
             }
