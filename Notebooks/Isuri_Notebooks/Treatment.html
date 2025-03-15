@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatment Recommendations</title>
+    <style>
+    /* General Styling */
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+/* Header */
+.header {
+      /*background-color: #A6AEBF;*/
+      background-color: #000;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #FFF;
+    }
+    .logo {
+      font-size: 28px;
+      color: #FFF;
+      margin: 0;
+    }
+    .nav {
+      display: flex;
+      gap: 40px;
+    }
+    .nav-link {
+      color: #FFF;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: text-decoration 0.3s;
+      padding: 8px 0;
+    }
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+    /* Main Content */
+    .main {
+      padding: 30px;
+    }
+
+/* General Header Styling */
+body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #fff; /* White background */
+            border-bottom: 2px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        /* Logo Image */
+        .logo img {
+            height: 50px; /* Adjust image height */
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #000; /* Black text */
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            transition: 0.3s;
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        .nav-link:hover {
+            color: #000;
+            background: #f1f1f1;
+            text-decoration: none; /* Light gray background on hover */
+        }
+
+        /* Dropdown */
+        .dropdown {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .dropdown a:hover {
+            background: #f1f1f1; /* Light gray background on hover */
+        }
+
+        /* Show Dropdown on Hover */
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+
+        /* Login Button */
+        .login-btn {
+            background: #000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+            width: auto;
+
+        }
+
+        .login-btn:hover {
+            background: #767676;
+        }
+
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    max-height: 800px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Slides */
+.slide {
+    display: none;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.text-content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 40%;
+}
+
+
+
+/* Navigation Arrows */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Pagination Dots */
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Treatment Section */
+.container {
+    width: 400px;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 50px auto;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    background: #ffab91;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff7043;
+}
+/* Reels Section */
+.reels-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    background: #fff;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+}
+
+.reel {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 0 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    scroll-snap-align: center;
+}
+
+.reel video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Doctor Search Section */
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    background: #fff;
+    border-bottom: 2px solid #ddd;
+}
+
+.search-container input,
+.search-container select,
+.search-container button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.search-container button {
+    background: #000;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.search-container button:hover {
+    background: #c62828;
+}
+
+/* Doctor List Section */
+.doctor-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.doctor-card {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.doctor-info h3 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.doctor-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.channel-button {
+    padding: 5px 10px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.channel-button:hover {
+    background: #c62828;
+}
+/* YouTube Video Section */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background: #f5f5f5;
+
+}
+
+.video iframe {
+    width: 620px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.video-description {
+    max-width: 500px;
+    text-align: left;
+}
+
+.video-description h2 {
+    font-size: 22px;
+    color: #333;
+}
+
+.video-description p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header class="header">
+        <div class="logo">
+            <img src="HopeBridgeLogonew.PNG" alt="HopeBridge Logo">  <!-- Replace with your logo -->
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+
+                <!-- Test with Dropdown -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Test</a>
+                    <div class="dropdown">
+                        <a href="#face">Face Recognition</a>
+                        <a href="#screen-test">Screen Test</a>
+                        <a href="#journal">Journal Entries</a>
+                        <a href="#chatbot">Chatbot</a>
+                        <p id="usernameDisplay"></p>
+                    </div>
+                </li>
+
+                <li class="nav-item"><a href="#treatment" class="nav-link">Treatment</a></li>
+                <li class="nav-item"><a href="#profile" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="#about-us" class="nav-link">About Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Login Button -->
+        <button class="login-btn">Login</button>
+    </header>
+
+        <!-- Slideshow Section -->
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <div class="text-content">
+                    <h2>Embrace Self-Care Daily</h2>
+                    <p>Prioritize your mental well-being with small daily self-care habits. A little time for yourself makes a big difference!</p>
+
+                </div>
+                <img src="1.png" alt="Slide 1">
+            </div>
+
+            <div class="slide fade">
+                <div class="text-content">
+                    <h2>Break the Stigma, Seek Support</h2>
+                    <p>Mental health matters. Don’t hesitate to seek help, talk to a friend, or reach out to a professional. You are not alone.</p>
+
+                </div>
+                <img src="2.png" alt="Slide 2">
+            </div>
+
+            <div class="slide fade">
+                <div class="text-content">
+                    <h2>Mindfulness for Inner Peace</h2>
+                    <p>Slow down and be present. Practicing mindfulness can help you reduce stress and live in the moment.
+
+                    </p>
+
+                </div>
+                <img src="3.png" alt="Slide 3">
+            </div>
+
+            <!-- Navigation Buttons -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+        <!-- Pagination Dots -->
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <!-- Reels Section -->
+    <div class="reels-container">
+        <div class="reel">
+            <video autoplay loop muted>
+                <source src="meditation.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="reel">
+            <video autoplay loop muted>
+                <source src="reel2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="reel">
+            <video autoplay loop muted>
+                <source src="reel3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="reel">
+            <video autoplay loop muted>
+                <source src="reel4.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="reel">
+            <video autoplay loop muted>
+                <source src="reel5.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="reel">
+            <video autoplay loop muted>
+                <source src="reel6.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="reel">
+            <video autoplay loop muted>
+                <source src="reel7.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="reel">
+            <video autoplay loop muted>
+                <source src="reel8.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="reel">
+            <video autoplay loop muted>
+                <source src="reel9.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="reel">
+            <video autoplay loop muted>
+                <source src="reel10.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <!-- Doctor Search Section -->
+    <div class="search-container">
+    <input type="text" id="doctorName" placeholder="Doctor - Max 20 Characters">
+
+    <select id="specialization">
+        <option value="" disabled selected>Any Specialization</option>
+        <option value="Addiction Professional">Addiction Professional</option>
+        <option value="Anxiety reduction therapy">Anxiety reduction therapy</option>
+        <option value="Applied Psychologist ">Applied Psychologist</option>
+        <option value="Art Therapist ">Art Therapist</option>
+        <option value="Behaviour Therapist ">Behaviour Therapist</option>
+        <option value="Child and Adolescent Psychiatric">Child and Adolescent Psychiatric</option>
+        <option value="Child and Adolescent Psychologist">Child and Adolescent Psychologist</option>
+        <option value="Child Counselling Psychologist and Therapist">Child Counselling Psychologist and Therapist</option>
+        <option value="Child Psychiatrist ">Child Psychiatrist</option>
+        <option value="Child Psychologist">Child Psychologist</option>
+        <option value="Child Psychology">Child Psychology</option>
+        <option value="Clinical Health Psychologist ">Clinical Health Psychologist</option>
+        <option value="Clinical Hypnotist ">Clinical Hypnotist</option>
+        <option value="Clinical Neurologist ">Clinical Neurologist</option>
+        <option value="Clinical Neurophysiologist ">Clinical Neurophysiologist</option>
+        <option value="Clinical Psychologist">Clinical Psychologist</option>
+        <option value="Cognitive Behavioral Therapy">Cognitive Behavioral Therapy</option>
+        <option value="Consultant Clinical Neurophysiologist">Consultant Clinical Neurophysiologist</option>
+        <option value="Consultant Emergency Physician ">Consultant Emergency Physician</option>
+        <option value="Consultant Neurologist ">Consultant Neurologist</option>
+        <option value="Consultant Paediatric Neurologist ">Consultant Paediatric Neurologist</option>
+        <option value="Counseling Psychologist">Counseling Psychologist</option>
+        <option value="Counselling ">Counselling</option>
+        <option value="Counselor ">Counselor</option>
+        <option value="End of life care ">End of life care</option>
+        <option value="Mental Health Counselor">Mental Health Counselor</option>
+        <option value="Paediatric Psychiatrist ">Paediatric Psychiatrist</option>
+        <option value="Psychiatrist ">Psychiatrist</option>
+        <option value="Psychological Counselling ">Psychological Counselling</option>
+    </select>
+
+    <select id="district">
+        <option value="" disabled selected>Select District</option>
+        <option value="Maharagama">Maharagama</option>
+        <option value="Rajagiriya">Rajagiriya</option>
+        <option value="Mount Lavinia">Mount Lavinia</option>
+        <option value="Colombo 10">Colombo 10</option>
+        <option value="Colombo 02">Colombo 02</option>
+        <option value="Colombo 07">Colombo 07</option>
+        <option value="Colombo 05">Colombo 05</option>
+        <option value="Kohuwala">Kohuwala</option>
+        <option value="Colombo 03">Colombo 03</option>
+        <option value="Colombo 06">Colombo 06</option>
+        <option value="Wattala">Wattala</option>
+        <option value="Ragama">Ragama</option>
+        <option value="Athurugiriya">Athurugiriya</option>
+        <option value="Nugegoda">Nugegoda</option>
+        <option value="Malabe">Malabe</option>
+        <option value="Colombo 04">Colombo 04</option>
+        <option value="Kelaniya">Kelaniya</option>
+        <option value="Kadawatha">Kadawatha</option>
+        <option value="Battaramulla">Battaramulla</option>
+        <option value="Kandy">Kandy</option>
+        <option value="Galle">Galle</option>
+        <option value="Negombo">Negombo</option>
+        <option value="Gampaha">Gampaha</option>
+        <option value="Kalutara">Kalutara</option>
+        <option value="Thalawathugoda">Thalawathugoda</option>
+        <option value="Ambalangoda">Ambalangoda</option>
+        <option value="Homagama">Homagama</option>
+        <option value="Jayawardenepura">Jayawardenepura</option>
+        <option value="Wellawatte">Wellawatte</option>
+        <option value="Kandana">Kandana</option>
+        <option value="Karapitiya">Karapitiya</option>
+        <option value="Moratuwa">Moratuwa</option>
+        <option value="Kurunegala">Kurunegala</option>
+        <option value="Mahabage">Mahabage</option>
+        <option value="Panadura">Panadura</option>
+        <option value="Bandaragama">Bandaragama</option>
+        <option value="Mathugama">Mathugama</option>
+        <option value="Badulla">Badulla</option>
+        <option value="Colombo 08">Colombo 08</option>
+        <option value="Kalubowila">Kalubowila</option>
+        <option value="Kiribathgoda">Kiribathgoda</option>
+        <option value="Dehiwala">Dehiwala</option>
+    </select>
+
+    <button id="searchBtn" onclick="searchDoctors()">🔍 Search</button>
+</div>
+     <div class="doctor-list" id="doctorList"></div>
+
+
+    <!-- Doctor List Section
+    <div class="doctor-list">
+        <div class="doctor-card">
+            <img src="doctorplace.jpg" alt="Doctor Image">
+            <div class="doctor-info">
+                <h3>Dr. A.L.M. NAZAR</h3>
+                <p>Nephrologist</p>
+                <button class="channel-button">⚕️ Channel</button>
+            </div>
+        </div>
+
+        <div class="doctor-card">
+            <img src="doctorplace.jpg" alt="Doctor Image">
+            <div class="doctor-info">
+                <h3>Dr. ARUNA CALDERA</h3>
+                <p>Rheumatologist</p>
+                <button class="channel-button">⚕️ Channel</button>
+            </div>
+        </div>
+
+        <div class="doctor-card">
+            <img src="doctorplace.jpg" alt="Doctor Image">
+            <div class="doctor-info">
+                <h3>Dr. CHAMARA WIJESINGHE</h3>
+                <p>Psychiatrist</p>
+                <button class="channel-button">⚕️ Channel</button>
+            </div>
+        </div>
+        <div class="doctor-card">
+            <img src="doctorplace.jpg" alt="Doctor Image">
+            <div class="doctor-info">
+                <h3>Dr. CHAMARA WIJESINGHE</h3>
+                <p>Psychiatrist</p>
+                <button class="channel-button">⚕️ Channel</button>
+            </div>
+        </div>
+        <div class="doctor-card">
+            <img src="doctorplace.jpg" alt="Doctor Image">
+            <div class="doctor-info">
+                <h3>Dr. CHAMARA WIJESINGHE</h3>
+                <p>Psychiatrist</p>
+                <button class="channel-button">⚕️ Channel</button>
+            </div>
+        </div>
+    </div>-->
+
+
+<div class="video-container">
+    <div class="video">
+        <iframe width="500" height="280" src="youtubevid2.mp4" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-description">
+        <h2>Understanding Depression & How to Overcome It</h2>
+        <p>
+            In this video People With Anxiety & Depression Shared Advice For Anyone Who's Struggling out there.
+
+        </p>
+        <p>Depression is more than just feeling sad—it’s a silent battle many face every day. In this video, we explore the signs, causes, and impact of depression on daily life. 💙</p>
+        <p>If you or someone you know is going through a tough time, remember—you are not alone. 💛</p>
+
+    </div>
+</div>
+
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    const username = localStorage.getItem("username");
+
+    if (username) {
+        document.getElementById("usernameDisplay").textContent = `Welcome, ${username}!`;
+    }
+});
+
+        let slideIndex = 0;
+showSlides();
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].classList.add("active");
+
+    //setTimeout(showSlides, 10000);
+}
+
+function changeSlide(n) {
+    slideIndex += n - 1;
+    showSlides();
+}
+
+function currentSlide(n) {
+    slideIndex = n - 1;
+    showSlides();
+}
+
+       function getTreatment() {
+    const specialization = document.getElementById("specialization").value;
+    const district = document.getElementById("district").value;
+    const resultContainer = document.getElementById("result");
+
+    resultContainer.innerHTML = "<p>🔄 Fetching treatment recommendations...</p>";  // ✅ Show loading message
+
+    fetch("http://127.0.0.1:5000/get_treatment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ specialization, district })
+    })
+    .then(response => response.json())
+    .then(data => {
+        resultContainer.innerHTML = "";
+
+        if (data.error) {
+            resultContainer.innerHTML = `<p style="color: red;">❌ ${data.error}</p>`;
+            return;
+        }
+
+        if (data.message) {
+            resultContainer.innerHTML = `<p>🔍 ${data.message}</p>`;
+            return;
+        }
+
+        data.forEach(treatment => {
+            resultContainer.innerHTML += `
+                <div class="treatment-card">
+                    <h3>${treatment["Treatment Name"]}</h3>
+                    <p>Specialization: ${treatment["Specialization"]}</p>
+                    <p>District: ${treatment["District"]}</p>
+                    <p>Confidence Level: ${(treatment["relevance_score"] * 100).toFixed(2)}%</p>
+                </div>`;
+        });
+    })
+    .catch(error => console.error("Error:", error));
+}
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let searchButton = document.getElementById("searchBtn");
+
+    if (searchButton) {
+        searchButton.addEventListener("click", searchDoctors);
+    } else {
+        console.error("❌ searchBtn not found in the DOM!");
+    }
+});
+function searchDoctors() {
+             console.log("Search button clicked!");
+            const specialization = document.getElementById("specialization").value.trim();
+            const district = document.getElementById("district").value.trim();
+            const doctorList = document.getElementById("doctorList");
+
+            if (!specialization || !district) {
+                alert("Please select both Specialization and District.");
+                return;
+            }
+
+            doctorList.innerHTML = "<p>🔄 Loading doctors...</p>";
+
+            fetch("http://127.0.0.1:5000/get_doctors", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ specialization, district })
+            })
+            .then(response => response.json())
+            .then(data => {
+                doctorList.innerHTML = "";
+
+                if (data.message) {
+                    doctorList.innerHTML = `<p>❌ ${data.message}</p>`;
+                    return;
+                }
+
+                data.slice(0, 20).forEach(doctor => {
+                    doctorList.innerHTML += `
+                        <div class="doctor-card">
+                            <img src="doctorplace.jpg" alt="Doctor Image">
+                            <div class="doctor-info">
+                                <h3>${doctor["Doctor name "] ? doctor["Doctor name "].trim() : "Unknown"}</h3>
+                                <p>Specialization: ${doctor["specialization"] ? doctor["specialization"].trim() : "Unknown"}</p>
+                                <p>Hospital: ${doctor["Hospital "] ? doctor["Hospital "].trim() : "Unknown"}</p>
+                                <p>District: ${doctor["district "] ? doctor["district "].trim() : "Unknown"}</p>
+                                <button class="channel-button">⚕️ Channel</button>
+                            </div>
+                        </div>`;
+                });
+
+                if (data.length === 0) {
+                    doctorList.innerHTML = "<p>❌ No doctors found</p>";
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching doctors:", error);
+                doctorList.innerHTML = "<p>❌ Error loading doctors. Try again later.</p>";
+            });
+        }
+</script>
+
+
+
+
+</body>
+</html>
