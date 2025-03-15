@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ca5f688-0cd4-4185-b608-51332cc6499d" name="Changes" comment="change pre-trained model" />
+    <list default="true" id="8ef28e19-2934-466d-a184-81e2b0cb8d23" name="Changes" comment="current user">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,12 +67,14 @@
     "JavaScript Debug.Login.html.executor": "Run",
     "JavaScript Debug.ScreenTest.html.executor": "Run",
     "JavaScript Debug.SignUp.html.executor": "Run",
+    "JavaScript Debug.index (1).html.executor": "Run",
     "JavaScript Debug.screen.html.executor": "Run",
     "Node.js.Login.js.executor": "Run",
     "Python.Face_Recognize.executor": "Run",
     "Python.Login.executor": "Run",
     "Python.ScreenTest.executor": "Run",
     "Python.SignUp.executor": "Run",
+    "Python.app.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -92,11 +96,11 @@
       <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge\HopeBridge_Backend\Isuri_Backend\" />
+      <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge\HopeBridge_Backend\Isuri_Backend\flask_session" />
       <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge\Frontend\Images" />
       <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge\Backend\ScreenTest" />
       <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge\Backend\App" />
-      <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge\Backend" />
-      <recent name="D:\IIT\AIDS_2 year\Data Science\HopeBridge\Frontend\JavaScript" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -237,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741860281331</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="current user">
+      <option name="closed" value="true" />
+      <created>1741935712348</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1741935712348</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +278,14 @@
     <MESSAGE value="fix error sign and screen nav bar" />
     <MESSAGE value="face header" />
     <MESSAGE value="change pre-trained model" />
-    <option name="LAST_COMMIT_MESSAGE" value="change pre-trained model" />
+    <MESSAGE value="current user" />
+    <option name="LAST_COMMIT_MESSAGE" value="current user" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/HopeBridge$SignUp.coverage" NAME="SignUp Coverage Results" MODIFIED="1741938831091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HopeBridge_Backend/Vinethma_Backend" />
+    <SUITE FILE_PATH="coverage/HopeBridge$Face_Recognize.coverage" NAME="Face_Recognize Coverage Results" MODIFIED="1741925690970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HopeBridge_Backend/Vinethma_Backend" />
+    <SUITE FILE_PATH="coverage/HopeBridge$app.coverage" NAME="app Coverage Results" MODIFIED="1741934274510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HopeBridge_Backend/Isuri_Backend" />
+    <SUITE FILE_PATH="coverage/HopeBridge$Login.coverage" NAME="Login Coverage Results" MODIFIED="1741938845408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HopeBridge_Backend/Vinethma_Backend" />
+    <SUITE FILE_PATH="coverage/HopeBridge$ScreenTest.coverage" NAME="ScreenTest Coverage Results" MODIFIED="1741929220700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HopeBridge_Backend/Vinethma_Backend" />
   </component>
 </project>
