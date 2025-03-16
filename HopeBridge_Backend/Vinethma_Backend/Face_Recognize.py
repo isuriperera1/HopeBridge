@@ -78,16 +78,12 @@ from transformers import ViTFeatureExtractor, TFAutoModelForImageClassification
 app = Flask(__name__)
 CORS(app)
 
-<<<<<<< HEAD
-model = load_model(r"C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\ML Models\Vinethma_MLModels\FR_Model.h5")
-=======
 # Load ViT model and feature extractor
 model_name = "google/vit-base-patch16-224"
 feature_extractor = ViTFeatureExtractor.from_pretrained(model_name)
 model = TFAutoModelForImageClassification.from_pretrained(model_name)
 
 # Emotion labels for ViT
->>>>>>> 6c08645b3c34f08f11c0d1d0517fbfb0dbb2c287
 emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
 
 # Load OpenCV face detector
