@@ -10,8 +10,6 @@ from HopeBridge_Backend.Vinethma_Backend.Login import users_collection
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})  # Allow all requests
 
-<<<<<<< HEAD
-
 # Load the trained KNN model, scaler, and encoders
 
 # Connect to MongoDB Atlas (Updated to HopeBridge > Recommendations)
@@ -22,19 +20,10 @@ app.config["MONGO_URI"] = "mongodb+srv://Vinethma:2003Asmi15@cluster0.xrhve.mong
 #doctor_collection = db["Doctors"]  # ✅ Ensure Doctors collection is referenced
 #
 
-
-
 # Configure Flask Session
 app.config["SECRET_KEY"] = "supersecretkey"  # Change this to a more secure key
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
-=======
-# Load the trained KNN model, scaler, and encoders
-knn_model = joblib.load("knn_model.pkl")  # ✅ Load KNN model
-scaler = joblib.load("scaler.pkl")  # ✅ Load Scaler
-specialization_encoder = joblib.load("label_encoder_specialization.pkl")  # ✅ Encode Specializations
-district_encoder = joblib.load("label_encoder_district.pkl")  # ✅ Encode Districts
->>>>>>> 918adbc32473d01b606ca34ac5cc12f81a2f7e49
 
 # Connect to MongoDB Atlas (Updated to HopeBridge > Recommendations)
 MONGO_URI = "mongodb+srv://Vinethma:2003Asmi15@cluster0.xrhve.mongodb.net/HopeBridge?retryWrites=true&w=majority"
@@ -43,7 +32,7 @@ db = client["HopeBridge"]  # ✅ Ensure database is HopeBridge
 treatment_collection = db["Recommendations"]  # ✅ Ensure collection is Recommendations
 doctor_collection = db["Doctors"]  # ✅ Ensure Doctors collection is referenced
 
-<<<<<<< HEAD
+
 db = mongo.db  # Database Reference
 users_collection = db.users  # User authentication
 screen_test_collection = db.ScreenTest  # ScreenTest answers and risk levels
@@ -57,8 +46,6 @@ specialization_encoder = joblib.load(r"C:\Users\sanje\OneDrive\Pictures\IIT FIRS
 district_encoder = joblib.load(r"C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\ML Models\Isuri_MLModels\label_encoder_district.pkl")
 
 # ------------------- User Authentication -------------------
-=======
->>>>>>> 918adbc32473d01b606ca34ac5cc12f81a2f7e49
 @app.route("/login", methods=["POST"])
 def login():
     data = request.json
@@ -74,17 +61,9 @@ def login():
     if not user["password"] == password:
         return jsonify({"error": "Invalid email or password"}), 401
 
-<<<<<<< HEAD
     return jsonify({"message": "Login successful"}), 200
 
 
-=======
-    return jsonify({"message": "Login successful", "username": user["username"]}), 200
-
-@app.route("/treatment")
-def treatment_page():
-    return render_template("treatment.html")  # Serves treatment.html
->>>>>>> 918adbc32473d01b606ca34ac5cc12f81a2f7e49
 
 @app.route("/get_doctors", methods=["POST"])
 def get_doctors():
