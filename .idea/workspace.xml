@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8ef28e19-2934-466d-a184-81e2b0cb8d23" name="Changes" comment="current user">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_20_2025_12_08_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_20_2025_12_08_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HopeBridge_Backend/Vinethma_Backend/Face_Recognize.py" beforeDir="false" afterPath="$PROJECT_DIR$/HopeBridge_Backend/Vinethma_Backend/Face_Recognize.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,12 +45,12 @@
     &quot;assignee&quot;: &quot;AsminiKOD&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/isuriperera1/HopeBridge.git&quot;,
-    &quot;accountId&quot;: &quot;8a2ad77f-ab2d-474f-97c3-ef65f49d74ba&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/isuriperera1/HopeBridge.git",
+    "accountId": "21384968-3e21-4f8b-a955-d129b9b714fe"
   }
-}</component>
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -138,7 +138,9 @@
       <workItem from="1741580692677" duration="6989000" />
       <workItem from="1741857443915" duration="5341000" />
       <workItem from="1741920866149" duration="953000" />
-      <workItem from="1742019582406" duration="816000" />
+      <workItem from="1742019582406" duration="2293000" />
+      <workItem from="1742191960063" duration="167000" />
+      <workItem from="1742267207052" duration="1680000" />
     </task>
     <task id="LOCAL-00001" summary="Front end and back end">
       <option name="closed" value="true" />
@@ -283,12 +285,5 @@
     <MESSAGE value="change pre-trained model" />
     <MESSAGE value="current user" />
     <option name="LAST_COMMIT_MESSAGE" value="current user" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HopeBridge$SignUp.coverage" NAME="SignUp Coverage Results" MODIFIED="1741938831091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HopeBridge_Backend/Vinethma_Backend" />
-    <SUITE FILE_PATH="coverage/HopeBridge$Face_Recognize.coverage" NAME="Face_Recognize Coverage Results" MODIFIED="1741925690970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HopeBridge_Backend/Vinethma_Backend" />
-    <SUITE FILE_PATH="coverage/HopeBridge$app.coverage" NAME="app Coverage Results" MODIFIED="1741934274510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HopeBridge_Backend/Isuri_Backend" />
-    <SUITE FILE_PATH="coverage/HopeBridge$Login.coverage" NAME="Login Coverage Results" MODIFIED="1741938845408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HopeBridge_Backend/Vinethma_Backend" />
-    <SUITE FILE_PATH="coverage/HopeBridge$ScreenTest.coverage" NAME="ScreenTest Coverage Results" MODIFIED="1741929220700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HopeBridge_Backend/Vinethma_Backend" />
   </component>
 </project>
