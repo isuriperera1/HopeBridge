@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - HopeBridge</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --text-main: #2C3E50;
+      --brand-primary: #205781;
+      --brand-teal: #4F959D;
+      --brand-mint: #98D2C0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 50px 16px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 16px;
+      width: 100%;
+    }
+
+    .card-section {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 12px rgba(199, 217, 221, 0.3), 0 10px 20px rgba(173, 178, 212, 0.2);
+      padding: 40px 20px;
+      margin-bottom: 60px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--brand-primary);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .teal { color: var(--brand-teal); }
+    .mint { color: var(--brand-mint); }
+
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 30px;
+    }
+
+    .grid-2,
+    .grid-4 {
+      grid-template-columns: 1fr;
+    }
+
+    @media(min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 6px 12px rgba(199, 217, 221, 0.3), 0 10px 20px rgba(173, 178, 212, 0.2);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn {
+      background-color: var(--brand-teal);
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--brand-primary);
+    }
+
+    .illustration {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      margin: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <section class="container" data-aos="zoom-in">
+    <div class="card-section text-center">
+      <h1>About HopeBridge</h1>
+      <p>Transforming retinal care with AI, empathy, and human-first design — because mental wellness matters too.</p>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="container" data-aos="fade-up">
+    <div class="card-section grid grid-2">
+      <div>
+        <h2 class="teal">🌱 Our Mission</h2>
+        <p>
+          We deliver accessible, accurate, and emotionally mindful diabetic retinopathy detection powered by AI. Our mission is to:
+        </p>
+        <ul>
+          <li><strong>Detect early</strong> to protect vision and peace of mind.</li>
+          <li><strong>Design compassionately</strong> with calming visuals and UX.</li>
+          <li><strong>Democratize care</strong> with free or low-cost access.</li>
+        </ul>
+      </div>
+      <div>
+<img src="https://img.freepik.com/free-photo/digital-art-style-illustration-mental-health-day-awareness_23-2151813343.jpg?t=st=1743569680~exp=1743573280~hmac=492f4c4083b7f71cc56b4446a3d98617543a6e6160fce9e956b76b091317997d&w=1380"
+     alt="Mission Illustration"
+     class="illustration wide-illustration">
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="container" data-aos="fade-up">
+    <div class="card-section grid grid-2">
+      <div>
+        <img src="https://img.freepik.com/premium-vector/poster-man-woman-with-painting-man-red-shirt_9493-73344.jpg?w=1800" alt="Vision Illustration" class="illustration">
+      </div>
+      <div>
+        <h2 class="mint">🌈 Our Vision</h2>
+        <p>
+          A future where no one loses sight because of delayed detection or inaccessible care. We envision AI acting as a calm guide—not just a tool—for informed, confident patients around the world.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="container" data-aos="fade-up">
+    <div class="card-section">
+      <h2 class="teal text-center">💡 Our Core Values</h2>
+      <div class="grid grid-2">
+        <div>
+          <p><strong>🌍 Human-first:</strong> We build for feelings, not just functions.</p>
+          <p><strong>🌈 Inclusive:</strong> Every patient matters, regardless of background.</p>
+        </div>
+        <div>
+          <p><strong>🔍 Transparent:</strong> Clear results, calm design, patient-first feedback.</p>
+          <p><strong>🤝 Collaborative:</strong> Tech + medicine + mental wellness = HopeBridge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Team -->
+  <section class="container" data-aos="fade-up">
+    <div class="card-section text-center">
+      <h2 class="mint">💖 Meet the Team</h2>
+      <p>Multidisciplinary, heart-led, and mission-focused.</p>
+      <div class="grid grid-4" style="margin-top: 40px;">
+        <div class="card">
+          <img src="https://via.placeholder.com/100" class="profile-pic" alt="Vinethma Asmini">
+          <h3>Vinethma Asmini</h3>
+          <p>AI Engineer</p>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/100" class="profile-pic" alt="Isuri Prera">
+          <h3>Isuri Prera</h3>
+          <p>Full Stack Developer</p>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/100" class="profile-pic" alt="Member 3">
+          <h3>Osal De Alwis</h3>
+          <p>AI Engineer</p>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/100" class="profile-pic" alt="Member 4">
+          <h3>Umar Jamal</h3>
+          <p>Conversational AI Developer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container" data-aos="fade-in">
+    <div class="card-section text-center">
+      <img src="https://img.freepik.com/premium-photo/poster-man-woman-shaking-hands_939033-34923.jpg?w=1800" class="illustration" alt="CTA Illustration" />
+      <h2 class="teal">✨ Ready to Build a Brighter Future?</h2>
+      <p>Let’s redefine retinal health with empathy and innovation.</p>
+      <a href="#contact" class="btn">Contact Us</a>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
+</body>
+</html>
