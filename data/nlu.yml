@@ -1,0 +1,1212 @@
+version: "3.1"
+
+nlu:
+# Question 1 Responses
+- intent: respond_positive_1
+  examples: |
+    - Yes, I feel this way.
+    - I’ve been struggling with this.
+    - I feel hopeless.
+    - Sometimes I feel down for no reason.
+    - Life feels too overwhelming.
+    - I often feel sad and helpless.
+    - I feel like nothing can improve.
+    - I’ve lost hope recently.
+    - It’s hard for me to stay positive.
+    - I feel like everything is going wrong.
+    - I feel stuck in my situation.
+    - I’m losing faith in things getting better.
+    - Yes, I’ve been feeling hopeless.
+    - I feel like giving up sometimes.
+    - It’s hard to find motivation.
+    - Life feels pointless right now.
+    - I’ve been feeling this way for weeks.
+    - I often wake up with no energy.
+    - Everything feels overwhelming lately.
+    - I’ve been thinking negatively about myself.
+    - My situation feels hopeless.
+    - I don’t feel confident about the future.
+    - Yes, I feel down more often than not.
+    - Things aren’t getting better, no matter what I do.
+    - I’ve been losing faith in myself.
+    - Man, it's like every day is a struggle. Just feel like I'm drowning, you know?
+    - Honestly, it's like a black cloud over me all the time. Nothing makes sense anymore.
+    - Yeah, I feel like I’m stuck in this endless loop of pain and misery.
+    - Every morning I wake up and wonder why I even bother. Feels pointless, man.
+    - Bro, it’s been rough. Like, really rough. Just feel empty all the time.
+    - I try to fake a smile, but deep down, I feel like I’m falling apart.
+    - Not gonna lie, I’ve been at my lowest. Feels like I’m carrying the weight of the world.
+    - Some days, I just wanna disappear. Like, what’s the point anymore?
+    - Life’s been kicking my ass. Every damn day is just another fight to survive.
+    - I feel like I'm just existing, not really living. It’s exhausting.
+    - It’s like I’m trapped inside my own mind, and I can’t escape.
+    - Dude, I don’t even recognize myself anymore. It’s all just too much.
+    - Been feeling like a ghost in my own life, just watching everything crumble.
+    - Every time I try to pick myself up, something else knocks me down.
+    - It’s hard to keep pretending I’m fine when I’m really not.
+    - I wake up feeling drained before the day even starts. It’s just... a lot.
+    - My brain just won’t stop throwing all these negative thoughts at me.
+    - I’ve lost interest in everything, and I don’t even know who I am anymore.
+    - It's like a dark pit, and I keep sinking deeper, no way out.
+    - Yeah, I smile in front of people, but inside, I’m falling apart.
+    - I don’t wanna do this anymore, but I don’t know what else to do.
+    - Feels like I’m screaming for help, but no one even hears me.
+    - Every night, I just sit and wonder if it would be easier to just... stop.
+    - Nothing excites me anymore. Just feels like I'm waiting for it all to end.
+    - Man, I don’t even care anymore. Just going through the motions.
+    - I feel this way a lot, almost daily.
+    - Most of the time, I just feel really low.
+    - I don’t even know why, but I feel down often.
+    - I feel stuck in this endless cycle of sadness.
+    - Every day feels like a struggle, honestly.
+    - I wake up feeling hopeless more than I should.
+    - Sometimes I feel okay, but mostly I feel empty.
+    - It’s like no matter what, I can’t shake this feeling.
+    - I feel down most nights when I’m alone.
+    - I’ve been feeling this way for weeks now.
+    - I feel like I’m drowning in my own thoughts.
+    - I feel like nothing excites me anymore.
+    - Even small things feel overwhelming nowadays.
+    - It’s not every day, but it happens a lot.
+    - I can’t remember the last time I felt truly happy.
+    - This feeling just keeps coming back, no matter what I do.
+    - I feel exhausted just existing sometimes.
+    - Some days are fine, but mostly, I feel off.
+    - I try to stay positive, but the sadness wins.
+    - Even when I laugh, deep down, I feel lost.
+    - There are more bad days than good ones lately.
+    - It’s like I’m just going through the motions of life.
+    - I can’t help but feel like things will never get better.
+
+- intent: respond_negative_1
+  examples: |
+    - No, I don’t feel that way.
+    - I’ve been feeling okay.
+    - I don’t feel hopeless at all.
+    - Things have been manageable.
+    - Life is good right now.
+    - I’m doing well.
+    - I feel hopeful about the future.
+    - I’ve been feeling better lately.
+    - I haven’t felt this way before.
+    - No, I’ve been handling everything fine.
+    - I feel good about where I’m at.
+    - I’m managing my emotions well.
+    - I’m not feeling down at all.
+    - I feel optimistic most of the time.
+    - No, I’m in a good place emotionally.
+    - Life feels balanced right now.
+    - I haven’t felt hopeless recently.
+    - I’ve been staying positive through tough times.
+    - No, I feel like I’m in control of things.
+    - Things are going well for me lately.
+    - I don’t feel down or hopeless.
+    - No, I’ve been able to stay motivated.
+    - I feel happy with my current situation.
+    - I’m hopeful that things will continue to improve.
+    - I’ve been finding joy in everyday things.
+    - Nah, I’m good. I mean, we all have bad days, but nothing major.
+    - Life’s been pretty decent. Can’t complain much, honestly.
+    - I don’t really feel down like that, I guess I just push through.
+    - Some days are tough, but overall, I keep myself busy and happy.
+    - Honestly, I feel great most of the time. No dark thoughts here.
+    - Yeah, I have bad days, but I always find a way to bounce back.
+    - I try to focus on the good stuff in life, and it works for me.
+    - Not really, I mean stress is normal, but I don’t feel hopeless.
+    - I just take things one step at a time. Nothing overwhelming.
+    - I’ve learned how to handle stress, so I don’t feel like that anymore.
+    - I don’t really think about that stuff, I just keep moving forward.
+    - I have my moments, but overall, I’m in a good place mentally.
+    - Yeah, life gets rough, but I remind myself that things get better.
+    - I keep myself distracted, so I don’t really have time to feel down.
+    - I have a strong support system, so I don’t feel like that often.
+    - Not really, I think I’m in control of my emotions for the most part.
+    - I have some bad days, but they don’t last long. I bounce back quick.
+    - I don’t let negative thoughts take over. I try to stay positive.
+    - Nope, I focus on my goals and don’t let anything pull me down.
+    - I think everyone gets stressed, but I wouldn’t call it hopeless.
+    - If I feel down, I just go out, meet people, and shake it off.
+    - I’ve been through tough times, but I’m doing much better now.
+    - Life’s not perfect, but I make sure to enjoy the good moments.
+    - I try not to overthink things, so I don’t get stuck in negativity.
+    - Nah, I wake up feeling good and just take the day as it comes.
+    - Nah, I don’t really feel that way.
+    - I feel good for the most part.
+    - I have my bad days, but mostly, I’m okay.
+    - I wouldn’t say I feel hopeless, just stressed sometimes.
+    - Not really, I manage to stay positive.
+    - I try not to let things bring me down.
+    - I get sad sometimes, but I wouldn’t call it hopeless.
+    - I feel fine, nothing to complain about.
+    - I have my ups and downs, but I handle them well.
+    - Life is tough, but I’m pushing through.
+    - I don’t feel down often, maybe once in a while.
+    - I wouldn’t say I feel hopeless, just a bit tired sometimes.
+    - I focus on the good things in life.
+    - There’s a lot to be grateful for, so I try to stay happy.
+    - Nah, I don’t really feel like that.
+    - I don’t dwell on negative feelings.
+    - Things are going well for me, so no complaints.
+    - I just take things one day at a time.
+    - Even when life gets hard, I know it gets better.
+    - I don’t feel hopeless, just stressed about work sometimes.
+    - Honestly, I feel pretty happy right now.
+    - I have support, so I don’t feel lost.
+    - Nah, I just keep myself busy, and I’m fine.
+    - Not really, I have a good balance in life.
+
+# Question 2 Responses
+- intent: respond_positive_2
+  examples: |
+    - Sometimes I have lost interest in some activities.
+    - Yes, I can’t enjoy anything anymore.
+    - I’ve lost interest in everything I used to love.
+    - Activities that I once enjoyed feel boring now.
+    - I find no joy in hobbies or socializing.
+    - I don’t feel like doing anything lately.
+    - Even my favorite things don’t make me happy anymore.
+    - I’ve lost passion for everything.
+    - I feel detached from things that used to make me happy.
+    - Nothing excites me like it used to.
+    - I have no motivation to do things I once loved.
+    - I’ve stopped caring about my hobbies.
+    - I used to enjoy so much, but not anymore.
+    - There’s no fun in anything these days.
+    - I feel indifferent about everything.
+    - Nothing seems worth doing anymore.
+    - Even my favorite music doesn’t lift my mood anymore.
+    - I feel emotionally disconnected from things I used to love.
+    - I don’t enjoy spending time with my friends like I used to.
+    - I feel like my happiness is gone.
+    - I can’t even remember what it feels like to have fun.
+    - I’ve lost all excitement for life.
+    - Nothing makes me smile anymore.
+    - I feel empty when I try to do fun activities.
+    - Even when I try, I can’t enjoy myself.
+    - I feel stuck in a cycle of not enjoying anything.
+    - Used to love playing games, now I just sit there staring at the screen.
+    - Music was my thing, but now it’s just noise to me.
+    - Everything feels so dull, I don’t even care about the things I once loved.
+    - Man, I used to go out with friends all the time, now I just wanna stay in bed.
+    - Movies, music, hanging out—it all feels empty now.
+    - I don’t even feel like watching my favorite shows anymore.
+    - I used to be obsessed with sports, now I can’t even bother to watch a game.
+    - Even eating feels like a chore, I just don’t care anymore.
+    - I used to paint all the time, but now I don’t even pick up a brush.
+    - Everything I enjoyed feels like too much effort now.
+    - I stopped texting people back because I don’t have the energy to talk.
+    - Man, I haven’t laughed in weeks. Nothing feels fun anymore.
+    - I used to love photography, but my camera is just collecting dust now.
+    - Even when I do the things I used to love, I feel nothing.
+    - I just sit around and scroll through my phone, doing nothing.
+    - Going outside feels like too much effort these days.
+    - I don’t even look forward to the weekends anymore.
+    - Used to be all about fitness, but now I don’t even wanna get up.
+    - Reading was my escape, now I can’t even focus on a single page.
+    - Everything just feels like a big waste of time.
+    - Even food tastes bland now, nothing excites me.
+    - I barely even talk to my friends anymore, just lost interest.
+    - Gaming, music, movies, all of it feels like too much effort.
+    - Man, I used to love going on long walks, now I don’t even step outside.
+    - I can’t even force myself to care about my old hobbies.
+    - Yeah, I don’t find things fun anymore.
+    - I used to love painting, but now I don’t care.
+    - I don’t feel excited about hobbies like I used to.
+    - Even my favorite music doesn’t make me happy.
+    - I feel disconnected from everything I once loved.
+    - I try, but I just don’t enjoy things anymore.
+    - Watching movies used to be fun, now it’s just background noise.
+    - I don’t even feel like playing games anymore.
+    - Hanging out with friends doesn’t excite me anymore.
+    - I feel like I’m forcing myself to do things I should enjoy.
+    - Everything just feels dull these days.
+    - It’s weird, I just don’t care about my hobbies anymore.
+    - Even going outside feels pointless to me now.
+    - I lost interest in everything, and I don’t know why.
+    - My passion for things just faded, and I can’t get it back.
+    - I miss enjoying things, but I don’t know how to fix it.
+    - No matter what I do, it doesn’t feel fun anymore.
+    - I used to be excited about life, now I just exist.
+    - Everything feels like a chore instead of something fun.
+    - Even when I try to do fun stuff, it feels empty.
+    - It’s like I lost my ability to enjoy life.
+    - I get bored too easily now, nothing holds my attention.
+    - I don’t feel like socializing or doing anything.
+    - I want to enjoy things, but I just don’t feel it.
+
+- intent: respond_negative_2
+  examples: |
+    - No, I still enjoy many things.
+    - I can still find joy in my hobbies.
+    - I don’t struggle with that, I’m okay.
+    - I feel happy when I do the things I love.
+    - I still enjoy spending time with friends and family.
+    - Activities I love still bring me happiness.
+    - I’ve been able to enjoy my free time lately.
+    - I find joy in the little things every day.
+    - I’m happy doing things I enjoy.
+    - My hobbies still make me smile.
+    - I can still feel joy in everyday moments.
+    - I don’t feel disconnected from my hobbies.
+    - Life still feels enjoyable to me.
+    - I love doing the things I used to do.
+    - My favorite activities still make me happy.
+    - I don’t have trouble finding joy in activities.
+    - I’ve been enjoying life as much as I can.
+    - I still feel excited about things I love.
+    - I don’t struggle with finding joy in things.
+    - I feel good when I’m doing things I enjoy.
+    - I’ve been feeling positive about life lately.
+    - I can still have fun and enjoy myself.
+    - I don’t have issues finding joy in my hobbies.
+    - Life feels fulfilling when I do what I love.
+    - I feel great when I’m engaged in my favorite activities.
+    - Nah, I still enjoy my hobbies as much as before.
+    - I make sure to do things that make me happy every day.
+    - I love spending time on my favorite activities, keeps me sane.
+    - I’ve picked up new hobbies too, so I’m always entertained.
+    - Gaming is still my escape, I love it.
+    - Music still makes me feel alive, man.
+    - I go out every weekend, still loving life.
+    - I still get excited about my favorite TV shows and movies.
+    - Hobbies keep me going, I never lost interest.
+    - Exercise keeps me happy, I do it daily.
+    - I still make time for the things that bring me happiness, no matter what.
+    - I’ve actually picked up some new interests, so I’m always trying something fun.
+    - Even on stressful days, I make sure to unwind with my favorite activities.
+    - If I ever feel low, I just put on my favorite music or movie and I feel better.
+    - I still find joy in the little things, even if life gets rough sometimes.
+    - I don’t let stress take away the things I enjoy, I keep pushing forward.
+    - Yeah, some days I feel off, but I always bounce back to what I love.
+    - Nothing’s really changed for me. I still get excited about my hobbies.
+    - I always make time for myself and do things that bring me peace.
+    - I don’t really lose interest in stuff, I just take breaks and come back to it.
+    - I try new things when I get bored, so I always have something fun to do.
+    - I keep myself engaged with things that make me feel alive and happy.
+    - If I ever feel unmotivated, I remind myself why I started loving these hobbies.
+    - My hobbies keep me grounded, so I always make sure to enjoy them.
+    - I stay passionate about the things I love, and that keeps me going every day.
+    - No, I still love doing my favorite things.
+    - I actually enjoy my hobbies a lot.
+    - I still find joy in little things.
+    - Life is still fun for me.
+    - I have things that keep me happy.
+    - I feel excitement when I do what I love.
+    - My hobbies still bring me joy.
+    - I haven’t lost interest in the things I enjoy.
+    - I still have fun with my friends.
+    - Even when I feel down, I find ways to enjoy life.
+
+# Question 3 Responses
+- intent: respond_positive_3
+  examples: |
+    - Yes, I’ve been having trouble sleeping.
+    - My sleep schedule is completely disrupted.
+    - I’ve been sleeping too much lately.
+    - I can’t fall asleep easily anymore.
+    - I wake up multiple times during the night.
+    - I feel tired no matter how much I sleep.
+    - My sleep patterns have been all over the place.
+    - I’ve been having frequent nightmares.
+    - I’ve had insomnia for the past few weeks.
+    - I’m either sleeping too little or too much.
+    - I can’t seem to get restful sleep anymore.
+    - I’ve been oversleeping and still feeling exhausted.
+    - My sleep feels really broken lately.
+    - It’s been hard to stick to a sleep routine.
+    - I feel like my sleep quality has drastically decreased.
+    - Yes, I’ve been waking up earlier than usual.
+    - I’ve been falling asleep during the day unexpectedly.
+    - I keep tossing and turning at night.
+    - I stay awake thinking too much.
+    - I wake up in the middle of the night feeling anxious.
+    - I’ve been feeling restless even after sleeping.
+    - I wake up exhausted even after long hours of sleep.
+    - I’ve been avoiding sleep altogether.
+    - I’ve had more sleepless nights than I can count recently.
+    - I’m struggling to get more than a few hours of sleep.
+    - Man, sleep's been a mess. Either I’m up all night staring at the ceiling or I knock out for way too long and still wake up exhausted.
+    - Yeah, I can’t get a decent night’s sleep to save my life. I just keep tossing and turning, and when I do sleep, it's never enough.
+    - My sleep schedule is so wrecked.
+    - I feel like I’m permanently tired. Doesn’t matter how much sleep I get, I wake up feeling dead inside.
+    - Lately, I’ve been waking up at random times in the night, and it’s driving me crazy. I feel like a zombie the next day.
+    - I don’t even remember what a good night’s sleep feels like. I either oversleep or can’t sleep at all. No in-between.
+    - I sleep, but it’s like my brain never shuts off. I wake up feeling like I’ve been in a mental marathon all night.
+    - I keep waking up drenched in sweat, heart racing. No idea why, but it freaks me out.
+    - Falling asleep isn’t the problem, it’s staying asleep. I wake up like every hour, and it’s draining me.
+    - I used to be able to sleep anywhere, anytime. Now? My bed feels like a battlefield every night.
+    - I straight-up feel like I’m nocturnal now. My body clock is totally ruined.
+    - Some nights, I just sit there thinking about life until the sun comes up. Then I gotta pretend to be fine all day.
+    - It’s weird, I feel exhausted all the time, but when I actually try to sleep, my brain is like ‘nah, let’s stay up and overthink everything instead.’
+    - Dreams are either way too real or completely terrifying. I wake up feeling worse than when I went to sleep.
+    - I tried melatonin, but now I just wake up feeling groggy instead of refreshed.
+    - Lying in bed should be relaxing, but for me, it just feels like an endless loop of my worst thoughts.
+    - There’s no in-between, I either sleep 4 hours or 14 hours, and both feel terrible.
+    - My nightmares are so vivid lately. I wake up gasping for air, feeling like I just lived through a horror movie.
+    - Sleep is a joke at this point. I’m just running on caffeine and willpower.
+    - I don’t even try to fight it anymore. If I can’t sleep, I just stay up. Whatever happens, happens.
+    - I literally dread bedtime because I know I’m just gonna lie there, staring at the ceiling, feeling like my mind’s eating itself.
+    - I wake up at the same time every night, like my body is trying to torture me on purpose.
+    - I don’t sleep, I just close my eyes and let my thoughts ruin my life in peace.
+    - The worst part is when I finally do sleep, I wake up feeling like I barely rested at all.
+    - I keep dreaming about things that happened years ago. It’s like my brain won’t let me move on.
+    - I keep rolling around in bed, trying to fall asleep, but it never happens.
+    - No matter how much I sleep, I wake up feeling like I haven’t rested at all.
+    - My nights feel endless. I just lay there, staring at the dark, overthinking everything.
+    - I either sleep for hours on end or barely get a wink of sleep—there’s no in-between.
+    - I feel like my brain refuses to shut down at night, but during the day, I can’t keep my eyes open.
+    - I wake up multiple times for no reason, and it’s so frustrating.
+    - My sleep’s a mess. Some nights, I crash early; other nights, I’m up until morning.
+    - I try to sleep, but it feels like my mind is running a marathon of bad thoughts.
+    - I wake up sweating and panicked, like I just ran from something in my dreams.
+    - Even when I sleep for hours, I feel like I’ve barely recharged.
+    - I can’t stay asleep for long. I wake up feeling like something’s wrong, but I don’t know what.
+    - My sleep schedule is completely ruined—sometimes I’m awake all night and asleep all day.
+    - I feel so drained that I just sleep whenever I can, even if it’s in the middle of the day.
+    - I wake up with my heart racing like I’ve been running in my sleep.
+    - It feels like my body is tired, but my mind refuses to rest.
+    - Yeah, I can’t sleep properly these days.
+    - My sleep schedule is a total mess.
+    - I either sleep too much or not at all.
+    - I wake up at odd hours for no reason.
+    - Insomnia has been hitting me hard lately.
+    - I keep waking up in the middle of the night.
+    - My dreams feel too real, and I wake up tired.
+    - I used to be able to sleep fine, but not anymore.
+    - I can’t remember the last time I felt well-rested.
+    - I get sleepy in the day but wide awake at night.
+    - I find it hard to fall asleep.
+
+- intent: respond_negative_3
+  examples: |
+    - No, my sleep is fine.
+    - I’m not having trouble with sleep.
+    - My sleep routine is normal.
+    - I’ve been sleeping well lately.
+    - My sleep schedule hasn’t changed.
+    - I’ve been sleeping soundly at night.
+    - I get enough rest every night.
+    - No, I haven’t noticed any changes in my sleep.
+    - I feel well-rested most mornings.
+    - My sleep hasn’t been a problem for me.
+    - I’ve had no trouble falling asleep recently.
+    - My sleep patterns are consistent.
+    - I feel refreshed when I wake up.
+    - No, I sleep at the same time every night.
+    - I haven’t had any sleepless nights recently.
+    - My sleep has been stable and good.
+    - I get around 7–8 hours of sleep regularly.
+    - No, I haven’t felt tired during the day.
+    - I don’t struggle with sleeping or waking up.
+    - My sleep quality is the same as before.
+    - I’ve been waking up feeling rested.
+    - I’m able to fall asleep easily.
+    - No, my sleep hasn’t been affected.
+    - I’ve been sticking to a healthy sleep schedule.
+    - I don’t have any issues with my sleep.
+    - Nah, my sleep’s been fine. I crash when I need to and wake up feeling good.
+    - I sleep like a baby, no issues at all.
+    - I stick to my schedule, so my sleep’s always consistent.
+    - I’ve got my bedtime routine down—same time every night, no problems.
+    - Honestly, sleep’s the one thing I’ve got figured out. I wake up feeling refreshed every day.
+    - Nope, I get my solid eight hours, and I’m good to go.
+    - I’ve never had sleep problems, I just pass out when I hit the pillow.
+    - I love my sleep, nothing messes with it.
+    - I feel lucky—no sleep issues, I’m always well-rested.
+    - I sleep deep and wake up feeling great.
+    - No changes here, I get my usual rest.
+    - I fall asleep fast, and I stay asleep.
+    - I wake up feeling energized, so no complaints about sleep.
+    - I stick to my routine, so my sleep is always steady.
+    - No sleep issues, I’ve been resting just fine.
+    - I don’t even need an alarm—I wake up naturally, fully rested.
+    - I sleep great, never had a problem with it.
+    - Sleep is my best friend. I never have trouble with it.
+    - Nope, I sleep peacefully every night.
+    - I sleep through the night without any interruptions.
+    - If anything, I’m sleeping better lately.
+    - I always wake up feeling refreshed, so no complaints.
+    - My sleep schedule is solid—I make sure to get enough rest.
+    - No tossing and turning for me, I sleep like a rock.
+    - I actually look forward to sleep. It’s my favorite time of day.
+    - No, my sleep is fine.
+    - I sleep well every night.
+    - My routine hasn’t changed much.
+    - I don’t have trouble falling asleep.
+    - I feel well-rested when I wake up.
+
+# Question 4 Responses
+- intent: respond_positive_4
+  examples: |
+    - Recent days i find my self excessively stressed.
+    - Overwhelmed by thinking a lot.
+    - Yes, I feel stressed all the time.
+    - I’ve been feeling completely overwhelmed lately.
+    - Life feels like it’s too much to handle right now.
+    - I can’t manage everything on my plate.
+    - I feel like I’m drowning in responsibilities.
+    - My stress levels are through the roof.
+    - Everything feels so chaotic and unmanageable.
+    - I’m constantly on edge because of stress.
+    - I’ve been crying because of how overwhelmed I feel.
+    - I don’t know how to cope with all this stress.
+    - I feel like I’m breaking down.
+    - I can’t stop worrying about everything.
+    - Stress is taking a toll on me emotionally.
+    - I feel so tense and drained all the time.
+    - I’m overwhelmed and exhausted every day.
+    - I feel like there’s no way out of this stress.
+    - My workload feels impossible to manage.
+    - I feel pressured by everything happening around me.
+    - I’m struggling to keep up with everything.
+    - I feel like I can’t breathe from the stress.
+    - I’ve been losing sleep because of how stressed I am.
+    - I feel like the smallest tasks are overwhelming.
+    - Yes, I’m constantly worried and anxious.
+    - My mind feels overloaded with everything.
+    - I’ve been so stressed that I can’t focus on anything.
+    - Man, I feel like I'm drowning in stress. Work, life, everything—it’s just too much. I barely catch a break before something else piles up.
+    - Yeah, no kidding. My mind’s constantly racing, and it feels like there’s no way to shut it off. I’m exhausted just thinking about my to-do list.
+    - I can’t even function properly. It’s like my brain’s on overload 24/7, and every little thing just pushes me closer to losing it.
+    - Feels like I’m stuck in a pressure cooker, and any second now, I might explode. Everything is just piling up, and I don’t know how to deal with it.
+    - Some days, I literally wanna scream into a pillow. I just keep bottling it up, but I know I’m close to cracking.
+    - Yeah, I’m way past stressed. I barely sleep, I forget to eat, and I feel like I’m constantly on edge. It’s like my body’s running on empty.
+    - I feel like no matter what I do, I can’t catch a break. I’m exhausted, drained, and ready to just shut down.
+    - Every little thing sets me off. My patience is gone, my brain’s fried, and I feel like I’m just running on autopilot.
+    - I keep telling myself “just get through the day,” but every day just feels heavier than the last.
+    - Honestly? It’s suffocating. Like I’m carrying the weight of the world on my shoulders, and I can’t take it anymore.
+    - If one more thing goes wrong, I swear I might just lose it. It’s like the universe is out to get me.
+    - I try to relax, but even when I sit down, my mind won’t shut up. It just keeps spinning with everything I need to do.
+    - I keep snapping at people for no reason, but I don’t even have the energy to explain why I’m so on edge.
+    - I feel like my whole life is just one giant ball of stress, and there’s no way to escape it.
+    - I’ve been so overwhelmed lately that even simple things like replying to texts feel like a huge task.
+    - Everything’s just too much. I don’t even know where to start fixing it.
+    - Some days, I just want to turn my phone off and disappear for a while.
+    - It’s like my brain refuses to chill out. Even when I try to relax, I’m still tense.
+    - I wake up already feeling drained, and I know the day’s just gonna make it worse.
+    - I feel like I’m falling apart but still pretending everything’s fine.
+    - It’s not just stress, it’s straight-up burnout. I don’t have any motivation left.
+    - My head feels like a war zone—too many thoughts, too much pressure, and no peace at all.
+    - Every time I try to take a break, I just feel guilty, like I should be doing something productive.
+    - I don’t even have the energy to care anymore. I’m just running on fumes.
+    - I keep telling myself I can handle it, but honestly? I’m not sure how much longer I can keep up this act.
+
+- intent: respond_negative_4
+  examples: |
+    - No, I don’t feel overwhelmed.
+    - I’ve been managing my stress well.
+    - I don’t feel excessively stressed right now.
+    - Things are manageable for me right now.
+    - I feel calm and collected.
+    - I’m not overwhelmed by anything.
+    - I’ve been handling everything just fine.
+    - Stress hasn’t been a big issue for me.
+    - I’ve been in control of my emotions.
+    - No, I feel balanced and okay.
+    - I don’t feel like stress is affecting me negatively.
+    - I’ve been keeping my stress levels low.
+    - No, I don’t feel overwhelmed by anything specific.
+    - My life feels pretty manageable at the moment.
+    - I don’t have any major stressors right now.
+    - I’ve been staying relaxed and focused.
+    - I’m not feeling pressured or tense.
+    - No, I feel like I’ve got things under control.
+    - I’ve been practicing self-care, and it’s helping.
+    - I don’t feel like stress is weighing me down.
+    - I feel like I’m coping with life’s challenges well.
+    - No, I feel pretty positive and in control.
+    - I’m not experiencing excessive stress.
+    - I’ve been staying calm even in difficult situations.
+    - I feel at ease with how things are going.
+    - Nah, I’m good. I mean, life’s hectic, but I’m handling it.
+    - Not really, I just take things one step at a time. No point stressing over stuff I can’t control.
+    - I’ve had stressful days, but nothing crazy. I just deal with things as they come.
+    - I get overwhelmed sometimes, but I’ve learned how to manage it.
+    - Nope, I make sure to take breaks and keep myself from getting too stressed.
+    - I don’t let things pile up too much. If I need a break, I take one.
+    - I just remind myself that stress is temporary, and I don’t let it get to me.
+    - I’ve been in high-stress situations before, so I know how to handle pressure.
+    - Nah, I’ve been in a pretty good headspace lately.
+    - Stress comes and goes, but I don’t let it take over my life.
+    - I used to stress a lot, but now I just breathe and go with the flow.
+    - I’m pretty good at managing stress. I know my limits.
+    - Not really, I’ve got a good balance between work and relaxation.
+    - If I feel stressed, I just take a deep breath and move on.
+    - Nah, I know when to step back and give myself a break.
+    - I try not to sweat the small stuff, and so far, it’s working.
+    - Nope, I’ve been staying pretty chill. Nothing to stress over.
+    - Stress is part of life, but I don’t let it consume me.
+    - Not at all. I’ve been feeling pretty relaxed and at peace.
+    - I have my moments, but I always bounce back quickly.
+    - I make sure to take care of myself, so stress doesn’t build up.
+    - Life’s busy, but I know how to manage it without getting overwhelmed.
+    - I’ve been doing things that help me de-stress, so I’m feeling good.
+    - I don’t let stress dictate my mood or my life.
+    - Nah, I’ve been feeling pretty steady and in control.
+
+# Question 5 Responses
+- intent: respond_positive_5
+  examples: |
+    - Yeah kindof. I prefer doing my thing by myself.
+    - Yes, I’ve been avoiding people a lot.
+    - I don’t want to interact with anyone anymore.
+    - I’ve been spending all my time alone lately.
+    - I feel like I’m shutting everyone out.
+    - I haven’t been talking to anyone much.
+    - I feel safer being by myself all the time.
+    - I don’t feel like meeting or talking to anyone.
+    - I’ve been withdrawing from my friends and family.
+    - I’ve been making excuses to avoid social interactions.
+    - I feel disconnected from everyone around me.
+    - I haven’t been going out or meeting anyone at all.
+    - I don’t want to see or talk to people anymore.
+    - I’ve stopped answering calls and messages from others.
+    - I’ve been isolating myself completely.
+    - I feel like I can’t handle being around others right now.
+    - Yes, I avoid social interactions whenever possible.
+    - I feel like I’m disappearing from everyone’s life.
+    - I’ve cut off contact with most people.
+    - I feel like I’m pushing everyone away from me.
+    - I feel too overwhelmed to talk to anyone.
+    - Yes, I prefer being alone these days.
+    - I feel like people wouldn’t understand how I feel.
+    - I haven’t been attending any social events recently.
+    - I’ve been ignoring everyone’s attempts to reach out to me.
+    - I don’t want to be around anyone at all.
+    - Yeah, I just don’t have the energy to be around people anymore. It’s easier to just be alone.
+    - I barely text anyone back these days. I just don’t feel like talking or explaining myself.
+    - I don’t even know the last time I hung out with friends. I’ve kinda just been avoiding everyone.
+    - I keep canceling plans last minute. I just can’t bring myself to go out and pretend I’m okay.
+    - It’s like, even when I’m around people, I feel alone. So what’s the point?
+    - I used to enjoy hanging out, but now it just drains me. I’d rather be by myself.
+    - I don’t even pick up calls anymore. It’s like, I want to talk, but I also really don’t.
+    - Everyone keeps asking if I’m okay, but I just brush it off. I don’t want to explain why I feel like this.
+    - I feel like I’ve built this wall around myself, and I don’t know how to break it down.
+    - I tell people I’m busy, but the truth is, I just don’t want to see anyone.
+    - I sit in my room all day, scrolling through social media, watching people live their lives while I do nothing.
+    - Every time someone asks me to hang out, I feel anxious and just say no.
+    - I feel like I don’t belong anywhere anymore, so I just keep to myself.
+    - I’ve lost touch with so many people because I keep pushing them away.
+    - I used to reach out first, but now I just wait and hope someone still cares.
+    - Even when I do go out, I feel like I’m not really there. It’s like I’m just existing in the background.
+    - I don’t even get fear of missing out anymore anymore. I just genuinely don’t care about socializing.
+    - My phone’s always on Do Not Disturb because I don’t want to deal with anyone.
+    - Sometimes I think about texting someone, but then I remember I wouldn’t even know what to say.
+    - It’s exhausting pretending to be okay, so I’d rather just avoid people completely.
+    - I feel like if I disappeared, no one would even notice.
+    - Even when I try to be social, I feel so disconnected from everyone.
+    - I’ve stopped checking messages because I don’t even want to deal with conversations.
+    - I feel like I’ve forgotten how to be around people. Like I’ve lost all social energy.
+    - I don’t even get lonely anymore. I just feel... numb.
+
+- intent: respond_negative_5
+  examples: |
+    - No, I haven’t been isolating myself.
+    - I’ve been staying connected with friends and family.
+    - I still interact with people regularly.
+    - No, I don’t feel like withdrawing from others.
+    - I’ve been attending social gatherings as usual.
+    - I enjoy spending time with my loved ones.
+    - No, I’ve been talking to friends often.
+    - I feel supported by the people around me.
+    - I don’t feel the need to isolate myself.
+    - I’ve been maintaining healthy social connections.
+    - I’m comfortable being around people.
+    - I’ve been keeping in touch with those close to me.
+    - No, I don’t feel like I’m shutting anyone out.
+    - I’ve been making an effort to stay social.
+    - I enjoy talking to people as usual.
+    - I feel connected to those around me.
+    - I haven’t felt like avoiding anyone lately.
+    - I feel like I have a good support system.
+    - I don’t have any trouble being around others.
+    - No, I’ve been spending time with others regularly.
+    - I don’t feel like isolating myself from anyone.
+    - I’ve been attending events and meeting new people.
+    - My relationships feel stable and normal right now.
+    - I’ve been making plans with friends regularly.
+    - I enjoy being around people, and I’m not isolating.
+    - Nah, I’ve been pretty social. I like hanging out with my friends.
+    - Not at all! I’ve been making an effort to stay connected with people.
+    - I love being around others. It keeps me feeling good.
+    - I still talk to my friends every day, even if it’s just online.
+    - I’m actually hanging out with people more than usual lately.
+    - I make sure to stay in touch because being alone too much isn’t good for me.
+    - Nope, I still enjoy socializing and going out.
+    - I’ve been trying to be more social, and it’s been great.
+    - I don’t feel the need to isolate myself. I like having company.
+    - Even when I need alone time, I still keep in touch with people.
+    - I value my relationships, so I make sure to stay connected.
+    - I’m not avoiding anyone—I enjoy spending time with people.
+    - I’ve been making plans with friends and actually looking forward to them.
+    - Socializing makes me happy, so I don’t see a reason to withdraw.
+    - I don’t feel distant from others. I feel supported and connected.
+    - I love being around my friends and family. They keep me grounded.
+    - I’ve been feeling good about my social life lately.
+    - I make sure to check in with my friends, and they do the same for me.
+    - Even when I’m busy, I make time for the people who matter.
+    - I actually enjoy talking and spending time with others.
+    - I don’t feel the need to shut people out. I like having company.
+    - Staying connected is important to me, so I don’t isolate myself.
+    - I don’t feel like avoiding anyone. I love my people!
+    - I’m in a good place socially. I like the balance I have.
+    - Even if I take breaks from socializing, I never fully cut myself off.
+
+# Question 6 Responses
+- intent: respond_positive_6
+  examples: |
+    - Yes, I feel like giving up sometimes.
+    - I’ve been thinking about ending everything lately.
+    - I don’t see any reason to keep going anymore.
+    - Life feels pointless, and I don’t want to go on.
+    - I’ve been feeling like there’s no way out.
+    - I don’t want to keep fighting anymore.
+    - It’s hard to find a reason to wake up every day.
+    - I feel like I’m a burden to everyone.
+    - Sometimes I think everyone would be better off without me.
+    - I feel like I’m just existing, not living.
+    - I’ve been having thoughts of not wanting to live anymore.
+    - I feel like life is too painful to continue.
+    - I’ve been struggling with thoughts of giving up.
+    - I feel so empty and tired of everything.
+    - Sometimes I think I’d be better off gone.
+    - It feels like there’s no light at the end of the tunnel.
+    - I’ve been questioning whether I should keep going.
+    - I feel like I’m stuck in a never-ending struggle.
+    - I’ve lost all hope for the future.
+    - I feel like I can’t do this anymore.
+    - I’ve been feeling like my existence doesn’t matter.
+    - Yes, I’ve had thoughts of not wanting to be here anymore.
+    - I feel like my life has no value.
+    - I’m tired of pretending that everything is okay.
+    - I’ve been feeling like there’s no reason to keep trying.
+    - I keep wondering what’s the point of all this. Feels like nothing really matters anymore.
+    - I have days where I just don’t wanna wake up, like everything is too heavy.
+    - I’ve had thoughts about just ending it all, like maybe that would be easier.
+    - Honestly, I feel like I’m just surviving, not really living.
+    - There are times when I just want everything to stop. It’s exhausting.
+    - I feel like no one would even notice if I just disappeared.
+    - Some nights, I just lie awake thinking about how much easier it would be to let go.
+    - I feel like I’m trapped in my own mind, and there’s no way out.
+    - It’s like I’m stuck in a cycle of pain, and I can’t see a way forward.
+    - I’ve caught myself thinking, “Would anyone really care if I wasn’t here?”
+    - It feels like my existence is pointless, like I’m just taking up space.
+    - I keep hoping I’ll wake up and everything will magically be okay, but it never is.
+    - I feel so numb all the time, like nothing really affects me anymore.
+    - I feel like I’ve already given up inside, even if I’m still here.
+    - Some days, I just wish I could disappear and not deal with anything anymore.
+    - The idea of “tomorrow” just feels like another day of the same struggle.
+    - I don’t want to scare anyone, but yeah, I’ve had thoughts about just ending it.
+    - I keep pushing forward, but deep down, I don’t know if I even want to.
+    - Every time something bad happens, I wonder if this is just a sign to give up.
+    - I feel like I’m drowning, but no one even notices.
+    - Sometimes I wish I could just fall asleep and never wake up.
+    - I feel like no matter what I do, I’ll never really be happy.
+    - I don’t see a future for myself anymore, like I’ve already given up on it.
+    - I pretend I’m okay, but deep down, I feel like I’ve already lost.
+    - I’ve thought about how easy it would be to just let go, and that scares me.
+
+- intent: respond_negative_6
+  examples: |
+    - No, I’ve never felt that way.
+    - I don’t think about giving up.
+    - I’ve been feeling hopeful about the future.
+    - Life feels worth living, even with its challenges.
+    - I’ve never had thoughts of not wanting to continue.
+    - I feel like there’s always something to look forward to.
+    - No, I believe things will get better.
+    - I don’t feel like giving up at all.
+    - I’m managing, even if it’s hard sometimes.
+    - I feel like my life has meaning and purpose.
+    - No, I’ve been able to stay positive through tough times.
+    - I’m confident that things will improve.
+    - I’ve been focusing on the good things in life.
+    - I feel like I can handle what life throws at me.
+    - I’ve never felt like ending everything.
+    - I feel hopeful and optimistic most of the time.
+    - I know I’m strong enough to keep going.
+    - I have people who support and care about me.
+    - I’m determined to overcome any challenges I face.
+    - No, I’ve been feeling motivated to keep pushing forward.
+    - I believe in myself and my ability to cope.
+    - I’ve never felt like giving up, even in difficult moments.
+    - I have goals and dreams I want to achieve.
+    - I’ve been able to find joy in small things.
+    - Life may be hard, but I know it’s worth it.
+    - No, I don’t feel that way. I know things get tough, but I keep pushing through.
+    - I have rough days, but I don’t ever think about giving up.
+    - I believe things always have a way of working out, even when it’s hard.
+    - Nope, I still have goals and things I want to accomplish.
+    - I have moments of sadness, but I never feel like I want to give up.
+    - I always remind myself that tomorrow can be a fresh start.
+    - No, I always try to find something to look forward to.
+    - Life gets difficult, but I know I have people who care about me.
+    - I don’t have those thoughts, I just focus on improving my situation.
+    - Even on my worst days, I remind myself that my story isn’t over.
+    - I have things I’m excited for, so I wouldn’t want to give up.
+    - I know there are struggles, but I believe in getting through them.
+    - I always try to find little joys in life, no matter how small.
+    - I keep pushing forward because I know things will change.
+    - No, I believe that even the hardest times eventually pass.
+    - I may feel down sometimes, but I don’t feel like giving up.
+    - I focus on what I can control instead of letting negative thoughts take over.
+    - I remind myself that emotions are temporary, and things always shift.
+    - I have people who love and support me, so I never feel completely alone.
+    - I know there’s still so much left for me to experience.
+    - No, I believe in finding reasons to keep going, even on tough days.
+    - I have dreams I want to chase, so giving up isn’t an option.
+    - I trust that things will improve, even if it takes time.
+    - Life can be hard, but I never feel like I want to stop living.
+    - I try to focus on the little things that make life worth it.
+
+# Question 7 Responses
+- intent: respond_positive_7
+  examples: |
+    - Yeah when I get overwhelmed by work I do feel like that.
+    - Can't say I am fatigued but I do lack energy.
+    - I have energy but sometimes feel fatigued.
+    - Yes, I’ve been feeling more irritable than usual.
+    - I get frustrated over small things lately.
+    - I feel angry for no reason at times.
+    - Everything seems to annoy me these days.
+    - I’ve noticed that I snap at people more often.
+    - I feel like I’m constantly on edge.
+    - Even minor inconveniences make me really upset.
+    - I have a hard time controlling my frustration.
+    - My temper has been worse than usual.
+    - I get irritated easily, even with people I care about.
+    - I feel like I’m always in a bad mood.
+    - I have no patience for anything anymore.
+    - I get angry at myself for no reason.
+    - I feel emotionally overwhelmed and easily triggered.
+    - It feels like I’m always tense and agitated.
+    - I feel like I lash out at people too often.
+    - Small things that never used to bother me now really upset me.
+    - I feel like my emotions are harder to control lately.
+    - I’ve been struggling with sudden bursts of anger.
+    - It’s hard for me to stay calm in situations that never used to bother me.
+    - I feel like my stress turns into frustration very quickly.
+    - I often feel guilty after getting angry.
+    - Lately, I’ve been getting into arguments more often.
+    - I don’t know why, but I just feel more aggressive these days.
+    - I wish I could control my frustration better.
+    - Man, I wake up tired and go to sleep even more exhausted.
+    - No matter how much I rest, I still feel drained.
+    - It’s like my body’s on low battery 24/7.
+    - I can’t even get the energy to do simple things.
+    - I feel like a zombie most days, just running on fumes.
+    - I’m always so sluggish; even coffee doesn’t help anymore.
+    - It’s like I’m carrying a weight on my whole body.
+    - My energy just disappears by midday.
+    - I feel so burnt out, even doing nothing is tiring.
+    - I sleep a lot, but it doesn’t feel like I’ve slept at all.
+    - Getting out of bed feels like a whole workout.
+    - I have zero motivation to move or do anything.
+    - Even talking feels like too much effort sometimes.
+    - I just wanna lie down all day, but I can’t even relax.
+    - My body feels like it’s giving up on me.
+    - I keep dragging myself through the day with no energy.
+    - Everything just takes too much effort now.
+    - My legs feel heavy like bricks when I walk.
+    - I used to be active, but now even standing is exhausting.
+    - I just feel so weak and drained all the time.
+    - I want to do things, but I have no energy for them.
+    - My muscles feel sore, even when I don’t do anything.
+    - I could sleep 12 hours and still feel exhausted.
+    - It’s like my energy is just leaking away constantly.
+    - I have no idea where all my energy went—it’s just gone.
+    - I feel exhausted all the time.
+    - No matter how much I sleep, I’m always tired.
+    - I have zero energy these days.
+    - Just getting up in the morning feels impossible.
+    - I feel drained before my day even starts.
+    - I crash during the day because I’m so tired.
+    - I feel like I have no motivation to move.
+    - My body feels heavy and sluggish.
+    - I keep taking naps, but they don’t help.
+    - I feel like I’m running on empty.
+
+- intent: respond_negative_7
+  examples: |
+    - No, I haven’t been feeling more irritable than usual.
+    - I don’t feel easily frustrated.
+    - My mood has been pretty stable.
+    - I don’t get annoyed over small things.
+    - I haven’t noticed any changes in my temper.
+    - I feel just as patient as I’ve always been.
+    - I don’t snap at people more than usual.
+    - I don’t feel like I’m constantly on edge.
+    - I can handle stressful situations calmly.
+    - My emotions are under control.
+    - I haven’t been having sudden bursts of anger.
+    - I don’t feel tense or agitated.
+    - I haven’t been getting into arguments more than usual.
+    - My stress levels haven’t turned into frustration.
+    - I still have the same level of patience as before.
+    - I don’t find myself lashing out at others.
+    - I’m able to stay calm in stressful situations.
+    - I feel emotionally balanced.
+    - My anger is no worse than it has ever been.
+    - I don’t feel overwhelmed by negative emotions.
+    - I don’t get irritated at small inconveniences.
+    - I feel like I handle my emotions well.
+    - I rarely lose my temper.
+    - I haven’t been feeling unusually aggressive.
+    - I feel like my usual self.
+    - Nah, I’ve been feeling pretty good, actually.
+    - My energy levels are solid throughout the day.
+    - I don’t really feel tired unless I stay up too late.
+    - I wake up refreshed and ready to go most mornings.
+    - As long as I eat right and sleep well, I’m fine.
+    - I might get tired after a long day, but that’s normal.
+    - Nope, I don’t struggle with fatigue at all.
+    - I have no issues with my energy levels.
+    - I stay active, so I don’t feel drained often.
+    - As long as I stay hydrated, I’m good.
+    - I don’t remember the last time I felt extremely tired.
+    - I work long hours, but I still feel fine afterward.
+    - Even after a full day, I still have energy left.
+    - I recover pretty quickly even after a rough night.
+    - My energy levels are stable most of the time.
+    - I don’t feel sluggish during the day at all.
+    - I wake up ready to take on whatever comes my way.
+    - I rarely feel too exhausted to function.
+    - I have no issues with motivation or fatigue.
+    - My body doesn’t feel weak or drained at all.
+    - I don’t rely on caffeine to keep me awake.
+    - I can keep up with my daily tasks without struggling.
+    - If I get tired, a short break usually helps.
+    - I haven’t noticed any major changes in my energy.
+    - Even after a long week, I feel okay.
+    - No, I have plenty of energy.
+    - I feel active and awake most of the time.
+    - I don’t struggle with fatigue.
+    - I wake up feeling refreshed.
+    - I’ve been feeling pretty energetic lately.
+
+# Question 8 Responses
+- intent: respond_positive_8
+  examples: |
+    - I think I am making pretty good decisions most of the times.
+    - Can't say I am having trouble making decisions but I can't concentrate well.
+    - Can't say I can't concentrate well but I am having trouble making decisions.
+    - Sometimes I have trouble making decisions.
+    - Yes, I’ve noticed changes in my appetite.
+    - I’m eating a lot more than I used to.
+    - I barely eat anything these days.
+    - I have no appetite at all.
+    - I keep craving unhealthy foods.
+    - I feel like I eat just to distract myself.
+    - My weight has changed a lot recently.
+    - I’ve lost interest in food completely.
+    - I eat even when I’m not hungry.
+    - I have to force myself to eat most days.
+    - I eat too much when I feel stressed.
+    - I skip meals without even realizing it.
+    - I don’t feel hungry even when I know I should eat.
+    - Food doesn’t interest me anymore.
+    - I overeat when I feel sad or anxious.
+    - I don’t have control over my eating habits lately.
+    - I used to love food, but now I just don’t care about eating.
+    - Eating feels like a chore now.
+    - I feel guilty whenever I eat.
+    - I go long periods without eating and then binge later.
+    - My appetite changes randomly—some days I eat a lot, some days nothing.
+    - I feel sick when I try to eat.
+    - I’ve been losing weight without trying.
+    - I’ve been gaining weight because I eat too much.
+    - I don’t recognize my body anymore because of these changes.
+    - My brain just doesn’t wanna work these days.
+    - I read a sentence five times and still don’t get it.
+    - I zone out so bad that I forget what I was doing.
+    - Making even small choices feels impossible.
+    - My mind keeps jumping from one thing to another.
+    - I space out in the middle of conversations.
+    - I forget what I’m talking about mid-sentence.
+    - It’s like my brain is running on dial-up internet.
+    - I try to focus, but my mind just wanders off.
+    - I can’t keep track of my thoughts anymore.
+    - My memory is shot—I forget things constantly.
+    - I keep overthinking every little decision.
+    - I start one thing and get distracted before I finish.
+    - I can’t even focus on things I actually enjoy.
+    - I reread things over and over but don’t process them.
+    - My thoughts feel scrambled, like static noise.
+    - Decision-making feels like a huge mental workout.
+    - I get overwhelmed just thinking about simple choices.
+    - I lose track of time because I get so lost in my head.
+    - It’s frustrating when I can’t concentrate on anything.
+    - My mind is just all over the place these days.
+    - It feels like my brain is foggy all the time.
+    - I have no mental energy to focus on things.
+    - I get easily distracted and forget what I was doing.
+    - Even picking what to eat stresses me out.
+
+- intent: respond_negative_8
+  examples: |
+    - No, my appetite hasn’t changed.
+    - I eat normally, just like before.
+    - I haven’t noticed any significant weight changes.
+    - I still enjoy food as much as I used to.
+    - I don’t overeat or undereat.
+    - My eating habits have remained the same.
+    - I don’t eat when I’m stressed or sad.
+    - I eat when I’m hungry and stop when I’m full.
+    - My relationship with food hasn’t changed.
+    - I don’t feel guilty about eating.
+    - I don’t skip meals or binge eat.
+    - I don’t have cravings I can’t control.
+    - I don’t feel sick when I eat.
+    - I haven’t lost or gained weight unexpectedly.
+    - I still enjoy my favorite foods.
+    - I don’t feel the need to force myself to eat.
+    - I haven’t lost interest in food.
+    - My eating schedule is consistent.
+    - I don’t feel hungry when I’m not supposed to.
+    - I don’t avoid food.
+    - I feel like my diet is balanced.
+    - Food is still enjoyable for me.
+    - I don’t experience sudden appetite fluctuations.
+    - I eat just like I always have.
+    - No, I don’t really struggle with focus.
+    - I can concentrate on my work without issues.
+    - I have no trouble making decisions.
+    - I stay focused on what I need to do.
+    - I don’t get easily distracted.
+    - My attention span is fine, even on long tasks.
+    - I can read for hours without zoning out.
+    - I have no problem remembering things.
+    - My thoughts are usually clear and organized.
+    - I don’t feel mentally foggy at all.
+    - I can make decisions quickly without second-guessing.
+    - I don’t feel like my brain is slow or scattered.
+    - I rarely struggle with concentration.
+    - I stay on top of my tasks without issues.
+    - I don’t need reminders to keep track of things.
+    - My focus is fine, even when I’m tired.
+    - I don’t lose my train of thought often.
+    - I process information quickly without trouble.
+    - My memory is sharp—I don’t forget things easily.
+    - I can multitask without feeling overwhelmed.
+    - I rarely space out or feel mentally lost.
+    - I stay engaged in conversations without drifting.
+    - I don’t have trouble following through with tasks.
+    - My brain feels sharp and alert.
+    - I handle decisions without overthinking.
+
+# Question 9 Responses
+- intent: respond_positive_9
+  examples: |
+    - I feel like I have lost weight.
+    - Yes, I’ve been feeling more anxious than usual.
+    - I worry about things constantly, even small stuff.
+    - My thoughts keep racing, and I can’t relax.
+    - I feel tense all the time.
+    - I often feel overwhelmed by everything.
+    - I get nervous about things that never used to bother me.
+    - I feel like I’m on edge for no reason.
+    - I get panic attacks sometimes.
+    - It’s hard for me to focus because of my anxiety.
+    - I always expect the worst to happen.
+    - My heart races, and I feel short of breath when I’m anxious.
+    - I can’t stop overthinking things.
+    - I feel like I’m losing control of my emotions.
+    - I constantly second-guess my decisions.
+    - My anxiety keeps me from doing things I want to do.
+    - I worry about disappointing people all the time.
+    - I feel like something bad is always about to happen.
+    - It’s hard for me to calm down once I start feeling anxious.
+    - My mind never stops racing.
+    - I feel physically exhausted from worrying so much.
+    - I avoid social situations because of my anxiety.
+    - My stomach hurts when I’m anxious.
+    - I get headaches from stress and anxiety.
+    - I feel paralyzed by my fears sometimes.
+    - I can’t sleep well because my mind won’t stop thinking.
+    - I either eat too much or nothing at all.
+    - My appetite is all over the place.
+    - I lost weight without even trying.
+    - I’ve been stress-eating like crazy.
+    - I forget to eat until I feel dizzy.
+    - I don’t feel hungry, even when I should be.
+    - I crave junk food way more than usual.
+    - I’ve put on weight because I eat when I’m sad.
+    - I eat out of boredom, not hunger.
+    - My stomach feels weird when I try to eat.
+    - Food just doesn’t interest me anymore.
+    - I’ve been skipping meals without realizing it.
+    - I eat late at night and regret it.
+    - I binge eat, then feel bad about it.
+    - My eating schedule is completely messed up.
+    - I used to love food, but now I don’t care.
+    - I can’t finish a full meal like I used to.
+    - I get full too fast or never feel satisfied.
+    - My clothes don’t fit like they used to.
+    - I feel guilty after eating.
+    - I eat mindlessly without even noticing.
+    - I’ve lost/gained weight in just a few weeks.
+    - I feel sick after eating sometimes.
+    - I skip meals because I have no appetite.
+    - My appetite is completely different now.
+
+- intent: respond_negative_9
+  examples: |
+    - No, I haven’t been feeling more anxious than usual.
+    - I don’t worry about things too much.
+    - My thoughts don’t race uncontrollably.
+    - I feel pretty relaxed most of the time.
+    - I’m not overwhelmed by stress or worry.
+    - I don’t feel nervous for no reason.
+    - I haven’t been experiencing panic attacks.
+    - My anxiety levels feel normal.
+    - I don’t expect the worst to happen all the time.
+    - I don’t feel constantly on edge.
+    - I sleep well without overthinking at night.
+    - I can focus without excessive worry.
+    - I don’t let fear control my actions.
+    - I feel emotionally stable.
+    - I handle uncertainty well.
+    - I don’t avoid social situations due to anxiety.
+    - My heart rate feels normal most of the time.
+    - I don’t get stressed over minor things.
+    - I don’t second-guess my decisions excessively.
+    - I don’t feel paralyzed by fear.
+    - I don’t overthink situations that much.
+    - I feel in control of my emotions.
+    - I handle pressure well.
+    - I don’t feel physically exhausted from worry.
+    - I’m able to manage stress without anxiety taking over.
+    - My appetite is normal.
+    - My weight has stayed the same.
+    - I eat regularly without problems.
+    - I don’t have cravings or appetite changes.
+    - My food habits haven’t changed.
+    - I eat when I’m hungry, and that’s it.
+    - I don’t stress-eat or skip meals.
+    - My eating routine is consistent.
+    - I don’t notice any weight changes.
+    - I enjoy food as always.
+    - Nope, my eating habits are the same as always.
+    - I don’t really think about my weight much.
+    - I eat pretty normally, nothing has changed.
+    - My appetite hasn’t been weird or anything.
+    - I haven’t noticed any weight gain or loss.
+    - I still enjoy food the same way I used to.
+    - My hunger levels feel completely normal.
+    - I haven’t had any cravings or changes in portions.
+    - I eat when I need to, and I feel full as usual.
+    - My meals are pretty consistent every day.
+    - My weight has been stable for a long time.
+    - I haven’t had any issues with eating patterns.
+    - No sudden loss or gain—everything’s the same.
+    - I feel good about my appetite and weight.
+    - Nothing feels off about my diet or body.
+
+# Question 10 Responses
+- intent: respond_positive_10
+  examples: |
+    - Not guilty but I feel worthlessness.
+    - Not worthlessness but I feel guilty.
+    - Yes, I often feel guilty about things I’ve done or said.
+    - I constantly blame myself for things, even when they’re not my fault.
+    - I feel like I’m a failure and have let everyone down.
+    - Guilt is something I struggle with every day.
+    - I always feel like I’m not good enough.
+    - No matter what I do, I feel worthless.
+    - I keep thinking about past mistakes and feel horrible about them.
+    - I feel like I don’t deserve happiness.
+    - I often feel like I’m a burden to others.
+    - I struggle with self-worth and feeling like I matter.
+    - I dwell on everything I’ve done wrong.
+    - I feel ashamed of myself most of the time.
+    - I always feel like I’m disappointing people.
+    - Even when I do something well, I still feel like I’m not enough.
+    - I don’t believe I deserve good things in life.
+    - I feel like I’ve failed at everything important.
+    - I can’t stop thinking about my past mistakes.
+    - I feel like I don’t deserve love or kindness.
+    - I always find a reason to blame myself for things.
+    - I feel like I’m the reason for all the problems around me.
+    - I replay my past failures in my head all the time.
+    - I constantly compare myself to others and feel inadequate.
+    - I feel like nothing I do will ever be enough.
+    - I struggle to accept compliments because I don’t believe them.
+    - I often feel ashamed just for being myself.
+    - Yeah, I constantly feel like I'm not good enough.
+    - I keep blaming myself for things, even when they’re not my fault.
+    - I feel like I can’t do anything right, no matter how hard I try.
+    - I’ve been feeling like a burden to everyone around me.
+    - Everything I do feels like a mistake, and it eats me up inside.
+    - I just feel like I don’t matter to anyone.
+    - No matter what I achieve, I still feel like a failure.
+    - I always feel like I’m letting people down.
+    - I can’t shake off this guilt, even over small things.
+    - I feel like I don’t deserve happiness.
+    - People tell me I should be proud of myself, but I don’t feel it.
+    - I replay past mistakes in my head all the time.
+    - I feel guilty for even feeling this way.
+    - No matter what, I feel like I’m not enough.
+    - I always compare myself to others and feel worthless.
+    - I keep apologizing, even when I haven’t done anything wrong.
+    - I feel like my existence doesn’t really matter to anyone.
+    - I feel guilty even when I try to take care of myself.
+    - I hate bothering people with my problems because I feel like I don’t deserve help.
+    - I feel like people only tolerate me, not actually care about me.
+    - It’s hard to believe that I have any real value.
+    - I sometimes feel like disappearing because I don’t think anyone would notice.
+    - Every time something goes wrong, I assume it’s my fault.
+    - I feel guilty for not being as productive as I should be.
+    - Even on good days, I feel like I don’t deserve to be happy.
+
+- intent: respond_negative_10
+  examples: |
+    - No, I don’t feel guilty about things unnecessarily.
+    - I don’t blame myself for everything.
+    - I feel like I’m doing my best.
+    - I don’t dwell on past mistakes.
+    - I don’t feel worthless.
+    - I believe I deserve happiness.
+    - I don’t feel like a failure.
+    - I know that I matter to others.
+    - I don’t struggle with guilt constantly.
+    - I accept my imperfections.
+    - I don’t feel like I’ve let everyone down.
+    - I don’t compare myself negatively to others.
+    - I don’t replay past failures in my head.
+    - I accept compliments without doubting them.
+    - I feel like I add value to people’s lives.
+    - I don’t feel like a burden to others.
+    - I believe I deserve love and kindness.
+    - I don’t feel ashamed of myself.
+    - I am proud of my achievements.
+    - I don’t struggle with self-worth issues.
+    - I don’t believe I’m responsible for all problems around me.
+    - I don’t carry unnecessary guilt.
+    - I don’t feel like nothing I do is enough.
+    - I know that everyone makes mistakes.
+    - I have confidence in myself and my worth.
+    - No, I don’t really struggle with guilt or self-worth.
+    - I feel pretty confident in myself and my actions.
+    - I know my worth, and I try not to be too hard on myself.
+    - I don’t dwell on mistakes for too long.
+    - I try to remind myself that I’m doing my best.
+    - Everyone messes up sometimes, so I don’t beat myself up over it.
+    - I know I have value, even when I have bad days.
+    - I focus on what I can control and let go of what I can’t.
+    - I don’t let negative thoughts define me.
+    - I know people appreciate me, and that helps me stay positive.
+    - I don’t feel guilty about things that aren’t my fault.
+    - I’ve learned to forgive myself when I make mistakes.
+    - I try to treat myself with the same kindness I give others.
+    - I don’t struggle with feelings of worthlessness.
+    - I believe that everyone, including me, has value.
+    - If I mess up, I take responsibility, but I don’t let it consume me.
+    - I don’t let guilt weigh me down too much.
+    - I know that my existence matters, and I remind myself of that.
+    - Even when I have self-doubt, I don’t feel worthless.
+    - I’m able to move past bad experiences without too much guilt.
+    - I don’t feel like a burden to others.
+    - My self-worth doesn’t depend on other people’s opinions.
+    - I accept that I make mistakes, but I try to learn from them.
+    - I don’t let negative thoughts about myself take over my life.
+    - I remind myself that I deserve kindness, just like anyone else.
