@@ -1,7 +1,0 @@
-#version: "3.1"
-
-#rules:
-#  - rule: Start conversation with greeting
-#    steps:
-#      - action: action_initialize_conversation
-#      - action: utter_greet
