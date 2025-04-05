@@ -15,3 +15,47 @@ Journal Entry - Users can log daily thoughts, with Sentiment Analysis detecting 
 Chat Bot - A 24/7 AI chatbot interacts with users, analyzes language tone, and escalates high-risk cases. <br />
 Treatment and Recommendations: AI generates tailored plans based on mental health assessments and Filters doctors by specialization and location.
 
+# programming running
+app.py <br />
+chatbot - Chatbot Setup Guide <br />
+
+This guide explains how to set up and run the chatbot after setting Python 3.10.0 as the interpreter for the entire application. <br />
+
+1. Create a Virtual Environment <br />
+
+Navigate to your Rasa project directory and run: <br />
+
+python -m venv venv <br />
+
+2. Activate the Virtual Environment <br />
+
+Windows (cmd/PowerShell): <br />
+
+venv\Scripts\activate <br />
+
+Mac/Linux: <br />
+
+source venv/bin/activate <br />
+
+
+3. Install Dependencies <br />
+
+Run the following command to install required packages: <br />
+
+pip install -r requirements.txt <br />
+
+4. Start Rasa Servers <br />
+
+Open two terminals, activate the virtual environment in both, and run: <br />
+
+Terminal 1 - Start Rasa Actions Server <br />
+
+rasa run actions <br />
+
+Terminal 2 - Start Rasa Chatbot in Debug Mode <br />
+
+rasa run --enable-api --debug --cors "*" <br />
+
+5. Connect to Frontend <br />
+
+After running the debug command, the chatbot backend will be accessible. The frontend of the chatbot will work as it connects to the running Rasa server. <br />
