@@ -64,94 +64,100 @@
 # if __name__ == '__main__':
 #     app.run(debug=True, host='0.0.0.0', port=5000)
 
-
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from PIL import Image as PILImage
+import io
 import cv2
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import img_to_array
-from PIL import Image as PILImage
-import io
 from transformers import ViTFeatureExtractor, TFAutoModelForImageClassification
+from pymongo import MongoClient
+import datetime
 
 app = Flask(__name__)
 CORS(app)
 
-# Load ViT model and feature extractor
+# ========== MongoDB Atlas Setup ==========
+# Replace with your actual MongoDB connection details
+mongo_uri = "mongodb+srv://Vinethma:2003Asmi15@cluster0.xrhve.mongodb.net/HopeBridge?retryWrites=true&w=majority"
+client = MongoClient(mongo_uri)
+db = client["HopeBridge"]
+results_collection = db["FaceRecognition"]
+
+# ========== Load ViT Model and Preprocessing ==========
 model_name = "google/vit-base-patch16-224"
 feature_extractor = ViTFeatureExtractor.from_pretrained(model_name)
 model = TFAutoModelForImageClassification.from_pretrained(model_name)
 
-# Emotion labels for ViT
 emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
 
-# Load OpenCV face detector
+# ========== Face Detection ==========
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-
-def preprocess_image_vit(image):
-    """Preprocess image for ViT model"""
-    image = image.convert("RGB")
-    inputs = feature_extractor(images=image, return_tensors="tf")
-    return inputs
-
-
-def detect_depression_level(emotion_scores):
-    """Calculate depression level based on emotion predictions"""
-    negative_emotions = ['Angry', 'Disgust', 'Fear', 'Sad']
-    positive_emotions = ['Happy', 'Surprise']
-
-    negative_score = sum(emotion_scores[emotion_labels.index(e)] for e in negative_emotions)
-    positive_score = sum(emotion_scores[emotion_labels.index(e)] for e in positive_emotions)
-    neutral_score = emotion_scores[emotion_labels.index('Neutral')]
-
-    depression_score = (negative_score * 0.6) + (neutral_score * 0.3) - (positive_score * 0.1)
-
-    return "Low" if depression_score < 0.4 else "Moderate" if depression_score < 0.7 else "High"
-
-
 def detect_face(image):
-    """Detect if a face is present in the image"""
     image_array = np.array(image.convert('RGB'))
     gray_image = cv2.cvtColor(image_array, cv2.COLOR_RGB2GRAY)
     faces = face_cascade.detectMultiScale(gray_image, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
     return len(faces) > 0
 
+def preprocess_image_vit(image):
+    image = image.convert("RGB")
+    inputs = feature_extractor(images=image, return_tensors="tf")
+    return inputs
+
+def detect_depression_level(emotion_scores):
+    negative_emotions = ['Angry', 'Disgust', 'Fear', 'Sad']
+    positive_emotions = ['Happy', 'Surprise']
+    negative_score = sum(emotion_scores[emotion_labels.index(e)] for e in negative_emotions)
+    positive_score = sum(emotion_scores[emotion_labels.index(e)] for e in positive_emotions)
+    neutral_score = emotion_scores[emotion_labels.index('Neutral')]
+    depression_score = (negative_score * 0.6) + (neutral_score * 0.3) - (positive_score * 0.1)
+
+    if depression_score < 0.4:
+        return "Low"
+    elif depression_score < 0.7:
+        return "Moderate"
+    else:
+        return "High"
 
 def process_image(image):
-    """Process image for emotion detection using ViT"""
     if not detect_face(image):
         return None, "No face detected. Please upload a clear image with a visible face."
 
     inputs = preprocess_image_vit(image)
     predictions = model(inputs).logits.numpy()[0]
-
-    # Convert logits to probabilities
     emotion_probs = tf.nn.softmax(predictions).numpy()
-
     depression_level = detect_depression_level(emotion_probs)
-    return None, depression_level
 
+    return emotion_probs.tolist(), depression_level
 
-@app.route('/process-image', methods=['POST'])
-def process_uploaded_image():
+def handle_image_processing(file):
     try:
-        file = request.files['image']
-        if not file:
-            return jsonify({"error": "No file provided"}), 400
+        img = PILImage.open(file)
+        if not detect_face(img):
+            return {"error": "No face detected. Please upload a clear image with a visible face."}, 400
 
-        img = PILImage.open(io.BytesIO(file.read()))
-        _, depression_level = process_image(img)
+        inputs = preprocess_image_vit(img)
+        logits = model(inputs).logits.numpy()[0]
+        emotion_scores = tf.nn.softmax(logits).numpy().tolist()
+        depression_level = detect_depression_level(emotion_scores)
 
-        if depression_level == "No face detected. Please upload a clear image with a visible face.":
-            return jsonify({"error": depression_level}), 400
+        results_collection.insert_one({
+            "depression_level": depression_level,
+            "emotion_scores": emotion_scores,
+            "timestamp": datetime.datetime.utcnow()
+        })
 
-        return jsonify({"depression_level": depression_level})
+        return {
+            "depression_level": depression_level,
+            "emotion_scores": emotion_scores
+        }, 200
 
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        return {"error": str(e)}, 500
 
-
+# ========== App Runner ==========
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

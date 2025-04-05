@@ -78,10 +78,27 @@ client = MongoClient("mongodb+srv://Vinethma:2003Asmi15@cluster0.xrhve.mongodb.n
 db = client["HopeBridge"]
 screen_test_collection = db["ScreenTest"]  # Single collection for storing answers and risk levels
 
-# Route to handle form submission and risk level calculation
-@app.route('/submit', methods=['POST'])
+from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
+from pymongo import MongoClient
+
+app = Flask(__name__)
+CORS(app)  # Enable CORS globally
+
+# MongoDB setup
+client = MongoClient("mongodb+srv://Vinethma:2003Asmi15@cluster0.xrhve.mongodb.net/HopeBridge?retryWrites=true&w=majority")
+db = client["HopeBridge"]
+screen_test_collection = db["ScreenTest"]
+
+# Fixed route with proper CORS headers
+@app.route('/submit', methods=['POST', 'OPTIONS'])
+@cross_origin()  # Allow all origins for this route
 def submit_answers():
-    data = request.json  # Get submitted answers
+    if request.method == 'OPTIONS':
+        # Handle the preflight request
+        return jsonify({'message': 'CORS preflight success'}), 200
+
+    data = request.json
     scores = {
         "All of the time": 4,
         "Most of the time": 3,
@@ -103,7 +120,7 @@ def submit_answers():
     else:
         risk_level = "Low"
 
-    # Store the answers and risk level in MongoDB under a single collection
+    # Save to MongoDB
     try:
         screen_test_collection.insert_one({
             "screen_answers": data,
@@ -116,4 +133,5 @@ def submit_answers():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
