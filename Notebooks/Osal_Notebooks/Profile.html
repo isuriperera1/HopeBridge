@@ -5,64 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit My Profile</title>
     <style>
+         /* Header */
+    .header {
+      background-color: #A6AEBF;
+      /*background-color: #000;*/
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #FFF;
+    }
+    .logo {
+      font-size: 28px;
+      color: #FFF;
+      margin: 0;
+    }
+    .nav {
+      display: flex;
+      gap: 40px;
+    }
+    .nav-link {
+      color: #FFF;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: text-decoration 0.3s;
+      padding: 8px 0;
+    }
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+    /* Main Content */
+    .main {
+      padding: 30px;
+    }
         /* General Page Styling */
         body {
             font-family: Arial, sans-serif;
             background-color: #C5D3E8;
             margin: 0;
-            padding: 40px 0;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            align-items: center;
-        }
+            padding: 0;
+}
 
         .container {
-			background-color: #FFF8DE;
+            align-items: center;
+			background-color:  transparent;
 			padding: 20px;
 			border-radius: 10px;
-			width: 90%; /* Increased width */
-			max-width: 900px; /* Optional: Prevents it from becoming too wide on large screens */
-			box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+			width: 100%; /* Increased width */
+			max-width: 1200px; /* Optional: Prevents it from becoming too wide on large screens */
+			box-shadow: none;
+			margin: 0 auto;
+		}
+		
+		.profile-and-report {
+			display: flex;
+			justify-content: space-between;
+			gap: 20px;
 		}
 
+		/* Edit Profile Section */
+		.edit-profile {
+			flex: 0.3;
+			background: white;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+		}
 
-        h1 {
+        h1,h2 {
             text-align: center;
             color: #333;
             margin-bottom: 25px;
         }
 
-        /* Profile Form Grid Layout */
-        .profile-form {
-            display: flex;
-            justify-content: space-between;
-        }
+        /* Profile Form Layout */
+		.profile-form {
+			display: flex;
+			flex-direction: column;
+			gap: 20px; /* Adds space between each field */
+		}
 
-        .profile-section {
-            width: 48%; /* Each section takes almost half */
-        }
+		/* Each section takes up full width */
+		.profile-section {
+			width: 100%;
+		}
 
-        .profile-section label {
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
+		/* Additional styling for profile-section labels and inputs */
+		.profile-section label {
+			font-weight: bold;
+			display: block;
+			margin-top: 10px;
+		}
 
-        .profile-section input,
-        .profile-section select {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #A6AEBF;
-            border-radius: 5px;
-        }
+		.profile-section input,
+		.profile-section select {
+			width: 100%;
+			padding: 8px;
+			margin-top: 5px;
+			border: 1px solid #A6AEBF;
+			border-radius: 5px;
+		}
 
-        .profile-section input:disabled,
-        .profile-section select:disabled {
-            background-color: #D0E8C5;
-            color: #666;
-        }
+		/* Disabled fields styling */
+		.profile-section input:disabled,
+		.profile-section select:disabled {
+			background-color: #D0E8C5;
+			color: #666;
+		}
+
 
         /* Save Button */
         .save-btn {
@@ -87,13 +138,270 @@
         #confirm-password-container {
             display: none;
         }
+        /* Footer Styles */
+			.footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #FFF;
+        }
+
+        .footer-description {
+            font-size: 16px;
+            color: #ccc;
+            margin: 10px auto;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .social-icons {
+            margin: 15px 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #FFF;
+        }
+
+        .footer-links {
+            margin: 15px 0;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #ccc;
+            margin: 0 15px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #FFF;
+        }
+
+        .footer-bottom {
+            font-size: 14px;
+            color: #888;
+            margin-top: 15px;
+        }
+        /* General Header Styling */
+		body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #fff; /* White background */
+            border-bottom: 2px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        /* Logo Image */
+        .logo img {
+            height: 50px; /* Adjust image height */
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #000; /* Black text */
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            transition: 0.3s;
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        .nav-link:hover {
+            color: #000;
+            background: #f1f1f1;
+            text-decoration: none; /* Light gray background on hover */
+        }
+
+        /* Dropdown */
+        .dropdown {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .dropdown a:hover {
+            background: #f1f1f1; /* Light gray background on hover */
+        }
+
+        /* Show Dropdown on Hover */
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+
+        /* Login Button */
+        .login-btn {
+            background: #000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #767676;
+        }
+		
+		/* Risk Level Legend */
+        .risk-legend {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .risk-circle {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .low { background-color: green; }  
+        .medium { background-color: #FFD700; } 
+        .high { background-color: red; } 
+
+        /* Table Styling */
+        /* Medical Report Section */
+		.medical-report {
+			flex: 0.7;
+			background: white;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 15px;
+		}
+
+		th, td {
+			border: 1px solid #ddd;
+			padding: 10px;
+			text-align: center;
+		}
+
+        /* Risk Level-Based Colors */
+		.high-risk { background-color: #FFC0CB; } /* Light Pink */
+		.medium-risk { background-color: yellow; } /* Darker Yellow */
+		.low-risk { background-color: #98FB98; } /* Light Green */
+
+		.risk-legend {
+			margin-bottom: 25px;  
+		}
 
     </style>
 </head>
 <body>
+     <!-- Header -->
+     <header class="header">
+        <div class="logo">
+            <img src="HopeBridgeLogonew.PNG" alt="HopeBridge Logo">  
+        </div>
+  
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Isuri_Notebooks\Home.html" class="nav-link">Home</a></li>
+  
+                <!-- Test with Dropdown -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Test</a>
+                    <div class="dropdown">
+                        <a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Vinethma_Notebooks\Pages\Face_Recognize.html">Face Recognition</a>
+                        <a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Vinethma_Notebooks\Pages\ScreenTest.html">Screen Test</a>
+                        <a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Osal_Notebooks\journal.html">Journal Entries</a>
+                        <a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Umar_Notebooks\chatbot.html">Chatbot</a>
+                        
+                    </div>
+                </li>
+  
+                <li class="nav-item"><a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Isuri_Notebooks\Treatment.html" class="nav-link">Treatment</a></li>
+                <li class="nav-item"><a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Osal_Notebooks\Profile.html" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Vinethma_Notebooks\Pages\About_Us.html" class="nav-link">About Us</a></li>
+            </ul>
+        </nav>
+        <div id="user-info">
+          <span id="user-name"></span> 
+        <!-- Login Button -->
+        <button class="login-btn">Login</button>
+        </div>
+    </header>
 
     <div class="container">
-        <h1>Edit My Profile</h1>
+		<h1> My Profile </h1>
+		<div class="profile-and-report">
+		
+		<div class="edit-profile">
+        <h2>Edit My Profile</h2>
 
         <div class="profile-form">
             <!-- Left Side: Editable Fields -->
@@ -175,6 +483,86 @@
         <!-- Save Button -->
         <button class="save-btn" onclick="saveProfile()">Save</button>
     </div>
+	
+	<div class="medical-report">
+        <h2>My Medical History</h2>
+		
+		<!-- Risk Level Legend -->
+        <div class="risk-legend">
+            <div class="legend-item"><div class="risk-circle low"></div> Low Risk</div>
+            <div class="legend-item"><div class="risk-circle medium"></div> Medium Risk</div>
+            <div class="legend-item"><div class="risk-circle high"></div> High Risk</div>
+        </div>
+		
+		<!-- Medical Report Table -->
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Risk Level</th>
+                    <th>Facial Recognition</th>
+                    <th>Screen Test</th>
+                    <th>Journal Entry</th>
+                    <th>Chatbot</th>
+                </tr>
+                <tr>
+					<td>2025-02-16</td>
+					<td><div class="risk-circle high"></div></td>
+					<td class="high-risk">High Risk</td>
+					<td class="medium-risk">Medium Risk</td>
+					<td class="high-risk">High Risk</td>
+					<td class="medium-risk">Medium Risk</td>
+				</tr>
+				<tr>
+					<td>2025-02-10</td>
+					<td><div class="risk-circle medium"></div></td>
+					<td class="medium-risk">Medium Risk</td>
+					<td class="low-risk">Low Risk</td>
+					<td class="medium-risk">Medium Risk</td>
+					<td class="low-risk">Low Risk</td>
+				</tr>
+				<tr>
+					<td>2025-02-05</td>
+					<td><div class="risk-circle low"></div></td>
+					<td class="low-risk">Low Risk</td>
+					<td class="low-risk">Low Risk</td>
+					<td class="low-risk">Low Risk</td>
+					<td class="low-risk">Low Risk</td>
+				</tr>
+
+
+            </table>
+	</div>
+	</div>
+	</div>
+    <!-- Footer Section -->
+   <footer class="footer">
+    <h2 class="footer-logo">Hope<span style="color: white;">Bridge</span></h2>
+    <p class="footer-description">
+        Discover a World of Wellness: Where Every Click Counts Towards Your Health Journey.
+        Trust in Our Platform to Provide Personalized Care and Reliable Resources, Guiding You Towards Optimal Well-Being.
+    </p>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="Facebook.png" alt="Facebook" style="width: 40px; height: 40px; border-radius: 50%;">
+      </a>
+      <a href="https://www.twitter.com" target="_blank">
+        <img src="x.jpg" alt="Twitter" style="width: 40px; height: 40px; border-radius: 50%;">
+      </a>
+      <a href="https://www.instagram.com" target="_blank">
+        <img src="instagram.avif" alt="Instagram" style="width: 40px; height: 40px; border-radius: 50%;">
+      </a>
+      <a href="mailto:your@email.com">
+        <img src="gmail.png" alt="Email" style="width: 40px; height: 40px; border-radius: 50%;">
+      </a>
+      <a href="https://maps.google.com">
+        <img src="googlemaps.png" alt="Location" style="width: 40px; height: 40px; border-radius: 50%;">
+      </a>
+    </div>
+	</footer>
+    
+
 
     <script>
         function saveProfile() {
@@ -236,9 +624,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
