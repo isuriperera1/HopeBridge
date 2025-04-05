@@ -15,7 +15,7 @@ Journal Entry - Users can log daily thoughts, with Sentiment Analysis detecting 
 Chat Bot - A 24/7 AI chatbot interacts with users, analyzes language tone, and escalates high-risk cases. <br />
 Treatment and Recommendations: AI generates tailored plans based on mental health assessments and Filters doctors by specialization and location.
 
-# programming running
+# program running steps
 app.py <br />
 chatbot - Chatbot Setup Guide <br />
 
