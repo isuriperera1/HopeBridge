@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - HopeBridge</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --text-main: #2C3E50;
+      --brand-primary: #205781;
+      --brand-teal: #4F959D;
+      --brand-mint: #98D2C0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 50px 16px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 16px;
+      width: 100%;
+    }
+
+    .card-section {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 12px rgba(199, 217, 221, 0.3), 0 10px 20px rgba(173, 178, 212, 0.2);
+      padding: 40px 20px;
+      margin-bottom: 60px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--brand-primary);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .teal { color: var(--brand-teal); }
+    .mint { color: var(--brand-mint); }
+
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 30px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      grid-template-columns: 1fr;
+    }
+
+    @media(min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 6px 12px rgba(199, 217, 221, 0.3), 0 10px 20px rgba(173, 178, 212, 0.2);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn {
+      background-color: var(--brand-teal);
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--brand-primary);
+    }
+
+    .illustration {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      margin: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    /* Header */
+.header {
+      /*background-color: #A6AEBF;*/
+      background-color: #000;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #FFF;
+    }
+    .logo {
+      font-size: 28px;
+      color: #FFF;
+      margin: 0;
+    }
+    .nav {
+      display: flex;
+      gap: 40px;
+    }
+    .nav-link {
+      color: #FFF;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: text-decoration 0.3s;
+      padding: 8px 0;
+    }
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+    /* General Header Styling */
+body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #fff; /* White background */
+            border-bottom: 2px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        /* Logo Image */
+        .logo img {
+            height: 50px; /* Adjust image height */
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #000; /* Black text */
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            transition: 0.3s;
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        .nav-link:hover {
+            color: #000;
+            background: #f1f1f1;
+            text-decoration: none; /* Light gray background on hover */
+        }
+
+        /* Dropdown */
+        .dropdown {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .dropdown a:hover {
+            background: #f1f1f1; /* Light gray background on hover */
+        }
+
+        /* Show Dropdown on Hover */
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+
+        /* Login Button */
+        .login-btn {
+            background: #000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+            width: auto;
+
+        }
+
+        .login-btn:hover {
+            background: #767676;
+        }
+        /* Footer Styles */
+     .footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #FFF;
+        }
+
+        .footer-description {
+            font-size: 16px;
+            color: #ccc;
+            margin: 10px auto;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .social-icons {
+            margin: 15px 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #FFF;
+        }
+
+        .footer-links {
+            margin: 15px 0;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #ccc;
+            margin: 0 15px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #FFF;
+        }
+
+        .footer-bottom {
+            font-size: 14px;
+            color: #888;
+            margin-top: 15px;
+        }
+
+  </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="HopeBridgeLogo.PNG" alt="HopeBridge Logo">  <!-- Replace with your logo -->
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Isuri_Notebooks\Home.html" class="nav-link">Home</a></li>
+
+                <!-- Test with Dropdown -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Test</a>
+                    <div class="dropdown">
+                        <a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Vinethma_Notebooks\Pages\Face_Recognize.html">Face Recognition</a>
+                        <a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Vinethma_Notebooks\Pages\ScreenTest.html">Screen Test</a>
+                        <a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Osal_Notebooks\journal.html">Journal Entries</a>
+                        <a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Umar_Notebooks\chatbot.html">Chatbot</a>
+                        <p id="usernameDisplay"></p>
+                    </div>
+                </li>
+
+                <li class="nav-item"><a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Isuri_Notebooks\Treatment.html" class="nav-link">Treatment</a></li>
+                <li class="nav-item"><a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Osal_Notebooks\Profile.html" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="C:\Users\sanje\OneDrive\Pictures\IIT FIRST YEAR\2 year -2024\2603\HopeBridge\Notebooks\Vinethma_Notebooks\Pages\About_Us.html" class="nav-link">About Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Login Button -->
+        <button class="login-btn">Login</button>
+    </header>
+
+    
+
+  <!-- Header -->
+  <section class="container" data-aos="zoom-in">
+    <div class="card-section text-center">
+      <h1>About HopeBridge</h1>
+      <p>Transforming retinal care with AI, empathy, and human-first design — because mental wellness matters too.</p>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="container" data-aos="fade-up">
+    <div class="card-section grid grid-2">
+      <div>
+        <h2 class="teal">🌱 Our Mission</h2>
+        <p>
+          We deliver accessible, accurate, and emotionally mindful diabetic retinopathy detection powered by AI. Our mission is to:
+        </p>
+        <ul>
+          <li><strong>Detect early</strong> to protect vision and peace of mind.</li>
+          <li><strong>Design compassionately</strong> with calming visuals and UX.</li>
+          <li><strong>Democratize care</strong> with free or low-cost access.</li>
+        </ul>
+      </div>
+      <div>
+        <img src="https://img.freepik.com/free-photo/digital-art-style-illustration-mental-health-day-awareness_23-2151813343.jpg?t=st=1743569680~exp=1743573280~hmac=492f4c4083b7f71cc56b4446a3d98617543a6e6160fce9e956b76b091317997d&w=1380"
+             alt="Mission Illustration"
+             class="illustration">
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="container" data-aos="fade-up">
+    <div class="card-section grid grid-2">
+      <div>
+        <img src="https://img.freepik.com/premium-vector/poster-man-woman-with-painting-man-red-shirt_9493-73344.jpg?w=1800" alt="Vision Illustration" class="illustration">
+      </div>
+      <div>
+        <h2 class="mint">🌈 Our Vision</h2>
+        <p>
+          A future where no one loses sight because of delayed detection or inaccessible care. We envision AI acting as a calm guide—not just a tool—for informed, confident patients around the world.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="container" data-aos="fade-up">
+    <div class="card-section">
+      <h2 class="teal text-center">💡 Our Core Values</h2>
+      <div class="grid grid-2">
+        <div>
+          <p><strong>🌍 Human-first:</strong> We build for feelings, not just functions.</p>
+          <p><strong>🌈 Inclusive:</strong> Every patient matters, regardless of background.</p>
+        </div>
+        <div>
+          <p><strong>🔍 Transparent:</strong> Clear results, calm design, patient-first feedback.</p>
+          <p><strong>🤝 Collaborative:</strong> Tech + medicine + mental wellness = HopeBridge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Mental Health Statistics -->
+  <!-- Global Mental Health Statistics -->
+<section class="container" data-aos="fade-up">
+  <div class="card-section text-center">
+    <h2 class="teal">📊 Global Mental Health Statistics</h2>
+    <p>Raising awareness about depression and suicide helps promote early intervention and access to care.</p>
+    <div class="grid grid-3" style="margin-top: 40px;">
+
+      <div class="card" style="background-color: white;">
+        <div style="font-size: 40px; color: var(--brand-teal);">🌐</div>
+        <h3 style="font-size: 2rem; margin-top: 10px;">280 Million</h3>
+        <p>People living with depression globally</p>
+      </div>
+
+      <div class="card" style="background-color: white;">
+        <div style="font-size: 40px; color: var(--brand-teal);">💬</div>
+        <h3 style="font-size: 2rem; margin-top: 10px;">700,000+</h3>
+        <p>Annual suicides worldwide</p>
+      </div>
+
+      <div class="card" style="background-color: white;">
+        <div style="font-size: 40px; color: var(--brand-teal);">📉</div>
+        <h3 style="font-size: 2rem; margin-top: 10px;">Every 40s</h3>
+        <p>Someone dies by suicide every 40 seconds</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Our Team -->
+  <section class="container" data-aos="fade-up">
+    <div class="card-section text-center">
+      <h2 class="mint">💖 Meet the Team</h2>
+      <p>Multidisciplinary, heart-led, and mission-focused.</p>
+      <div class="grid grid-4" style="margin-top: 40px;">
+        <div class="card">
+          <img src="vinethmaprof.jpg" class="profile-pic" alt="Vinethma Asmini">
+          <h3>Vinethma Asmini</h3>
+          <p>AI Engineer</p>
+        </div>
+        <div class="card">
+          <img src="isuriprof.jpg" class="profile-pic" alt="Isuri Prera">
+          <h3>Isuri Prera</h3>
+          <p>Full Stack Developer</p>
+        </div>
+        <div class="card">
+          <img src="osalprof.jpg" class="profile-pic" alt="Osal De Alwis">
+          <h3>Osal De Alwis</h3>
+          <p>AI Engineer</p>
+        </div>
+        <div class="card">
+          <img src="umarprof.jpg" class="profile-pic" alt="Umar Jamal">
+          <h3>Umar Jamal</h3>
+          <p>Conversational AI Developer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container" data-aos="fade-in">
+    <div class="card-section text-center">
+      <img src="https://img.freepik.com/premium-photo/poster-man-woman-shaking-hands_939033-34923.jpg?w=1800" class="illustration" alt="CTA Illustration" />
+      <h2 class="teal">✨ Ready to Build a Brighter Future?</h2>
+      <p>Let’s redefine retinal health with empathy and innovation.</p>
+      <a href="#contact" class="btn">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+<footer class="footer">
+    <h2 class="footer-logo">Hope<span style="color: white;">Bridge</span></h2>
+    <p class="footer-description">
+        Discover a World of Wellness: Where Every Click Counts Towards Your Health Journey.
+        Trust in Our Platform to Provide Personalized Care and Reliable Resources, Guiding You Towards Optimal Well-Being.
+    </p>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank">
+          <img src="Facebook.png" alt="Facebook" style="width: 40px; height: 40px; border-radius: 50%;">
+        </a>
+        <a href="https://www.twitter.com" target="_blank">
+          <img src="x.jpg" alt="Twitter" style="width: 40px; height: 40px; border-radius: 50%;">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <img src="instagram.avif" alt="Instagram" style="width: 40px; height: 40px; border-radius: 50%;">
+        </a>
+        <a href="mailto:your@email.com">
+          <img src="gmail.png" alt="Email" style="width: 40px; height: 40px; border-radius: 50%;">
+        </a>
+        <a href="https://maps.google.com">
+          <img src="googlemaps.png" alt="Location" style="width: 40px; height: 40px; border-radius: 50%;">
+        </a>
+      </div>
+      
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
+</body>
+</html>

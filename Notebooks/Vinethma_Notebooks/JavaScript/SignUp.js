@@ -1,5 +1,11 @@
 document.getElementById("signup-form").addEventListener("submit", async (event) => {
     event.preventDefault();
+    const termsChecked = document.getElementById("terms").checked;
+if (!termsChecked) {
+    alert("You must agree to the Terms & Conditions.");
+    return;
+}
+
 
     const formData = {
         firstName: document.getElementById("first-name").value,
@@ -32,6 +38,9 @@ document.getElementById("signup-form").addEventListener("submit", async (event) 
         const result = await response.json();
 
         if (response.ok) {
+            localStorage.setItem("user_id", formData.email); // Assuming email is used as user_id
+            localStorage.setItem("district", formData.district);
+            localStorage.setItem("username", formData.firstName);
             alert("User registered successfully!");
             window.location.href = "login.html"; // Redirect to login page
         } else {
@@ -41,4 +50,5 @@ document.getElementById("signup-form").addEventListener("submit", async (event) 
         console.error("Error:", error);
         alert("Error connecting to server");
     }
+
 });

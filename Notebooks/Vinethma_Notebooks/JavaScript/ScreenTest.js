@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
     async function submitAnswers() {
         try {
             // Submit answers and receive risk level
-            let response = await fetch('http://127.0.0.1:5000/submit', {
+            let response = await fetch('http://127.0.0.1:5000/submit-screen-test', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(answers)
