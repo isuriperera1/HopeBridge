@@ -13,6 +13,5 @@ Tutor - Mrs.Sulari Fernando
 Facial Recognition and Screen test - AI analyzes emotional expressions to detect signs of distress, sadness, or anxiety, aiding in early depression risk assessment.A multiple-choice psychological test evaluates stress, anxiety, and depression based on clinically validated models.<br /> 
 Journal Entry - Users can log daily thoughts, with Sentiment Analysis detecting mood patterns for long-term emotional tracking. <br /> 
 Chat Bot - A 24/7 AI chatbot interacts with users, analyzes language tone, and escalates high-risk cases. <br />
-Personalized Treatment: AI generates tailored plans based on mental health assessments. <br />
 Treatment and Recommendations: AI generates tailored plans based on mental health assessments and Filters doctors by specialization and location.
 
